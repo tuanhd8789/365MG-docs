@@ -553,6 +553,7 @@
           {
             "list": [
               "**Language**: nine languages, applied at once; Arabic switches the layout to right to left.",
+              "**Appearance**: light, dark or matching Windows; the sun/moon button in the title bar switches too.",
               "**Temporary folder**: keep it off drive C.",
               "**Treat a thread as stuck after**: minutes without progress before a thread is restarted (at most twice)."
             ]

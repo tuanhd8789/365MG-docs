@@ -553,6 +553,7 @@
           {
             "list": [
               "**Ngôn ngữ**: chín ngôn ngữ, đổi là có tác dụng ngay; tiếng Ả Rập chuyển bố cục sang phải-sang-trái.",
+              "**Giao diện**: sáng, tối hoặc theo Windows; nút mặt trời/mặt trăng trên thanh tiêu đề cũng đổi được.",
               "**Thư mục tạm**: không đặt trên ổ C.",
               "**Coi luồng là kẹt sau**: số phút không có tiến triển trước khi luồng được khởi động lại (tối đa 2 lần)."
             ]

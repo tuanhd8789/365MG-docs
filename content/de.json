@@ -553,6 +553,7 @@
           {
             "list": [
               "**Sprache**: neun Sprachen, sofort übernommen; Arabisch stellt das Layout auf rechts nach links um.",
+              "**Darstellung**: hell, dunkel oder wie Windows; auch über die Sonne/Mond-Schaltfläche in der Titelleiste umschaltbar.",
               "**Temporärer Ordner**: nicht auf Laufwerk C.",
               "**Thread als hängend behandeln nach**: Minuten ohne Fortschritt, bevor ein Thread neu gestartet wird (höchstens zweimal)."
             ]
