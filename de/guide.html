@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benutzerhandbuch · 365MG</title>
+  <meta name="description" content="365MG ist eine Desktop-App, die E-Mails, Kontakte, Kalender, OneDrive und E-Mail-Gruppen von einem Microsoft 365-Mandanten in einen anderen verschiebt – mit Journalen, die nie doppelt kopieren, und klaren Entscheidungen dort, wo Daten verloren gehen könnten.">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/guide.html">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/guide.html">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/guide.html">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/guide.html">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/guide.html">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/guide.html">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/guide.html">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/guide.html">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/guide.html">
+  
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./">Übersicht</a><a href="case-study.html">Fallstudie</a><a href="guide.html" aria-current="page">Benutzerhandbuch</a><a href="tours.html">Geführte Touren</a></nav>
+    <label class="lang"><span class="sr">Sprache</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/guide.html">English</option><option value="../vi/guide.html">Tiếng Việt</option><option value="../zh/guide.html">简体中文</option><option value="../ko/guide.html">한국어</option><option value="../ja/guide.html">日本語</option><option value="../de/guide.html" selected>Deutsch</option><option value="../ru/guide.html">Русский</option><option value="../hi/guide.html">हिन्दी</option><option value="../ar/guide.html">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<div class="wrap docs">
+  <aside class="toc"><nav><p class="muted">Auf dieser Seite</p><ol><li><a href="#install">1. Installation</a></li><li><a href="#requirements">2. Bevor Sie beginnen</a></li><li><a href="#tenants">3. Mandanten hinzufügen</a></li><li><a href="#campaign">4. Kampagne erstellen</a></li><li><a href="#provision">5. Zielbenutzer vorbereiten</a></li><li><a href="#waves">6. Wellen und Testläufe</a></li><li><a href="#run">7. Ausführen, anhalten, fortsetzen</a></li><li><a href="#decisions">8. Ihre Entscheidung erforderlich</a></li><li><a href="#groups">9. E-Mail-Gruppen</a></li><li><a href="#reports">10. Berichte</a></li><li><a href="#settings">11. Einstellungen und Sprachen</a></li><li><a href="#updates">12. Updates</a></li><li><a href="#faq">13. Problembehandlung</a></li></ol></nav></aside>
+  <article class="doc">
+    <h1>Benutzerhandbuch</h1><p class="lead">Von der Installation von 365MG bis zum letzten Bericht. Jeder Teil enthält Screenshots; die geführten Touren spielen die wichtigsten Aufgaben mit einem animierten Mauszeiger ab.</p>
+    <section id="install"><h2>1. Installation</h2><p>365MG läuft unter Windows 10 oder 11 (64 Bit) mit Microsoft Edge WebView2, das in Windows bereits enthalten ist. Das Installationsprogramm stellt der Autor bereit: Schreiben Sie an die unten stehende Adresse.</p>
+<ol><li>Führen Sie <code>365MG_x.y.z_x64-setup.exe</code> aus und folgen Sie dem Installationsprogramm.</li><li>Öffnen Sie 365MG über das Startmenü. Die Daten bleiben auf diesem PC in <code>%APPDATA%\com.tuanhd.365mg</code>.</li><li>Wählen Sie unter <strong>Einstellungen</strong> die Sprache der Oberfläche und einen temporären Ordner auf einem zweiten Laufwerk.</li></ol>
+<aside class="note">Die App sucht alle 6 Stunden nach Updates. Unter <strong>Neuigkeiten</strong> finden Sie das Änderungsprotokoll und die Schaltfläche zum Aktualisieren.</aside></section>
+<section id="requirements"><h2>2. Bevor Sie beginnen</h2><ul><li>Ein Konto als <strong>globaler Administrator</strong> sowohl im Quell- als auch im Zielmandanten.</li><li>Genügend <strong>Lizenzen</strong> mit Exchange Online (und OneDrive) im Ziel für die Benutzer, die Sie erstellen oder zuordnen.</li><li>Ein PC, der während des Kopierens eingeschaltet bleiben kann, mit schneller, stabiler Verbindung: Die Daten laufen über ihn.</li><li>Ein zweites Laufwerk für den temporären Ordner; nur OneDrive-Dateien ab 4 MB laufen darüber.</li></ul>
+<aside class="note warn">Beim Start einer Kampagne erstellt 365MG in jedem Mandanten eine <strong>Datenübertragungs-App</strong>, die sich mit einem Zertifikat anmeldet und organisationsweite Graph-Berechtigungen erhält (Postfachimport/-export, Files, Sites). Entfernen Sie diese App nach Abschluss der Migration aus Entra ID.</aside></section>
+<section id="tenants"><h2>3. Mandanten hinzufügen</h2><ol><li>Öffnen Sie <strong>Mandanten</strong> und klicken Sie auf <strong>Mandant hinzufügen</strong>.</li><li>Melden Sie sich im sich öffnenden Browserfenster als globaler Administrator an und akzeptieren Sie die Berechtigungen.</li><li>Zurück in 365MG zeigt der Mandant seine Domänen, die Berechtigungsprüfungen und seine Lizenzen. Verwenden Sie <strong>Berechtigungen prüfen</strong>, nachdem Sie etwas im Admin Center geändert haben.</li></ol>
+<figure class="shot"><img src="../assets/shots/de/tenants.webp" alt="Mandanten mit ihren Berechtigungsprüfungen und Lizenzen" loading="lazy"><figcaption>Mandanten mit ihren Berechtigungsprüfungen und Lizenzen</figcaption></figure>
+<figure class="tour" data-tour="addTenant">
+  <figcaption class="tour-head"><strong>Mandant hinzufügen</strong><span class="muted">Einmal als globaler Administrator anmelden</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Mandant hinzufügen"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Vorheriger Schritt">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Abspielen</button>
+    <button type="button" class="tb" data-act="next" aria-label="Nächster Schritt">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Öffnen Sie „Mandanten“ in der Seitenleiste.","Klicken Sie auf „Mandant hinzufügen“: Ein Browserfenster für die Anmeldung als globaler Administrator öffnet sich.","Zurück in 365MG zeigt der Mandant seine Berechtigungsprüfungen und Lizenzen."]</script>
+</figure></section>
+<section id="campaign"><h2>4. Kampagne erstellen</h2><p>Eine Kampagne verschiebt eine Gruppe von Benutzern von einem Quellmandanten in einen Zielmandanten. Der Assistent hat sechs Schritte; Titel, Schritte und Filter bleiben oben sichtbar, Zurück / Weiter / Kampagne speichern bleiben unten.</p>
+<ol><li><strong>Quellmandant</strong> und <strong>Zielmandant</strong>: je ein Schritt.</li><li><strong>Quellbenutzer auswählen</strong>: nach Lizenz, Domäne oder Status filtern, Benutzer in der Liste markieren und zur Auswahl hinzufügen.</li><li><strong>Zielbenutzer zuordnen</strong>: 365MG schlägt einen Zielbenutzer nach Adresse, Alias oder Anzeigename vor. Zeilen markieren und dann <strong>Zieldomäne festlegen…</strong>, <strong>Erstellen, falls im Ziel nicht vorhanden</strong> oder <strong>Lizenz zuweisen…</strong> gesammelt anwenden; das Kontrollkästchen über der Liste markiert alle Zeilen, die der Filter zeigt.</li><li><strong>Inhalt &amp; Zeitplan</strong>: E-Mail, OneDrive, Kontakte, Kalender; Junk-E-Mail überspringen; einmal oder alle N Stunden ausführen; Anzahl der Threads.</li><li><strong>Überprüfen</strong>: Zusammenfassung und benötigte Lizenzen prüfen, dann <strong>Kampagne speichern</strong>.</li></ol>
+<figure class="shot"><img src="../assets/shots/de/wizard-match.webp" alt="Zuordnung von Quellbenutzern zu Zielbenutzern, mit Massenaktionen" loading="lazy"><figcaption>Zuordnung von Quellbenutzern zu Zielbenutzern, mit Massenaktionen</figcaption></figure>
+<figure class="tour" data-tour="createCampaign">
+  <figcaption class="tour-head"><strong>Kampagne erstellen</strong><span class="muted">Von der Benutzerauswahl bis zum Speichern</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Kampagne erstellen"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Vorheriger Schritt">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Abspielen</button>
+    <button type="button" class="tb" data-act="next" aria-label="Nächster Schritt">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Öffnen Sie „Kampagnen“ und klicken Sie auf „Neue Kampagne“.","Wählen Sie den Quell- und den Zielmandanten.","Filtern und markieren Sie die zu verschiebenden Quellbenutzer und klicken Sie dann auf „Weiter“.","Markieren Sie „Alle passenden auswählen“, um jede vom Filter angezeigte Zeile auszuwählen.","Weisen Sie allen markierten Zeilen auf einmal eine Zieldomäne zu.","Wählen Sie Inhalte, Zeitplan und Threads.","Speichern Sie die Kampagne."]</script>
+</figure></section>
+<section id="provision"><h2>5. Zielbenutzer vorbereiten</h2><p>Auf der Kampagnenseite erstellt <strong>Benutzer erstellen &amp; Lizenzen zuweisen</strong> die mit „Erstellen“ markierten Zielbenutzer und weist jedem Benutzer die gewählte Lizenz zu. Fehlgeschlagene Zeilen zeigen den Grund; beheben Sie ihn und führen Sie den Vorgang erneut aus.</p>
+<p>Neue Benutzer erhalten ein zufälliges Anfangskennwort, das sie bei der ersten Anmeldung ändern müssen. Exportieren Sie die Kennwörter über das Menü <strong>⋯</strong> als CSV, übergeben Sie sie und löschen Sie dann die Datei.</p></section>
+<section id="waves"><h2>6. Wellen und Testläufe</h2><p>Markieren Sie auf der Registerkarte <strong>Benutzer</strong> Benutzer und verwenden Sie <strong>In Welle verschieben</strong>, um eine große Migration aufzuteilen. Die Ausführungsleiste kann dann jeweils eine Welle starten; geplante Ausführungen synchronisieren jede bereits geöffnete Welle weiter.</p>
+<p><strong>Testlauf (nur zählen)</strong> liest beide Seiten und meldet, wie viele Elemente, Dateien und Megabyte eine echte Ausführung kopieren würde. Er schreibt nichts in das Ziel und prüft außerdem, ob jedes Zielpostfach und jedes OneDrive existiert.</p></section>
+<section id="run"><h2>7. Ausführen, anhalten, fortsetzen</h2><p>Die Ausführungsleiste oben auf jeder Registerkarte der Kampagne zeigt, was die Kampagne gerade tut und was als Nächstes folgt.</p>
+<div class="tw"><table><thead><tr><th>Status</th><th>Angezeigt</th><th>Schaltflächen</th></tr></thead><tbody><tr><td>Noch nicht ausgeführt</td><td>Der Zeitplan</td><td><strong>Jetzt starten</strong>, Testlauf</td></tr><tr><td>Wird kopiert</td><td>Verstrichene Zeit, aktive und wartende Threads</td><td><strong>Anhalten</strong></td></tr><tr><td>Angehalten</td><td>Letzte Ausführung</td><td><strong>Fortsetzen</strong> (kopiert den Rest)</td></tr><tr><td>Synchronisiert</td><td>Wann sie endete und die nächste geplante Ausführung</td><td><strong>Erneut ausführen (neue Daten abrufen)</strong>, Zeitplan anhalten</td></tr></tbody></table></div>
+<p>Anhalten beendet die Threads und hält den Zeitplan an. Alles Kopierte bleibt in den Journalen, daher wird beim Fortsetzen nie doppelt kopiert. Die Registerkarte <strong>Kopierfortschritt</strong> zeigt jedes Postfach und OneDrive mit seiner Geschwindigkeit; ein Thread, der nicht mehr vorankommt, wird automatisch neu gestartet.</p>
+<figure class="tour" data-tour="run">
+  <figcaption class="tour-head"><strong>Ausführen, anhalten und fortsetzen</strong><span class="muted">Die Ausführungsleiste einer Kampagne</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Ausführen, anhalten und fortsetzen"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Vorheriger Schritt">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Abspielen</button>
+    <button type="button" class="tb" data-act="next" aria-label="Nächster Schritt">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Die Ausführungsleiste zeigt, was die Kampagne gerade tut und was als Nächstes folgt.","Klicken Sie auf „Jetzt starten“, um sofort zu kopieren.","„Kopierfortschritt“ zeigt jedes Postfach und OneDrive mit seiner Geschwindigkeit.","„Anhalten“ beendet die Threads sicher und hält den Zeitplan an.","„Fortsetzen“ kopiert den Rest; nichts wird doppelt kopiert."]</script>
+</figure></section>
+<section id="decisions"><h2>8. Ihre Entscheidung erforderlich</h2><p>Trifft eine Ausführung auf etwas, das sie nicht allein klären sollte, zeigt die Kampagne einen Bereich <strong>Ihre Entscheidung erforderlich</strong>, nach Art gruppiert, mit einer Erklärung und den Aktionen für jeden Benutzer.</p>
+<div class="tw"><table><thead><tr><th>Art</th><th>Was zu tun ist</th></tr></thead><tbody><tr><td>Zielpostfach funktioniert nicht</td><td>Weisen Sie dem Benutzer eine Lizenz zu (oder machen Sie daraus ein freigegebenes Postfach), warten Sie 15–60 Minuten, dann <strong>Erneut prüfen</strong>. Wurde die Lizenz absichtlich entfernt: <strong>Diesen Benutzer überspringen</strong>.</td></tr><tr><td>Kein OneDrive im Ziel</td><td><strong>Befehl zum Erstellen von OneDrive kopieren</strong>, in Windows PowerShell als SharePoint-Administrator ausführen oder den Benutzer sich einmal anmelden lassen; dann erneut prüfen.</td></tr><tr><td>Zielbenutzer wurde neu erstellt</td><td><strong>Von Grund auf neu kopieren</strong> in das neue Postfach bzw. OneDrive oder überspringen.</td></tr><tr><td>Elemente mit unbekanntem Ergebnis</td><td><strong>Elemente erneut senden</strong> (ein bereits vorhandenes Element liegt dann doppelt vor) oder <strong>Diese Elemente überspringen</strong>.</td></tr><tr><td>Ziel enthält weniger als kopiert</td><td>Meist absichtlich im Ziel gelöscht; mit <strong>Verstanden</strong> bestätigen.</td></tr></tbody></table></div>
+<figure class="shot"><img src="../assets/shots/de/issues.webp" alt="Gruppierte Entscheidungen mit ihren Aktionen" loading="lazy"><figcaption>Gruppierte Entscheidungen mit ihren Aktionen</figcaption></figure>
+<figure class="tour" data-tour="issues">
+  <figcaption class="tour-head"><strong>Klären, was Sie braucht</strong><span class="muted">Der Bereich „Ihre Entscheidung erforderlich“</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Klären, was Sie braucht"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Vorheriger Schritt">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Abspielen</button>
+    <button type="button" class="tb" data-act="next" aria-label="Nächster Schritt">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Was 365MG nicht allein klärt, wird hier gruppiert.","Öffnen Sie eine Gruppe, um jeden Benutzer und die Aktionen zu sehen.","Kopieren Sie den Befehl, der die fehlenden OneDrives erstellt.","Überspringen Sie einen Benutzer, dessen Lizenz absichtlich entfernt wurde."]</script>
+</figure>
+<aside class="note">Übersprungene Benutzer werden bei jeder Ausführung ausgelassen und im Bericht aufgeführt. <strong>Erneut kopieren</strong> auf der Registerkarte „Benutzer“ holt einen Benutzer zurück.</aside></section>
+<section id="groups"><h2>9. E-Mail-Gruppen</h2><p>Wählen Sie auf der Registerkarte <strong>E-Mail-Gruppen</strong> Quellgruppen aus und klicken Sie auf <strong>Gruppen erstellen &amp; Mitglieder hinzufügen</strong>. Graph kann nur Microsoft 365-Gruppen erstellen, daher werden Verteilerlisten und E-Mail-aktivierte Sicherheitsgruppen zu Microsoft 365-Gruppen mit demselben Alias, die an die Posteingänge der Mitglieder zustellen und externe Absender akzeptieren. Mitglieder ohne Zielbenutzer werden pro Gruppe aufgeführt.</p></section>
+<section id="reports"><h2>10. Berichte</h2><p><strong>Berichte</strong> zeigt pro Kampagne die Quell- und Kopierzahlen pro Benutzer und insgesamt, zu prüfende Benutzer, Gruppen und Hinweise. <strong>HTML exportieren</strong> schreibt eine einzelne Seite (hell und dunkel, mit Suche und Filter) und öffnet sie; CSV-Exporte listen Benutzer oder Gruppen auf.</p>
+<figure class="tour" data-tour="report">
+  <figcaption class="tour-head"><strong>Bericht exportieren</strong><span class="muted">Quelle gegenüber Kopiertem, pro Benutzer</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Bericht exportieren"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Vorheriger Schritt">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Abspielen</button>
+    <button type="button" class="tb" data-act="next" aria-label="Nächster Schritt">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Öffnen Sie „Berichte“ und wählen Sie eine Kampagne.","Summen, zu prüfende Benutzer, Gruppen und Hinweise.","„HTML exportieren“ schreibt eine eigenständige Seite und öffnet sie."]</script>
+</figure></section>
+<section id="settings"><h2>11. Einstellungen und Sprachen</h2><ul><li><strong>Sprache</strong>: neun Sprachen, sofort übernommen; Arabisch stellt das Layout auf rechts nach links um.</li><li><strong>Temporärer Ordner</strong>: nicht auf Laufwerk C.</li><li><strong>Thread als hängend behandeln nach</strong>: Minuten ohne Fortschritt, bevor ein Thread neu gestartet wird (höchstens zweimal).</li></ul>
+<figure class="tour" data-tour="language">
+  <figcaption class="tour-head"><strong>Sprache ändern</strong><span class="muted">Neun Sprachen, auch von rechts nach links</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Sprache ändern"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Vorheriger Schritt">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Abspielen</button>
+    <button type="button" class="tb" data-act="next" aria-label="Nächster Schritt">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Öffnen Sie „Einstellungen“.","Wählen Sie eine Sprache: Sie wird sofort übernommen.","Arabisch stellt das gesamte Layout auf rechts nach links um."]</script>
+</figure></section>
+<section id="updates"><h2>12. Updates</h2><p><strong>Neuigkeiten</strong> listet die Änderungen jeder Version auf. Wenn eine neuere Version veröffentlicht ist, zeigt die Seitenleiste sie an; <strong>Auf x.y.z aktualisieren</strong> lädt sie herunter, prüft die Signatur des Autors, schließt die App, installiert und öffnet sie wieder. Halten Sie laufende Kampagnen zuvor an und setzen Sie sie danach fort.</p></section>
+<section id="faq"><h2>13. Problembehandlung</h2><div class="tw"><table><thead><tr><th>Symptom</th><th>Ursache und Lösung</th></tr></thead><tbody><tr><td>„Warten, bis die Berechtigungen der Datenübertragungs-App wirksam werden“</td><td>Eine neue App wird von Exchange und SharePoint erst nach einigen Minuten akzeptiert; die Ausführung wartet selbstständig bis zu 30 Minuten.</td></tr><tr><td>Geschwindigkeit sinkt, viele Meldungen „Exchange drosselt“</td><td>Exchange bzw. SharePoint begrenzen pro Postfach und pro App. Mehr Threads helfen einem einzelnen Postfach nicht; sie helfen, wenn viele Postfächer warten.</td></tr><tr><td>Zahlen im Ziel niedriger als in der Quelle</td><td>Prüfen Sie die Hinweise im Bericht: übersprungene Junk-E-Mails, per Entscheidung ausgelassene Elemente oder im Ziel gelöschte E-Mails.</td></tr><tr><td>Ein Postfach enthält im Ziel bereits E-Mails</td><td>365MG lehnt das Kopieren in dieses Postfach bei der ersten Ausführung ab. Erlauben Sie es in der Kampagne nur, wenn kein anderes Tool hineinkopiert hat.</td></tr></tbody></table></div></section>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · Microsoft 365-Migration von Mandant zu Mandant von tuanhd</div>
+    <div>Installationsprogramm, Demo oder Hilfe · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365, Exchange Online, OneDrive und Microsoft Graph sind Marken der Microsoft Corporation. 365MG ist unabhängige Software und steht in keiner Verbindung zu Microsoft.</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/de/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-addTenant-2.webp","box":[0.8377,0.0861,0.1373,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.4039],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/de/tour-createCampaign-1.webp","box":[0.8583,0.0861,0.1167,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-createCampaign-2.webp","box":[0.2125,0.3066,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-createCampaign-3.webp","box":[0.2227,0.4041,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-createCampaign-4.webp","box":[0.2227,0.4422,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-createCampaign-5.webp","box":[0.401,0.4725,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-createCampaign-6.webp","box":[0.2125,0.0972,0.525,0.855],"action":"look","w":1280,"h":800},{"shot":"assets/shots/de/tour-createCampaign-7.webp","box":[0.8348,0.95,0.1402,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/de/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.3471],"action":"look","w":1280,"h":800},{"shot":"assets/shots/de/tour-run-2.webp","box":[0.4626,0.3033,0.2325,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-run-3.webp","box":[0.2982,0.5016,0.1213,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/de/tour-run-4.webp","box":[0.8877,0.17,0.0771,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-run-5.webp","box":[0.4626,0.3033,0.2325,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/de/tour-issues-1.webp","box":[0.2125,0.1193,0.7625,0.8107],"action":"look","w":1280,"h":800},{"shot":"assets/shots/de/tour-issues-2.webp","box":[0.2234,0.4736,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-issues-3.webp","box":[0.2328,0.5072,0.2571,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-issues-4.webp","box":[0.786,0.5076,0.1687,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/de/tour-report-1.webp","box":[0.2125,0.1472,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/de/tour-report-2.webp","box":[0.2125,0.1972,0.7625,0.2927],"action":"look","w":1280,"h":800},{"shot":"assets/shots/de/tour-report-3.webp","box":[0.4469,0.1472,0.1244,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/de/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/de/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"Abspielen","pause":"Pause","replay":"Erneut abspielen","prev":"Vorheriger Schritt","next":"Nächster Schritt","empty":"Die Bildschirme für diese Tour werden vorbereitet."}</script>
+</body>
+</html>

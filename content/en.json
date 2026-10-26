@@ -1,0 +1,602 @@
+{
+  "lang": "en",
+  "name": "English",
+  "dir": "ltr",
+  "meta": {
+    "title": "365MG · Move Microsoft 365 between tenants, safely",
+    "description": "365MG is a desktop app that moves mail, contacts, calendars, OneDrive and mail groups from one Microsoft 365 tenant to another, with journals that never copy twice and clear decisions where data could be lost."
+  },
+  "nav": {
+    "home": "Overview",
+    "caseStudy": "Case study",
+    "guide": "User guide",
+    "tours": "Guided tours",
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Microsoft 365 tenant-to-tenant migration",
+      "title": "Move a whole company's Microsoft 365, **without losing a single message**",
+      "subtitle": "365MG copies mail, contacts, calendars, OneDrive and mail groups between tenants from your own Windows PC. It keeps a journal of every item, runs again without duplicates, and stops to ask you whenever a choice could lose or duplicate data.",
+      "cta": "Read the guide",
+      "ctaTours": "Watch the tours",
+      "shotAlt": "A campaign in 365MG with its run controls and the decisions it needs"
+    },
+    "features": {
+      "title": "What it does",
+      "items": [
+        {
+          "icon": "🏢",
+          "title": "Many tenants, many campaigns",
+          "text": "Sign in once as global admin per tenant. 365MG checks permissions and licenses, then runs any number of campaigns between them."
+        },
+        {
+          "icon": "🧭",
+          "title": "Guided campaign wizard",
+          "text": "Pick source users with filters, match them to target users automatically, assign a target domain and license in bulk, create the users that are missing."
+        },
+        {
+          "icon": "✉️",
+          "title": "Mail, contacts, calendar",
+          "text": "Exports and imports every item through the Exchange mailbox API, folder by folder, with a journal per item so a stopped run carries on where it left off."
+        },
+        {
+          "icon": "☁️",
+          "title": "OneDrive with hash checks",
+          "text": "Copies files and folders, keeps created and modified dates, verifies every file by quickXorHash and downloads large files in resumable 64 MB ranges."
+        },
+        {
+          "icon": "👥",
+          "title": "Mail groups",
+          "text": "Recreates distribution lists and mail-enabled groups as Microsoft 365 groups with the same alias, members and owners."
+        },
+        {
+          "icon": "🌊",
+          "title": "Waves and dry runs",
+          "text": "Split users into waves, count what a run would copy without writing anything, then copy for real and keep syncing on a schedule until cutover."
+        },
+        {
+          "icon": "✋",
+          "title": "Asks before it guesses",
+          "text": "Missing target mailboxes or OneDrives, recreated users, items with an unknown outcome: each lands in a \"Needs your decision\" list with the actions that settle it."
+        },
+        {
+          "icon": "📊",
+          "title": "Reports",
+          "text": "Source versus copied per user and in total, users that need a look, groups, and notes; export a self-contained HTML page or CSV."
+        },
+        {
+          "icon": "🌐",
+          "title": "Nine languages",
+          "text": "English, Tiếng Việt, 简体中文, 한국어, 日本語, Deutsch, Русский, हिन्दी and العربية (right to left)."
+        }
+      ]
+    },
+    "how": {
+      "title": "How a migration goes",
+      "steps": [
+        {
+          "title": "Add both tenants",
+          "text": "Sign in as global admin; 365MG checks permissions and lists licenses."
+        },
+        {
+          "title": "Plan a campaign",
+          "text": "Choose users, match targets, choose content, threads and schedule."
+        },
+        {
+          "title": "Prepare targets",
+          "text": "Create missing users and assign licenses in one click."
+        },
+        {
+          "title": "Dry run, then copy",
+          "text": "Count first, then copy wave by wave; pause and resume at will."
+        },
+        {
+          "title": "Decide and report",
+          "text": "Settle what needs you, re-sync until cutover, export the report."
+        }
+      ]
+    },
+    "safety": {
+      "title": "Built from a real migration's lessons",
+      "text": "Every safeguard comes from something that went wrong while moving a 350-user company: mailboxes that lost their license mid-way, OneDrives that did not exist yet, connections that broke while sending.",
+      "items": [
+        "Each item is journaled before it is sent: a run that stops is resumed, never repeated.",
+        "An item whose outcome is unknown is never re-sent silently: you choose.",
+        "A target mailbox that already holds mail is not copied into unless you allow it.",
+        "Data moves through your PC only; temporary files sit on a drive you choose and are deleted right after upload.",
+        "Updates are signed: the app installs only builds signed by the author."
+      ],
+      "shotAlt": "The Needs your decision panel"
+    },
+    "cta": {
+      "title": "Planning a tenant-to-tenant move?",
+      "text": "365MG is distributed by its author. Write for an installer, a demo or help with a migration.",
+      "button": "Contact the author",
+      "caseStudy": "Read the case study"
+    }
+  },
+  "caseStudy": {
+    "eyebrow": "Case study",
+    "title": "350 users, 3.4 million emails and 670 GB of files to a new tenant",
+    "intro": "A services company with offices in two countries moved to a new Microsoft 365 tenant after a change of ownership. The first attempt, with scripts run by hand, stalled for weeks. This is what went wrong, how the migration was finished, and what 365MG does about each problem today.",
+    "stats": [
+      {
+        "value": "352",
+        "label": "mailboxes"
+      },
+      {
+        "value": "3.42 M",
+        "label": "emails in the source"
+      },
+      {
+        "value": "99.1 %",
+        "label": "matched in the target"
+      },
+      {
+        "value": "353 GB",
+        "label": "OneDrive, 284 users"
+      },
+      {
+        "value": "320 GB",
+        "label": "shared folders"
+      },
+      {
+        "value": "0",
+        "label": "duplicate copies"
+      }
+    ],
+    "sections": [
+      {
+        "title": "The starting point",
+        "blocks": [
+          {
+            "p": "Scripts copied one message at a time through Microsoft Graph from a single PC. After a month the target held about 71 % of the mail. Reports said most mailboxes had \"caught up\", yet some target mailboxes were empty."
+          },
+          {
+            "list": [
+              "A controller crashed on a data type error and was restarted every hour by a watchdog, doing nothing in between.",
+              "170 target accounts had been deleted and recreated, and 190 journals reset; the sync kept treating those mailboxes as finished.",
+              "Workers held whole messages with attachments in memory: some reached 3 GB of RAM.",
+              "One rejected calendar item stopped a whole mailbox on every run."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What fixed it",
+        "blocks": [
+          {
+            "list": [
+              "**Journals per item** checked against live counts in both tenants, so \"caught up\" meant what it said.",
+              "**Size-aware batches** spooled to disk instead of memory: each worker stayed around 200 MB.",
+              "**Rejected items recorded and skipped** instead of stopping the mailbox.",
+              "**Adaptive pacing per mailbox** when Exchange throttled one target: one mailbox went from 42 to about 200 messages per minute.",
+              "**24 parallel workers** for mail and up to 44 for OneDrive, spread over several data mover apps to stay under per-app limits."
+            ]
+          },
+          {
+            "p": "Mail reached 342 of 352 mailboxes matched (99.1 % of messages). The rest were not tool errors: 4 mailboxes whose license the admin had removed on purpose, and 6 mailboxes where messages filed in two folders had been matched to one copy, then repaired."
+          }
+        ]
+      },
+      {
+        "title": "Where a person had to decide",
+        "blocks": [
+          {
+            "p": "Some situations cannot be settled by a tool without risking data. They now appear in 365MG's **Needs your decision** panel:"
+          },
+          {
+            "table": [
+              [
+                "What happened",
+                "Why a tool must not guess",
+                "What 365MG offers"
+              ],
+              [
+                "Target mailbox lost its license",
+                "The admin may have removed it on purpose",
+                "License it and check again, or skip the user"
+              ],
+              [
+                "Target OneDrive did not exist yet",
+                "Only a sign-in or a SharePoint admin can create it",
+                "One click copies the command for every missing OneDrive"
+              ],
+              [
+                "Target user deleted and recreated",
+                "What was copied before is gone",
+                "Copy everything again into the new one, or skip"
+              ],
+              [
+                "Connection broke while sending",
+                "The item may or may not be in the target",
+                "Send again (maybe twice) or leave it out"
+              ],
+              [
+                "Target holds fewer messages than copied",
+                "Users may have deleted them on purpose",
+                "Noted; never copied back without you"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Lessons built into 365MG",
+        "blocks": [
+          {
+            "list": [
+              "Junk Email older than 30 days is deleted by Exchange Online in the target: 365MG skips it by default so counts agree.",
+              "Large files are downloaded in ranges with their own timeout: a stalled 29.8 GB file no longer hangs a worker.",
+              "A worker that stops moving is restarted automatically and continues from the journal.",
+              "Dry runs check target mailboxes and OneDrives before the real copy."
+            ]
+          },
+          {
+            "note": "Company and people are not named, and the figures are rounded."
+          }
+        ]
+      }
+    ]
+  },
+  "guide": {
+    "title": "User guide",
+    "tocTitle": "On this page",
+    "intro": "From installing 365MG to the last report. Each part has screenshots; the guided tours replay the main tasks with an animated cursor.",
+    "sections": [
+      {
+        "id": "install",
+        "title": "1. Install",
+        "blocks": [
+          {
+            "p": "365MG runs on Windows 10 or 11 (64-bit) with Microsoft Edge WebView2, which Windows already includes. The installer is provided by the author: write to the address below."
+          },
+          {
+            "steps": [
+              "Run `365MG_x.y.z_x64-setup.exe` and follow the installer.",
+              "Open 365MG from the Start menu. Data stays on this PC in `%APPDATA%\\com.tuanhd.365mg`.",
+              "In **Settings**, choose the interface language and a temporary folder on a secondary drive."
+            ]
+          },
+          {
+            "note": "The app checks for updates every 6 hours. See **What's new** for the changelog and the update button."
+          }
+        ]
+      },
+      {
+        "id": "requirements",
+        "title": "2. Before you start",
+        "blocks": [
+          {
+            "list": [
+              "A **global administrator** account in both the source and the target tenant.",
+              "Enough **licenses** with Exchange Online (and OneDrive) in the target for the users you create or map.",
+              "A PC that can stay on during the copy, with a fast, stable connection: data flows through it.",
+              "A secondary drive for the temporary folder; only OneDrive files of 4 MB or more pass through it."
+            ]
+          },
+          {
+            "warn": "When it starts a campaign, 365MG creates a **data mover app** in each tenant, signed in with a certificate and given organisation-wide Graph permissions (mailbox import/export, Files, Sites). Remove that app from Entra ID when the migration is finished."
+          }
+        ]
+      },
+      {
+        "id": "tenants",
+        "title": "3. Add the tenants",
+        "blocks": [
+          {
+            "steps": [
+              "Open **Tenants** and click **Add tenant**.",
+              "Sign in as global admin in the browser window that opens and accept the permissions.",
+              "Back in 365MG, the tenant shows its domains, the permission checks and its licenses. Use **Check permissions** after changing anything in the admin center."
+            ]
+          },
+          {
+            "shot": "tenants",
+            "caption": "Tenants with their permission checks and licenses"
+          },
+          {
+            "tour": "addTenant"
+          }
+        ]
+      },
+      {
+        "id": "campaign",
+        "title": "4. Create a campaign",
+        "blocks": [
+          {
+            "p": "A campaign moves a set of users from one source tenant to one target tenant. The wizard has six steps; its title, steps and filters stay in view, and Back / Next / Save campaign stay at the bottom."
+          },
+          {
+            "steps": [
+              "**Source tenant** and **Target tenant**: one step each.",
+              "**Choose source users**: filter by license, domain or state, tick users on the list and add them to the selection.",
+              "**Match target users**: 365MG suggests a target user by address, alias or display name. Tick rows, then use **Set target domain…**, **Create if missing in target** or **Assign license…** in bulk; the checkbox above the list (**N matching users**) ticks every row the filter shows.",
+              "**Content & schedule**: mail, OneDrive, contacts, calendar; skip Junk Email; run once or every N hours; thread counts.",
+              "**Review**: check the summary and the licenses needed, then **Save campaign**."
+            ]
+          },
+          {
+            "shot": "wizard-match",
+            "caption": "Matching source users to target users, with bulk actions"
+          },
+          {
+            "tour": "createCampaign"
+          }
+        ]
+      },
+      {
+        "id": "provision",
+        "title": "5. Prepare the target users",
+        "blocks": [
+          {
+            "p": "On the campaign page, **Create users & assign licenses** creates the target users marked \"Create\" and gives every user the chosen license. Rows that fail show why; fix it and run it again."
+          },
+          {
+            "p": "New users get a random initial password they must change at first sign-in. Export them from the **⋯** menu as CSV, hand them over, then delete the file."
+          }
+        ]
+      },
+      {
+        "id": "waves",
+        "title": "6. Waves and dry runs",
+        "blocks": [
+          {
+            "p": "In the **Users** tab, tick users and use **Move to wave** to split a large migration. The run bar can then start one wave at a time; scheduled runs keep syncing every wave already opened."
+          },
+          {
+            "p": "**Dry run (count only)** reads both sides and reports how many items, files and megabytes a real run would copy. It writes nothing to the target and also checks that every target mailbox and OneDrive exists."
+          }
+        ]
+      },
+      {
+        "id": "run",
+        "title": "7. Run, pause, resume",
+        "blocks": [
+          {
+            "p": "The run bar at the top of every campaign tab shows what the campaign is doing and what comes next."
+          },
+          {
+            "table": [
+              [
+                "State",
+                "Shown",
+                "Buttons"
+              ],
+              [
+                "Never run",
+                "The schedule",
+                "**Start now**, Dry run"
+              ],
+              [
+                "Copying",
+                "Elapsed time, threads running and waiting",
+                "**Pause**"
+              ],
+              [
+                "Paused",
+                "Last run",
+                "**Resume** (copies the rest)"
+              ],
+              [
+                "Synced",
+                "When it finished and the next scheduled run",
+                "**Run again (fetch new data)**, Pause schedule"
+              ]
+            ]
+          },
+          {
+            "p": "Pausing stops the threads and holds the schedule. Everything copied stays in the journals, so resuming never copies twice. The **Copy progress** tab shows each mailbox and OneDrive with its speed; a thread that stops moving is restarted automatically."
+          },
+          {
+            "tour": "run"
+          }
+        ]
+      },
+      {
+        "id": "decisions",
+        "title": "8. Needs your decision",
+        "blocks": [
+          {
+            "p": "When a run meets something it should not settle alone, the campaign shows a **Needs your decision** panel grouped by kind, with an explanation and the actions for each user."
+          },
+          {
+            "table": [
+              [
+                "Kind",
+                "What to do"
+              ],
+              [
+                "Target mailbox not working",
+                "License the user (or make it a shared mailbox), wait 15–60 minutes, **Check again**. If the license was removed on purpose, **Skip this user**."
+              ],
+              [
+                "No OneDrive in the target",
+                "**Copy OneDrive creation command**, run it in Windows PowerShell as SharePoint admin, or have the user sign in once; then check again."
+              ],
+              [
+                "Target user was recreated",
+                "**Copy again from scratch** into the new mailbox or OneDrive, or skip."
+              ],
+              [
+                "Items with unknown outcome",
+                "**Resend** (an item already there becomes two) or **Skip these items**."
+              ],
+              [
+                "Target has fewer than copied",
+                "Usually deleted on purpose in the target; acknowledge with **Got it**."
+              ]
+            ]
+          },
+          {
+            "shot": "issues",
+            "caption": "Grouped decisions with their actions"
+          },
+          {
+            "tour": "issues"
+          },
+          {
+            "note": "Skipped users are left out of every run and listed in the report. **Copy again** in the Users tab brings one back."
+          }
+        ]
+      },
+      {
+        "id": "groups",
+        "title": "9. Mail groups",
+        "blocks": [
+          {
+            "p": "In the **Mail groups** tab, pick source groups and click **Create groups & add members**. Graph can only create Microsoft 365 groups, so distribution lists and mail-enabled security groups become Microsoft 365 groups with the same alias, delivering to members' inboxes and accepting outside senders. Members without a target user are listed per group."
+          }
+        ]
+      },
+      {
+        "id": "reports",
+        "title": "10. Reports",
+        "blocks": [
+          {
+            "p": "**Reports** shows, per campaign, source and copied counts per user and in total, users that need a look, groups and notes. **Export HTML** writes a single page (light and dark, search and filter) and opens it; CSV exports list users or groups."
+          },
+          {
+            "tour": "report"
+          }
+        ]
+      },
+      {
+        "id": "settings",
+        "title": "11. Settings and languages",
+        "blocks": [
+          {
+            "list": [
+              "**Language**: nine languages, applied at once; Arabic switches the layout to right to left.",
+              "**Temporary folder**: keep it off drive C.",
+              "**Treat a thread as stuck after**: minutes without progress before a thread is restarted (at most twice)."
+            ]
+          },
+          {
+            "tour": "language"
+          }
+        ]
+      },
+      {
+        "id": "updates",
+        "title": "12. Updates",
+        "blocks": [
+          {
+            "p": "**What's new** lists the changes of every version. When a newer version is published the sidebar shows it; **Update to x.y.z** downloads it, checks the author's signature, closes the app, installs and reopens it. Pause running campaigns first; resume them afterwards."
+          }
+        ]
+      },
+      {
+        "id": "faq",
+        "title": "13. Troubleshooting",
+        "blocks": [
+          {
+            "table": [
+              [
+                "Symptom",
+                "Cause and fix"
+              ],
+              [
+                "\"Waiting for the data mover app's permissions\"",
+                "A new app takes a few minutes to be accepted by Exchange and SharePoint; the run waits up to 30 minutes by itself."
+              ],
+              [
+                "Speed drops, many \"throttled\" messages",
+                "Exchange or SharePoint limits per mailbox and per app. More threads do not help one mailbox; they help when many mailboxes are waiting."
+              ],
+              [
+                "Target counts lower than source",
+                "Check the report notes: skipped Junk Email, items left out by decision, or mail deleted in the target."
+              ],
+              [
+                "A mailbox already has mail in the target",
+                "365MG refuses to copy into it on the first run. Allow it in the campaign only if no other tool copied into it."
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "tours": {
+    "title": "Guided tours",
+    "intro": "Each tour replays a task on real screens with an animated cursor. Use ‹ › to go step by step.",
+    "controls": {
+      "play": "Play",
+      "pause": "Pause",
+      "replay": "Replay",
+      "prev": "Previous step",
+      "next": "Next step",
+      "empty": "Screens for this tour are being prepared."
+    },
+    "items": {
+      "addTenant": {
+        "title": "Add a tenant",
+        "desc": "Sign in once as global admin",
+        "steps": [
+          "Open Tenants in the sidebar.",
+          "Click Add tenant: a browser window opens for the global admin sign-in.",
+          "Back in 365MG, the tenant shows its permission checks and licenses."
+        ]
+      },
+      "createCampaign": {
+        "title": "Create a campaign",
+        "desc": "From choosing users to saving",
+        "steps": [
+          "Open Campaigns and click New campaign.",
+          "Choose the source and the target tenant.",
+          "Filter and tick the source users to move, then click Next.",
+          "Tick the box above the list to pick every row the filter shows.",
+          "Assign a target domain to all ticked rows at once.",
+          "Choose the content, schedule and threads.",
+          "Save the campaign."
+        ]
+      },
+      "run": {
+        "title": "Run, pause and resume",
+        "desc": "The run bar of a campaign",
+        "steps": [
+          "The run bar says what the campaign is doing and what comes next.",
+          "Click Start now to copy right away.",
+          "Copy progress shows every mailbox and OneDrive with its speed.",
+          "Pause stops the threads safely and holds the schedule.",
+          "Resume copies the rest; nothing is copied twice."
+        ]
+      },
+      "issues": {
+        "title": "Settle what needs you",
+        "desc": "The Needs your decision panel",
+        "steps": [
+          "Things 365MG will not settle alone are grouped here.",
+          "Open a group to see each user and the actions.",
+          "Copy the command that creates the missing OneDrives.",
+          "Skip a user whose license was removed on purpose."
+        ]
+      },
+      "report": {
+        "title": "Export a report",
+        "desc": "Source versus copied, per user",
+        "steps": [
+          "Open Reports and choose a campaign.",
+          "Totals, users that need a look, groups and notes.",
+          "Export HTML writes one self-contained page and opens it."
+        ]
+      },
+      "language": {
+        "title": "Change the language",
+        "desc": "Nine languages, including right to left",
+        "steps": [
+          "Open Settings.",
+          "Choose a language: it applies at once.",
+          "Arabic turns the whole layout right to left."
+        ]
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Microsoft 365 tenant-to-tenant migration by tuanhd",
+    "contact": "Installer, demo or help",
+    "trademark": "Microsoft 365, Exchange Online, OneDrive and Microsoft Graph are trademarks of Microsoft Corporation. 365MG is independent software, not affiliated with Microsoft."
+  }
+}

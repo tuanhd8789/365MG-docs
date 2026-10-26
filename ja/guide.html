@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ユーザー ガイド · 365MG</title>
+  <meta name="description" content="365MG は、メール、連絡先、予定表、OneDrive、メール グループをある Microsoft 365 テナントから別のテナントへ移行するデスクトップ アプリです。ジャーナルにより二重コピーを防ぎ、データが失われるおそれのある場面では明確な判断を求めます。">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/guide.html">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/guide.html">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/guide.html">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/guide.html">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/guide.html">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/guide.html">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/guide.html">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/guide.html">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/guide.html">
+  
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./">概要</a><a href="case-study.html">事例</a><a href="guide.html" aria-current="page">ユーザー ガイド</a><a href="tours.html">ガイド ツアー</a></nav>
+    <label class="lang"><span class="sr">言語</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/guide.html">English</option><option value="../vi/guide.html">Tiếng Việt</option><option value="../zh/guide.html">简体中文</option><option value="../ko/guide.html">한국어</option><option value="../ja/guide.html" selected>日本語</option><option value="../de/guide.html">Deutsch</option><option value="../ru/guide.html">Русский</option><option value="../hi/guide.html">हिन्दी</option><option value="../ar/guide.html">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<div class="wrap docs">
+  <aside class="toc"><nav><p class="muted">このページの内容</p><ol><li><a href="#install">1. インストール</a></li><li><a href="#requirements">2. 開始する前に</a></li><li><a href="#tenants">3. テナントを追加する</a></li><li><a href="#campaign">4. キャンペーンを作成する</a></li><li><a href="#provision">5. 移行先ユーザーを準備する</a></li><li><a href="#waves">6. ウェーブとドライ ラン</a></li><li><a href="#run">7. 実行、一時停止、再開</a></li><li><a href="#decisions">8. 判断が必要</a></li><li><a href="#groups">9. メール グループ</a></li><li><a href="#reports">10. レポート</a></li><li><a href="#settings">11. 設定と言語</a></li><li><a href="#updates">12. 更新</a></li><li><a href="#faq">13. トラブルシューティング</a></li></ol></nav></aside>
+  <article class="doc">
+    <h1>ユーザー ガイド</h1><p class="lead">365MG のインストールから最後のレポートまで。各パートにスクリーンショットがあり、ガイド ツアーではアニメーション カーソルで主な作業を再現します。</p>
+    <section id="install"><h2>1. インストール</h2><p>365MG は Windows 10 または 11 (64 ビット) で動作し、Windows に標準で含まれる Microsoft Edge WebView2 を使用します。インストーラーは作成者が提供します。下記のアドレスまでご連絡ください。</p>
+<ol><li><code>365MG_x.y.z_x64-setup.exe</code> を実行し、インストーラーの指示に従います。</li><li>スタート メニューから 365MG を開きます。データはこの PC の <code>%APPDATA%\com.tuanhd.365mg</code> に保存されます。</li><li><strong>設定</strong> で、インターフェイスの言語と、セカンダリ ドライブ上の一時フォルダーを選択します。</li></ol>
+<aside class="note">アプリは 6 時間ごとに更新プログラムを確認します。変更履歴と更新ボタンは <strong>新機能</strong> で確認できます。</aside></section>
+<section id="requirements"><h2>2. 開始する前に</h2><ul><li>移行元と移行先の両方のテナントの<strong>グローバル管理者</strong>アカウント。</li><li>作成または対応付けするユーザー分の、Exchange Online (および OneDrive) を含む移行先の十分な<strong>ライセンス</strong>。</li><li>コピー中に電源を入れたままにでき、高速で安定した接続を持つ PC (データはこの PC を経由します)。</li><li>一時フォルダー用のセカンダリ ドライブ。ここを経由するのは 4 MB 以上の OneDrive ファイルのみです。</li></ul>
+<aside class="note warn">キャンペーンを開始すると、365MG は各テナントに<strong>データ移行アプリ</strong>を作成します。このアプリは証明書でサインインし、組織全体の Graph アクセス許可 (メールボックスのインポート/エクスポート、Files、Sites) が付与されます。移行が完了したら、Entra ID からこのアプリを削除してください。</aside></section>
+<section id="tenants"><h2>3. テナントを追加する</h2><ol><li><strong>テナント</strong> を開き、<strong>テナントを追加</strong> をクリックします。</li><li>開いたブラウザー ウィンドウでグローバル管理者としてサインインし、アクセス許可に同意します。</li><li>365MG に戻ると、テナントのドメイン、アクセス許可の確認結果、ライセンスが表示されます。管理センターで何かを変更した後は <strong>アクセス許可を確認</strong> を使用してください。</li></ol>
+<figure class="shot"><img src="../assets/shots/ja/tenants.webp" alt="アクセス許可の確認結果とライセンスが表示されたテナント" loading="lazy"><figcaption>アクセス許可の確認結果とライセンスが表示されたテナント</figcaption></figure>
+<figure class="tour" data-tour="addTenant">
+  <figcaption class="tour-head"><strong>テナントを追加する</strong><span class="muted">グローバル管理者として一度サインイン</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="テナントを追加する"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["サイドバーで [テナント] を開きます。","[テナントを追加] をクリックすると、グローバル管理者のサインイン用にブラウザー ウィンドウが開きます。","365MG に戻ると、テナントのアクセス許可の確認結果とライセンスが表示されます。"]</script>
+</figure></section>
+<section id="campaign"><h2>4. キャンペーンを作成する</h2><p>キャンペーンは、ユーザーのまとまりを 1 つの移行元テナントから 1 つの移行先テナントへ移します。ウィザードは 6 ステップで、タイトル・ステップ・フィルターは常に上部に、戻る / 次へ / キャンペーンを保存 は常に下部に表示されます。</p>
+<ol><li><strong>移行元テナント</strong> と <strong>移行先テナント</strong>: それぞれ 1 ステップです。</li><li><strong>移行元ユーザーの選択</strong>: ライセンス、ドメイン、状態で絞り込み、一覧でユーザーを選んで選択済みに追加します。</li><li><strong>移行先ユーザーとの照合</strong>: 365MG がアドレス、エイリアス、表示名から移行先ユーザーを提案します。行を選び、<strong>移行先ドメインを設定…</strong>、<strong>移行先にない場合は作成</strong>、<strong>ライセンスを割り当て…</strong> を一括で使います。一覧上部のチェック ボックスで、フィルターに表示されたすべての行を選択できます。</li><li><strong>コンテンツとスケジュール</strong>: メール、OneDrive、連絡先、予定表、迷惑メールのスキップ、1 回または N 時間ごとの実行、スレッド数。</li><li><strong>確認</strong>: 概要と必要なライセンスを確認し、<strong>キャンペーンを保存</strong> をクリックします。</li></ol>
+<figure class="shot"><img src="../assets/shots/ja/wizard-match.webp" alt="一括操作を使用した移行元ユーザーと移行先ユーザーの照合" loading="lazy"><figcaption>一括操作を使用した移行元ユーザーと移行先ユーザーの照合</figcaption></figure>
+<figure class="tour" data-tour="createCampaign">
+  <figcaption class="tour-head"><strong>キャンペーンを作成する</strong><span class="muted">ユーザーの選択から保存まで</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="キャンペーンを作成する"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["[キャンペーン] を開き、[新しいキャンペーン] をクリックします。","移行元テナントと移行先テナントを選択します。","移行する移行元ユーザーをフィルターしてチェックし、[次へ] をクリックします。","[一致するものをすべて選択] をチェックして、フィルターで表示されているすべての行を選択します。","チェックしたすべての行に移行先ドメインを一度に設定します。","コンテンツ、スケジュール、スレッドを選択します。","キャンペーンを保存します。"]</script>
+</figure></section>
+<section id="provision"><h2>5. 移行先ユーザーを準備する</h2><p>キャンペーン ページで <strong>ユーザーの作成とライセンスの割り当て</strong> をクリックすると、「新規作成」とマークされた移行先ユーザーが作成され、すべてのユーザーに選択したライセンスが割り当てられます。失敗した行には理由が表示されます。修正してからもう一度実行してください。</p>
+<p>新しいユーザーにはランダムな初期パスワードが設定され、初回サインイン時に変更する必要があります。<strong>⋯</strong> メニューから CSV としてエクスポートし、ユーザーに渡した後、ファイルを削除してください。</p></section>
+<section id="waves"><h2>6. ウェーブとドライ ラン</h2><p><strong>ユーザー</strong> タブでユーザーをチェックし、<strong>ウェーブへ移動</strong> を使用して大規模な移行を分割します。実行バーでは 1 ウェーブずつ開始でき、スケジュールされた実行では既に開始したすべてのウェーブの同期が続けられます。</p>
+<p><strong>ドライ ラン (件数のみ)</strong> は両側を読み取り、実際の実行でコピーされるアイテム数、ファイル数、メガバイト数を報告します。移行先には何も書き込まず、すべての移行先メールボックスと OneDrive が存在することも確認します。</p></section>
+<section id="run"><h2>7. 実行、一時停止、再開</h2><p>各キャンペーン タブの上部にある実行バーには、キャンペーンが現在行っていることと次に行うことが表示されます。</p>
+<div class="tw"><table><thead><tr><th>状態</th><th>表示内容</th><th>ボタン</th></tr></thead><tbody><tr><td>未実行</td><td>スケジュール</td><td><strong>今すぐ開始</strong>、ドライ ラン</td></tr><tr><td>コピー中</td><td>経過時間、実行中と待機中のスレッド</td><td><strong>一時停止</strong></td></tr><tr><td>一時停止中</td><td>前回の実行</td><td><strong>再開</strong> (残りをコピー)</td></tr><tr><td>同期済み</td><td>完了日時と次回のスケジュール実行</td><td><strong>再実行 (新しいデータを取得)</strong>、スケジュールを一時停止</td></tr></tbody></table></div>
+<p>一時停止するとスレッドが停止し、スケジュールも保留されます。コピー済みのものはすべてジャーナルに残るため、再開しても二重にコピーされることはありません。<strong>コピーの進行状況</strong> タブには、各メールボックスと OneDrive が速度とともに表示されます。処理が進まなくなったスレッドは自動的に再起動されます。</p>
+<figure class="tour" data-tour="run">
+  <figcaption class="tour-head"><strong>実行、一時停止、再開</strong><span class="muted">キャンペーンの実行バー</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="実行、一時停止、再開"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["実行バーには、キャンペーンが現在行っていることと次に行うことが表示されます。","[今すぐ開始] をクリックすると、すぐにコピーが始まります。","[コピーの進行状況] には、すべてのメールボックスと OneDrive が速度とともに表示されます。","[一時停止] はスレッドを安全に停止し、スケジュールを保留します。","[再開] で残りをコピーします。二重にコピーされるものはありません。"]</script>
+</figure></section>
+<section id="decisions"><h2>8. 判断が必要</h2><p>実行中に自動で解決すべきでない事象が発生すると、キャンペーンに <strong>判断が必要</strong> パネルが表示されます。種類ごとにグループ化され、説明と各ユーザーに対する操作が示されます。</p>
+<div class="tw"><table><thead><tr><th>種類</th><th>対処方法</th></tr></thead><tbody><tr><td>移行先メールボックスが機能していない</td><td>ユーザーにライセンスを割り当て (または共有メールボックスに変換し)、15～60 分待ってから <strong>再確認</strong> します。意図的にライセンスを削除した場合は <strong>このユーザーをスキップ</strong> します。</td></tr><tr><td>移行先に OneDrive がない</td><td><strong>OneDrive 作成コマンドをコピー</strong> して SharePoint 管理者として Windows PowerShell で実行するか、ユーザーに一度サインインしてもらいます。その後、再確認します。</td></tr><tr><td>移行先ユーザーが再作成された</td><td>新しいメールボックスまたは OneDrive に <strong>最初から再コピー</strong> するか、スキップします。</td></tr><tr><td>結果が不明なアイテム</td><td><strong>再送信</strong> (既にあるアイテムは 2 件になります) するか、<strong>これらのアイテムをスキップ</strong> します。</td></tr><tr><td>移行先の件数がコピーした件数より少ない</td><td>通常は移行先で意図的に削除されたものです。<strong>確認しました</strong> で了承します。</td></tr></tbody></table></div>
+<figure class="shot"><img src="../assets/shots/ja/issues.webp" alt="操作とともにグループ化された判断事項" loading="lazy"><figcaption>操作とともにグループ化された判断事項</figcaption></figure>
+<figure class="tour" data-tour="issues">
+  <figcaption class="tour-head"><strong>判断が必要な項目を解決する</strong><span class="muted">[判断が必要] パネル</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="判断が必要な項目を解決する"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["365MG が自動で解決しない事項は、ここにグループ化されます。","グループを開くと、各ユーザーと操作が表示されます。","不足している OneDrive を作成するコマンドをコピーします。","意図的にライセンスが削除されたユーザーをスキップします。"]</script>
+</figure>
+<aside class="note">スキップされたユーザーはすべての実行から除外され、レポートに一覧表示されます。[ユーザー] タブの <strong>再コピー</strong> で元に戻せます。</aside></section>
+<section id="groups"><h2>9. メール グループ</h2><p><strong>メール グループ</strong> タブで移行元のグループを選択し、<strong>グループの作成とメンバーの追加</strong> をクリックします。Graph で作成できるのは Microsoft 365 グループのみであるため、配布リストとメールが有効なセキュリティ グループは同じエイリアスを持つ Microsoft 365 グループになり、メンバーの受信トレイに配信され、外部の送信者からのメールを受け付けます。移行先ユーザーのないメンバーはグループごとに一覧表示されます。</p></section>
+<section id="reports"><h2>10. レポート</h2><p><strong>レポート</strong> には、キャンペーンごとに、ユーザー別および合計の移行元とコピー済みの件数、確認が必要なユーザー、グループ、メモが表示されます。<strong>HTML をエクスポート</strong> は単一のページ (ライト/ダーク表示、検索とフィルター付き) を書き出して開きます。CSV エクスポートではユーザーまたはグループの一覧を出力します。</p>
+<figure class="tour" data-tour="report">
+  <figcaption class="tour-head"><strong>レポートをエクスポートする</strong><span class="muted">ユーザー別の移行元とコピー済みの比較</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="レポートをエクスポートする"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["[レポート] を開き、キャンペーンを選択します。","合計、確認が必要なユーザー、グループ、メモ。","[HTML をエクスポート] は単一のページを書き出して開きます。"]</script>
+</figure></section>
+<section id="settings"><h2>11. 設定と言語</h2><ul><li><strong>言語</strong>: 9 つの言語があり、すぐに適用されます。アラビア語ではレイアウトが右から左に切り替わります。</li><li><strong>一時フォルダー (スプール)</strong>: C ドライブ以外に配置してください。</li><li><strong>スレッドを停滞と見なすまでの時間</strong>: スレッドを再起動するまでの、進行のない時間 (分) です (最大 2 回)。</li></ul>
+<figure class="tour" data-tour="language">
+  <figcaption class="tour-head"><strong>言語を変更する</strong><span class="muted">右から左の言語を含む 9 つの言語</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="言語を変更する"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["[設定] を開きます。","言語を選択すると、すぐに適用されます。","アラビア語では、レイアウト全体が右から左になります。"]</script>
+</figure></section>
+<section id="updates"><h2>12. 更新</h2><p><strong>新機能</strong> には各バージョンの変更点が一覧表示されます。新しいバージョンが公開されるとサイドバーに表示され、<strong>x.y.z に更新</strong> をクリックするとダウンロード、作成者の署名の確認、アプリの終了、インストール、再起動が行われます。実行中のキャンペーンは先に一時停止し、更新後に再開してください。</p></section>
+<section id="faq"><h2>13. トラブルシューティング</h2><div class="tw"><table><thead><tr><th>症状</th><th>原因と対処</th></tr></thead><tbody><tr><td>「データ移行アプリのアクセス許可が有効になるのを待っています」</td><td>新しいアプリが Exchange と SharePoint で受け入れられるまでには数分かかります。実行は最大 30 分間自動的に待機します。</td></tr><tr><td>速度が低下し、「調整 (スロットリング)」のメッセージが多数表示される</td><td>Exchange と SharePoint はメールボックスごと、アプリごとに制限を設けています。スレッドを増やしても 1 つのメールボックスは速くなりませんが、多数のメールボックスが待機している場合には効果があります。</td></tr><tr><td>移行先の件数が移行元より少ない</td><td>レポートのメモを確認してください。スキップされた迷惑メール、判断により除外されたアイテム、移行先で削除されたメールなどが考えられます。</td></tr><tr><td>移行先のメールボックスに既にメールがある</td><td>365MG は初回の実行でそのメールボックスへのコピーを拒否します。他のツールでコピーされていない場合にのみ、キャンペーンで許可してください。</td></tr></tbody></table></div></section>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · tuanhd による Microsoft 365 テナント間移行</div>
+    <div>インストーラー、デモ、支援 · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365、Exchange Online、OneDrive、Microsoft Graph は Microsoft Corporation の商標です。365MG は独立したソフトウェアであり、Microsoft とは提携していません。</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/ja/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-addTenant-2.webp","box":[0.8656,0.0861,0.1094,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.3737],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/ja/tour-createCampaign-1.webp","box":[0.8433,0.0861,0.1317,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-2.webp","box":[0.2125,0.3066,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-3.webp","box":[0.2227,0.4041,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-4.webp","box":[0.2227,0.4422,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-5.webp","box":[0.4734,0.4725,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-6.webp","box":[0.2125,0.1097,0.525,0.8306],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-7.webp","box":[0.8433,0.95,0.1317,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/ja/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.226],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-2.webp","box":[0.4771,0.2427,0.1758,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-3.webp","box":[0.296,0.5016,0.1248,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-4.webp","box":[0.889,0.17,0.0759,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-5.webp","box":[0.4771,0.2427,0.1758,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/ja/tour-issues-1.webp","box":[0.2125,0.1445,0.7625,0.762],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-issues-2.webp","box":[0.2234,0.4743,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-issues-3.webp","box":[0.2328,0.5079,0.1942,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-issues-4.webp","box":[0.8195,0.5071,0.1352,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/ja/tour-report-1.webp","box":[0.2125,0.1472,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-report-2.webp","box":[0.2125,0.1972,0.7625,0.2927],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-report-3.webp","box":[0.4469,0.1472,0.1436,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/ja/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"再生","pause":"一時停止","replay":"もう一度再生","prev":"前のステップ","next":"次のステップ","empty":"このツアーの画面は準備中です。"}</script>
+</body>
+</html>

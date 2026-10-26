@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>دليل المستخدم · 365MG</title>
+  <meta name="description" content="‏365MG تطبيق لسطح المكتب ينقل البريد وجهات الاتصال والتقويمات وOneDrive ومجموعات البريد من مستأجر Microsoft 365 إلى مستأجر آخر، مع سجلات لا تنسخ أي عنصر مرتين وقرارات واضحة حيثما قد تُفقد البيانات.">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/guide.html">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/guide.html">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/guide.html">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/guide.html">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/guide.html">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/guide.html">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/guide.html">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/guide.html">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/guide.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./">نظرة عامة</a><a href="case-study.html">دراسة حالة</a><a href="guide.html" aria-current="page">دليل المستخدم</a><a href="tours.html">جولات إرشادية</a></nav>
+    <label class="lang"><span class="sr">اللغة</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/guide.html">English</option><option value="../vi/guide.html">Tiếng Việt</option><option value="../zh/guide.html">简体中文</option><option value="../ko/guide.html">한국어</option><option value="../ja/guide.html">日本語</option><option value="../de/guide.html">Deutsch</option><option value="../ru/guide.html">Русский</option><option value="../hi/guide.html">हिन्दी</option><option value="../ar/guide.html" selected>العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<div class="wrap docs">
+  <aside class="toc"><nav><p class="muted">في هذه الصفحة</p><ol><li><a href="#install">1. التثبيت</a></li><li><a href="#requirements">2. قبل أن تبدأ</a></li><li><a href="#tenants">3. إضافة المستأجرين</a></li><li><a href="#campaign">4. إنشاء حملة</a></li><li><a href="#provision">5. تجهيز المستخدمين الهدف</a></li><li><a href="#waves">6. الموجات والتشغيل التجريبي</a></li><li><a href="#run">7. التشغيل والإيقاف المؤقت والاستئناف</a></li><li><a href="#decisions">8. يحتاج إلى قرارك</a></li><li><a href="#groups">9. مجموعات البريد</a></li><li><a href="#reports">10. التقارير</a></li><li><a href="#settings">11. الإعدادات واللغات</a></li><li><a href="#updates">12. التحديثات</a></li><li><a href="#faq">13. استكشاف الأخطاء وإصلاحها</a></li></ol></nav></aside>
+  <article class="doc">
+    <h1>دليل المستخدم</h1><p class="lead">من تثبيت 365MG حتى التقرير الأخير. يحتوي كل جزء على لقطات شاشة؛ وتعيد الجولات الإرشادية عرض المهام الرئيسية بمؤشر متحرك.</p>
+    <section id="install"><h2>1. التثبيت</h2><p>يعمل 365MG على Windows 10 أو 11 (64 بت) مع Microsoft Edge WebView2، المضمّن بالفعل في Windows. يوفّر المؤلف برنامج التثبيت: راسله على العنوان أدناه.</p>
+<ol><li>شغّل <code>365MG_x.y.z_x64-setup.exe</code> واتبع خطوات برنامج التثبيت.</li><li>افتح 365MG من قائمة ابدأ. تبقى البيانات على هذا الكمبيوتر في <code>%APPDATA%\com.tuanhd.365mg</code>.</li><li>في <strong>الإعدادات</strong>، اختر لغة الواجهة ومجلدًا مؤقتًا على محرك أقراص ثانوي.</li></ol>
+<aside class="note">يتحقق التطبيق من وجود تحديثات كل 6 ساعات. راجع <strong>ما الجديد</strong> للاطلاع على سجل التغييرات وزر التحديث.</aside></section>
+<section id="requirements"><h2>2. قبل أن تبدأ</h2><ul><li>حساب <strong>مسؤول عام</strong> في كل من المستأجر المصدر والمستأجر الهدف.</li><li>عدد كافٍ من <strong>التراخيص</strong> التي تتضمن Exchange Online (وOneDrive) في الهدف للمستخدمين الذين تنشئهم أو تطابقهم.</li><li>كمبيوتر يمكن أن يبقى قيد التشغيل أثناء النسخ، مع اتصال سريع ومستقر: فالبيانات تمر عبره.</li><li>محرك أقراص ثانوي للمجلد المؤقت؛ لا تمر عبره إلا ملفات OneDrive التي يبلغ حجمها 4 MB أو أكثر.</li></ul>
+<aside class="note warn">عند بدء حملة، ينشئ 365MG <strong>تطبيق نقل البيانات</strong> في كل مستأجر، يسجّل الدخول بشهادة ويُمنح أذونات Graph على مستوى المؤسسة (استيراد/تصدير علب البريد، Files، Sites). أزل هذا التطبيق من Entra ID عند انتهاء الترحيل.</aside></section>
+<section id="tenants"><h2>3. إضافة المستأجرين</h2><ol><li>افتح <strong>المستأجرون</strong> وانقر على <strong>إضافة مستأجر</strong>.</li><li>سجّل الدخول كمسؤول عام في نافذة المستعرض التي تُفتح واقبل الأذونات.</li><li>بعد العودة إلى 365MG، يعرض المستأجر مجالاته وعمليات التحقق من الأذونات وتراخيصه. استخدم <strong>التحقق من الأذونات</strong> بعد تغيير أي شيء في مركز الإدارة.</li></ol>
+<figure class="shot"><img src="../assets/shots/ar/tenants.webp" alt="المستأجرون مع عمليات التحقق من الأذونات والتراخيص" loading="lazy"><figcaption>المستأجرون مع عمليات التحقق من الأذونات والتراخيص</figcaption></figure>
+<figure class="tour" data-tour="addTenant">
+  <figcaption class="tour-head"><strong>إضافة مستأجر</strong><span class="muted">سجّل الدخول مرة واحدة كمسؤول عام</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="إضافة مستأجر"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="الخطوة السابقة">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">تشغيل</button>
+    <button type="button" class="tb" data-act="next" aria-label="الخطوة التالية">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["افتح المستأجرون في الشريط الجانبي.","انقر على إضافة مستأجر: تُفتح نافذة مستعرض لتسجيل دخول المسؤول العام.","بعد العودة إلى 365MG، يعرض المستأجر عمليات التحقق من الأذونات والتراخيص."]</script>
+</figure></section>
+<section id="campaign"><h2>4. إنشاء حملة</h2><p>تنقل الحملة مجموعة من المستخدمين من مستأجر مصدر واحد إلى مستأجر هدف واحد. يتكوّن المعالج من ست خطوات؛ يبقى العنوان والخطوات وعوامل التصفية ظاهرة في الأعلى، وتبقى أزرار السابق / التالي / حفظ الحملة في الأسفل.</p>
+<ol><li><strong>المستأجر المصدر</strong> و<strong>المستأجر الهدف</strong>: خطوة لكل منهما.</li><li><strong>اختيار المستخدمين المصدر</strong>: صفِّ حسب الترخيص أو المجال أو الحالة، وحدّد المستخدمين في القائمة ثم أضفهم إلى المحدَّدين.</li><li><strong>مطابقة المستخدمين الهدف</strong>: يقترح 365MG مستخدمًا هدفًا حسب العنوان أو الاسم المستعار أو اسم العرض. حدّد الصفوف ثم طبّق <strong>تعيين المجال الهدف…</strong> أو <strong>الإنشاء إذا لم يكن موجودًا في الهدف</strong> أو <strong>تعيين ترخيص…</strong> دفعة واحدة؛ ويحدّد مربع الاختيار أعلى القائمة كل الصفوف التي يعرضها عامل التصفية.</li><li><strong>المحتوى والجدول</strong>: البريد وOneDrive وجهات الاتصال والتقويم؛ تخطي البريد العشوائي؛ التشغيل مرة واحدة أو كل N ساعات؛ عدد المسارات.</li><li><strong>مراجعة</strong>: راجع الملخص والتراخيص المطلوبة، ثم انقر <strong>حفظ الحملة</strong>.</li></ol>
+<figure class="shot"><img src="../assets/shots/ar/wizard-match.webp" alt="مطابقة المستخدمين المصدر مع المستخدمين الهدف، مع الإجراءات المجمّعة" loading="lazy"><figcaption>مطابقة المستخدمين المصدر مع المستخدمين الهدف، مع الإجراءات المجمّعة</figcaption></figure>
+<figure class="tour" data-tour="createCampaign">
+  <figcaption class="tour-head"><strong>إنشاء حملة</strong><span class="muted">من اختيار المستخدمين حتى الحفظ</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="إنشاء حملة"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="الخطوة السابقة">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">تشغيل</button>
+    <button type="button" class="tb" data-act="next" aria-label="الخطوة التالية">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["افتح الحملات وانقر على حملة جديدة.","اختر المستأجر المصدر والمستأجر الهدف.","قم بالتصفية وحدّد المستخدمين المصدر المراد نقلهم، ثم انقر على التالي.","حدّد تحديد كل المطابقين لاختيار كل صف يعرضه عامل التصفية.","عيّن مجالاً هدفًا لجميع الصفوف المحددة دفعة واحدة.","اختر المحتوى والجدول والمسارات.","احفظ الحملة."]</script>
+</figure></section>
+<section id="provision"><h2>5. تجهيز المستخدمين الهدف</h2><p>في صفحة الحملة، يؤدي <strong>إنشاء المستخدمين وتعيين التراخيص</strong> إلى إنشاء المستخدمين الهدف الذين عليهم علامة &quot;إنشاء&quot; ومنح كل مستخدم الترخيص المختار. تعرض الصفوف التي تفشل السبب؛ أصلحه وشغّل مرة أخرى.</p>
+<p>يحصل المستخدمون الجدد على كلمة مرور أولية عشوائية يجب عليهم تغييرها عند أول تسجيل دخول. صدّرها من القائمة <strong>⋯</strong> كملف CSV، وسلّمها، ثم احذف الملف.</p></section>
+<section id="waves"><h2>6. الموجات والتشغيل التجريبي</h2><p>في علامة التبويب <strong>المستخدمون</strong>، حدّد المستخدمين واستخدم <strong>نقل إلى موجة</strong> لتقسيم ترحيل كبير. يمكن بعد ذلك لشريط التشغيل بدء موجة واحدة في كل مرة؛ وتستمر عمليات التشغيل المجدولة في مزامنة كل موجة سبق فتحها.</p>
+<p>يقرأ <strong>تشغيل تجريبي (عدّ فقط)</strong> كلا الجانبين ويبلغ عن عدد العناصر والملفات والميغابايتات التي سينسخها التشغيل الفعلي. لا يكتب شيئًا في الهدف، ويتحقق أيضًا من وجود كل علبة بريد وكل OneDrive في الهدف.</p></section>
+<section id="run"><h2>7. التشغيل والإيقاف المؤقت والاستئناف</h2><p>يعرض شريط التشغيل أعلى كل علامة تبويب في الحملة ما تفعله الحملة وما سيأتي بعد ذلك.</p>
+<div class="tw"><table><thead><tr><th>الحالة</th><th>ما يُعرض</th><th>الأزرار</th></tr></thead><tbody><tr><td>لم يتم التشغيل بعد</td><td>الجدول</td><td><strong>البدء الآن</strong>، تشغيل تجريبي</td></tr><tr><td>جارٍ النسخ</td><td>الوقت المنقضي، والمسارات قيد التشغيل وفي الانتظار</td><td><strong>إيقاف مؤقت</strong></td></tr><tr><td>متوقف مؤقتًا</td><td>آخر تشغيل</td><td><strong>استئناف</strong> (ينسخ الباقي)</td></tr><tr><td>تمت المزامنة</td><td>وقت الانتهاء والتشغيل المجدول التالي</td><td><strong>التشغيل مرة أخرى (جلب البيانات الجديدة)</strong>، إيقاف الجدول مؤقتًا</td></tr></tbody></table></div>
+<p>يؤدي الإيقاف المؤقت إلى إيقاف المسارات وتعليق الجدول. يبقى كل ما نُسخ في السجلات، لذا فإن الاستئناف لا ينسخ أي شيء مرتين أبدًا. تعرض علامة التبويب <strong>تقدّم النسخ</strong> كل علبة بريد وكل OneDrive مع سرعته؛ ويُعاد تشغيل المسار الذي يتوقف عن التقدم تلقائيًا.</p>
+<figure class="tour" data-tour="run">
+  <figcaption class="tour-head"><strong>التشغيل والإيقاف المؤقت والاستئناف</strong><span class="muted">شريط التشغيل في الحملة</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="التشغيل والإيقاف المؤقت والاستئناف"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="الخطوة السابقة">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">تشغيل</button>
+    <button type="button" class="tb" data-act="next" aria-label="الخطوة التالية">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["يوضح شريط التشغيل ما تفعله الحملة وما سيأتي بعد ذلك.","انقر على البدء الآن للنسخ على الفور.","يعرض تقدّم النسخ كل علبة بريد وكل OneDrive مع سرعته.","يوقف الإيقاف المؤقت المسارات بأمان ويعلّق الجدول.","ينسخ الاستئناف الباقي؛ ولا يُنسخ أي شيء مرتين."]</script>
+</figure></section>
+<section id="decisions"><h2>8. يحتاج إلى قرارك</h2><p>عندما يواجه التشغيل أمرًا لا ينبغي له أن يحسمه وحده، تعرض الحملة لوحة <strong>يحتاج إلى قرارك</strong> مجمّعة حسب النوع، مع شرح والإجراءات المتاحة لكل مستخدم.</p>
+<div class="tw"><table><thead><tr><th>النوع</th><th>ما يجب فعله</th></tr></thead><tbody><tr><td>علبة البريد الهدف لا تعمل</td><td>رخّص المستخدم (أو اجعلها علبة بريد مشتركة)، وانتظر 15–60 دقيقة، ثم <strong>التحقق مرة أخرى</strong>. إذا أُزيل الترخيص عمدًا، فاختر <strong>تخطي هذا المستخدم</strong>.</td></tr><tr><td>لا يوجد OneDrive في الهدف</td><td><strong>نسخ أمر إنشاء OneDrive</strong>، وشغّله في Windows PowerShell كمسؤول SharePoint، أو اطلب من المستخدم تسجيل الدخول مرة واحدة؛ ثم تحقق مرة أخرى.</td></tr><tr><td>تمت إعادة إنشاء المستخدم الهدف</td><td><strong>النسخ مرة أخرى من البداية</strong> إلى علبة البريد أو OneDrive الجديدة، أو التخطي.</td></tr><tr><td>عناصر بنتيجة غير معروفة</td><td><strong>إعادة الإرسال</strong> (العنصر الموجود بالفعل يصبح نسختين) أو <strong>تخطي هذه العناصر</strong>.</td></tr><tr><td>الهدف يحتوي على عدد أقل مما تم نسخه</td><td>في العادة حُذفت عمدًا في الهدف؛ أكّد العلم بذلك بالنقر على <strong>حسنًا</strong>.</td></tr></tbody></table></div>
+<figure class="shot"><img src="../assets/shots/ar/issues.webp" alt="القرارات المجمّعة مع إجراءاتها" loading="lazy"><figcaption>القرارات المجمّعة مع إجراءاتها</figcaption></figure>
+<figure class="tour" data-tour="issues">
+  <figcaption class="tour-head"><strong>حسم ما يحتاج إليك</strong><span class="muted">لوحة يحتاج إلى قرارك</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="حسم ما يحتاج إليك"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="الخطوة السابقة">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">تشغيل</button>
+    <button type="button" class="tb" data-act="next" aria-label="الخطوة التالية">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["تُجمَّع هنا الأمور التي لن يحسمها 365MG وحده.","افتح مجموعة لعرض كل مستخدم والإجراءات.","انسخ الأمر الذي ينشئ حسابات OneDrive غير الموجودة.","تخطَّ مستخدمًا أُزيل ترخيصه عمدًا."]</script>
+</figure>
+<aside class="note">يُستبعد المستخدمون الذين تم تخطيهم من كل تشغيل ويُدرجون في التقرير. يعيد <strong>النسخ مرة أخرى</strong> في علامة التبويب المستخدمون أحدهم.</aside></section>
+<section id="groups"><h2>9. مجموعات البريد</h2><p>في علامة التبويب <strong>مجموعات البريد</strong>، اختر المجموعات المصدر وانقر على <strong>إنشاء المجموعات وإضافة الأعضاء</strong>. لا يستطيع Graph إنشاء سوى مجموعات Microsoft 365، لذا تصبح قوائم التوزيع ومجموعات الأمان الممكّنة للبريد مجموعات Microsoft 365 بالاسم المستعار نفسه، تسلّم البريد إلى علب الوارد الخاصة بالأعضاء وتقبل المرسلين من خارج المؤسسة. يُدرج الأعضاء الذين ليس لهم مستخدم هدف لكل مجموعة.</p></section>
+<section id="reports"><h2>10. التقارير</h2><p>تعرض <strong>التقارير</strong>، لكل حملة، أعداد المصدر والمنسوخ لكل مستخدم وفي المجموع، والمستخدمين الذين يحتاجون إلى مراجعة، والمجموعات والملاحظات. يكتب <strong>تصدير HTML</strong> صفحة واحدة (بنمطين فاتح وداكن، مع البحث والتصفية) ويفتحها؛ وتسرد ملفات CSV المصدّرة المستخدمين أو المجموعات.</p>
+<figure class="tour" data-tour="report">
+  <figcaption class="tour-head"><strong>تصدير تقرير</strong><span class="muted">المصدر مقابل المنسوخ، لكل مستخدم</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="تصدير تقرير"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="الخطوة السابقة">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">تشغيل</button>
+    <button type="button" class="tb" data-act="next" aria-label="الخطوة التالية">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["افتح التقارير واختر حملة.","المجاميع، والمستخدمون الذين يحتاجون إلى مراجعة، والمجموعات والملاحظات.","يكتب تصدير HTML صفحة واحدة مستقلة ويفتحها."]</script>
+</figure></section>
+<section id="settings"><h2>11. الإعدادات واللغات</h2><ul><li><strong>اللغة</strong>: تسع لغات، تُطبَّق فورًا؛ وتحوّل العربية التخطيط إلى الاتجاه من اليمين إلى اليسار.</li><li><strong>المجلد المؤقت</strong>: أبقه بعيدًا عن محرك الأقراص C.</li><li><strong>اعتبار المسار عالقًا بعد</strong>: عدد الدقائق دون تقدم قبل إعادة تشغيل المسار (مرتين كحد أقصى).</li></ul>
+<figure class="tour" data-tour="language">
+  <figcaption class="tour-head"><strong>تغيير اللغة</strong><span class="muted">تسع لغات، بما فيها لغة تُكتب من اليمين إلى اليسار</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="تغيير اللغة"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="الخطوة السابقة">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">تشغيل</button>
+    <button type="button" class="tb" data-act="next" aria-label="الخطوة التالية">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["افتح الإعدادات.","اختر لغة: تُطبَّق فورًا.","تحوّل العربية التخطيط بالكامل إلى الاتجاه من اليمين إلى اليسار."]</script>
+</figure></section>
+<section id="updates"><h2>12. التحديثات</h2><p>يسرد <strong>ما الجديد</strong> تغييرات كل إصدار. عند نشر إصدار أحدث، يظهر في الشريط الجانبي؛ ويؤدي <strong>التحديث إلى x.y.z</strong> إلى تنزيله والتحقق من توقيع المؤلف وإغلاق التطبيق وتثبيته وإعادة فتحه. أوقف الحملات قيد التشغيل مؤقتًا أولاً، ثم استأنفها بعد ذلك.</p></section>
+<section id="faq"><h2>13. استكشاف الأخطاء وإصلاحها</h2><div class="tw"><table><thead><tr><th>العَرَض</th><th>السبب والحل</th></tr></thead><tbody><tr><td>&quot;في انتظار سريان أذونات تطبيق نقل البيانات&quot;</td><td>يستغرق التطبيق الجديد بضع دقائق حتى يقبله Exchange وSharePoint؛ وينتظر التشغيل حتى 30 دقيقة من تلقاء نفسه.</td></tr><tr><td>انخفاض السرعة وظهور رسائل &quot;تقييد&quot; كثيرة</td><td>يفرض Exchange أو SharePoint حدودًا لكل علبة بريد ولكل تطبيق. لا تفيد زيادة المسارات علبة بريد واحدة؛ بل تفيد عندما تكون علب بريد كثيرة في الانتظار.</td></tr><tr><td>أعداد الهدف أقل من المصدر</td><td>راجع ملاحظات التقرير: البريد العشوائي الذي تم تخطيه، أو العناصر المستبعدة بقرار، أو البريد المحذوف في الهدف.</td></tr><tr><td>علبة بريد تحتوي على بريد بالفعل في الهدف</td><td>يرفض 365MG النسخ إليها في التشغيل الأول. اسمح بذلك في الحملة فقط إذا لم تنسخ أي أداة أخرى إليها.</td></tr></tbody></table></div></section>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · ترحيل Microsoft 365 من مستأجر إلى مستأجر بواسطة tuanhd</div>
+    <div>برنامج التثبيت أو عرض توضيحي أو مساعدة · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365 وExchange Online وOneDrive وMicrosoft Graph علامات تجارية لشركة Microsoft Corporation. ‏365MG برنامج مستقل وغير تابع لشركة Microsoft.</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/ar/tour-addTenant-1.webp","box":[0.8187,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-addTenant-2.webp","box":[0.025,0.0861,0.0944,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-addTenant-3.webp","box":[0.4125,0.1472,0.375,0.3737],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/ar/tour-createCampaign-1.webp","box":[0.025,0.0861,0.0825,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-createCampaign-2.webp","box":[0.3375,0.3066,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-createCampaign-3.webp","box":[0.7664,0.4041,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-createCampaign-4.webp","box":[0.7664,0.4422,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-createCampaign-5.webp","box":[0.4001,0.4725,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-createCampaign-6.webp","box":[0.2625,0.1222,0.525,0.8062],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ar/tour-createCampaign-7.webp","box":[0.025,0.95,0.0834,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/ar/tour-run-1.webp","box":[0.025,0.1472,0.7625,0.2016],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ar/tour-run-2.webp","box":[0.306,0.2305,0.2116,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-run-3.webp","box":[0.6066,0.5016,0.0852,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ar/tour-run-4.webp","box":[0.0352,0.17,0.0871,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-run-5.webp","box":[0.306,0.2305,0.2116,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/ar/tour-issues-1.webp","box":[0.025,0.1688,0.7625,0.7132],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ar/tour-issues-2.webp","box":[0.0359,0.4737,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-issues-3.webp","box":[0.6233,0.5073,0.1439,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-issues-4.webp","box":[0.0453,0.5081,0.1059,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/ar/tour-report-1.webp","box":[0.2444,0.0861,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ar/tour-report-2.webp","box":[0.025,0.1472,0.7625,0.2927],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ar/tour-report-3.webp","box":[0.1164,0.0861,0.0936,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/ar/tour-language-1.webp","box":[0.8187,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-language-2.webp","box":[0.3875,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ar/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"تشغيل","pause":"إيقاف مؤقت","replay":"إعادة العرض","prev":"الخطوة السابقة","next":"الخطوة التالية","empty":"يجري إعداد شاشات هذه الجولة."}</script>
+</body>
+</html>

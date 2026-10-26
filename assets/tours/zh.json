@@ -1,0 +1,314 @@
+{
+ "addTenant": [
+  {
+   "shot": "assets/shots/zh/tour-addTenant-1.webp",
+   "box": [
+    0.0063,
+    0.1,
+    0.175,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-addTenant-2.webp",
+   "box": [
+    0.8991,
+    0.0861,
+    0.0759,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-addTenant-3.webp",
+   "box": [
+    0.2125,
+    0.1472,
+    0.375,
+    0.3737
+   ],
+   "action": "look",
+   "w": 1280,
+   "h": 800
+  }
+ ],
+ "createCampaign": [
+  {
+   "shot": "assets/shots/zh/tour-createCampaign-1.webp",
+   "box": [
+    0.8768,
+    0.0861,
+    0.0982,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-createCampaign-2.webp",
+   "box": [
+    0.2125,
+    0.2597,
+    0.45,
+    0.0869
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-createCampaign-3.webp",
+   "box": [
+    0.2227,
+    0.3572,
+    0.0109,
+    0.0175
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-createCampaign-4.webp",
+   "box": [
+    0.2227,
+    0.3953,
+    0.0109,
+    0.0175
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-createCampaign-5.webp",
+   "box": [
+    0.4957,
+    0.3912,
+    0.1625,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-createCampaign-6.webp",
+   "box": [
+    0.2125,
+    0.1516,
+    0.525,
+    0.7575
+   ],
+   "action": "look",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-createCampaign-7.webp",
+   "box": [
+    0.8768,
+    0.95,
+    0.0982,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  }
+ ],
+ "run": [
+  {
+   "shot": "assets/shots/zh/tour-run-1.webp",
+   "box": [
+    0.2125,
+    0.1472,
+    0.7625,
+    0.1049
+   ],
+   "action": "look",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-run-2.webp",
+   "box": [
+    0.602,
+    0.1822,
+    0.154,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-run-3.webp",
+   "box": [
+    0.2738,
+    0.5022,
+    0.0803,
+    0.0461
+   ],
+   "action": "look",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-run-4.webp",
+   "box": [
+    0.9113,
+    0.17,
+    0.0536,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-run-5.webp",
+   "box": [
+    0.602,
+    0.1822,
+    0.154,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  }
+ ],
+ "issues": [
+  {
+   "shot": "assets/shots/zh/tour-issues-1.webp",
+   "box": [
+    0.2125,
+    0.1809,
+    0.7625,
+    0.6888
+   ],
+   "action": "look",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-issues-2.webp",
+   "box": [
+    0.2234,
+    0.4732,
+    0.7406,
+    0.1024
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-issues-3.webp",
+   "box": [
+    0.2328,
+    0.5081,
+    0.1527,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-issues-4.webp",
+   "box": [
+    0.8864,
+    0.5013,
+    0.0683,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  }
+ ],
+ "report": [
+  {
+   "shot": "assets/shots/zh/tour-report-1.webp",
+   "box": [
+    0.5672,
+    0.0861,
+    0.2,
+    0.035
+   ],
+   "action": "look",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-report-2.webp",
+   "box": [
+    0.2125,
+    0.1472,
+    0.7625,
+    0.2927
+   ],
+   "action": "look",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-report-3.webp",
+   "box": [
+    0.8016,
+    0.0861,
+    0.0878,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  }
+ ],
+ "language": [
+  {
+   "shot": "assets/shots/zh/tour-language-1.webp",
+   "box": [
+    0.0063,
+    0.24,
+    0.175,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-language-2.webp",
+   "box": [
+    0.2125,
+    0.1734,
+    0.4,
+    0.035
+   ],
+   "action": "click",
+   "w": 1280,
+   "h": 800
+  },
+  {
+   "shot": "assets/shots/zh/tour-language-3.webp",
+   "box": [
+    0.3875,
+    0.1734,
+    0.4,
+    0.035
+   ],
+   "action": "look",
+   "w": 1280,
+   "h": 800
+  }
+ ]
+}

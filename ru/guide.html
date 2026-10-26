@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Руководство пользователя · 365MG</title>
+  <meta name="description" content="365MG — настольное приложение, которое переносит почту, контакты, календари, OneDrive и почтовые группы из одного клиента Microsoft 365 в другой, ведет журналы, исключающие повторное копирование, и запрашивает ваше решение там, где возможна потеря данных.">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/guide.html">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/guide.html">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/guide.html">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/guide.html">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/guide.html">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/guide.html">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/guide.html">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/guide.html">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/guide.html">
+  
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./">Обзор</a><a href="case-study.html">Пример внедрения</a><a href="guide.html" aria-current="page">Руководство пользователя</a><a href="tours.html">Пошаговые демонстрации</a></nav>
+    <label class="lang"><span class="sr">Язык</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/guide.html">English</option><option value="../vi/guide.html">Tiếng Việt</option><option value="../zh/guide.html">简体中文</option><option value="../ko/guide.html">한국어</option><option value="../ja/guide.html">日本語</option><option value="../de/guide.html">Deutsch</option><option value="../ru/guide.html" selected>Русский</option><option value="../hi/guide.html">हिन्दी</option><option value="../ar/guide.html">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<div class="wrap docs">
+  <aside class="toc"><nav><p class="muted">На этой странице</p><ol><li><a href="#install">1. Установка</a></li><li><a href="#requirements">2. Перед началом работы</a></li><li><a href="#tenants">3. Добавление клиентов</a></li><li><a href="#campaign">4. Создание кампании</a></li><li><a href="#provision">5. Подготовка целевых пользователей</a></li><li><a href="#waves">6. Волны и пробные запуски</a></li><li><a href="#run">7. Запуск, приостановка, продолжение</a></li><li><a href="#decisions">8. Требуется ваше решение</a></li><li><a href="#groups">9. Почтовые группы</a></li><li><a href="#reports">10. Отчеты</a></li><li><a href="#settings">11. Параметры и языки</a></li><li><a href="#updates">12. Обновления</a></li><li><a href="#faq">13. Устранение неполадок</a></li></ol></nav></aside>
+  <article class="doc">
+    <h1>Руководство пользователя</h1><p class="lead">От установки 365MG до итогового отчета. Каждый раздел содержит снимки экрана; пошаговые демонстрации воспроизводят основные задачи с анимированным курсором.</p>
+    <section id="install"><h2>1. Установка</h2><p>365MG работает в Windows 10 или 11 (64-разрядной) с Microsoft Edge WebView2, который уже входит в состав Windows. Установщик предоставляет автор: напишите по адресу ниже.</p>
+<ol><li>Запустите <code>365MG_x.y.z_x64-setup.exe</code> и следуйте указаниям установщика.</li><li>Откройте 365MG из меню «Пуск». Данные хранятся на этом компьютере в <code>%APPDATA%\com.tuanhd.365mg</code>.</li><li>В разделе <strong>Параметры</strong> выберите язык интерфейса и временную папку на дополнительном диске.</li></ol>
+<aside class="note">Приложение проверяет обновления каждые 6 часов. Журнал изменений и кнопка обновления находятся в разделе <strong>Что нового</strong>.</aside></section>
+<section id="requirements"><h2>2. Перед началом работы</h2><ul><li>Учетная запись <strong>глобального администратора</strong> и в исходном, и в целевом клиенте.</li><li>Достаточно <strong>лицензий</strong> с Exchange Online (и OneDrive) в целевом клиенте для создаваемых или сопоставляемых пользователей.</li><li>Компьютер, который может оставаться включенным во время копирования, с быстрым и стабильным подключением: данные проходят через него.</li><li>Дополнительный диск для временной папки; через нее проходят только файлы OneDrive размером от 4 МБ.</li></ul>
+<aside class="note warn">При запуске кампании 365MG создает в каждом клиенте <strong>приложение переноса данных</strong>, которое входит с помощью сертификата и получает разрешения Graph на уровне всей организации (импорт и экспорт почтовых ящиков, Files, Sites). Удалите это приложение из Entra ID после завершения миграции.</aside></section>
+<section id="tenants"><h2>3. Добавление клиентов</h2><ol><li>Откройте <strong>Клиенты</strong> и нажмите <strong>Добавить клиент</strong>.</li><li>В открывшемся окне браузера войдите как глобальный администратор и примите разрешения.</li><li>Вернувшись в 365MG, вы увидите домены клиента, результаты проверки разрешений и его лицензии. После любых изменений в центре администрирования нажмите <strong>Проверить разрешения</strong>.</li></ol>
+<figure class="shot"><img src="../assets/shots/ru/tenants.webp" alt="Клиенты с проверкой разрешений и лицензиями" loading="lazy"><figcaption>Клиенты с проверкой разрешений и лицензиями</figcaption></figure>
+<figure class="tour" data-tour="addTenant">
+  <figcaption class="tour-head"><strong>Добавление клиента</strong><span class="muted">Один вход глобального администратора</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Добавление клиента"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Предыдущий шаг">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Воспроизвести</button>
+    <button type="button" class="tb" data-act="next" aria-label="Следующий шаг">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Откройте «Клиенты» на боковой панели.","Нажмите «Добавить клиент»: откроется окно браузера для входа глобального администратора.","Вернувшись в 365MG, вы увидите результаты проверки разрешений и лицензии клиента."]</script>
+</figure></section>
+<section id="campaign"><h2>4. Создание кампании</h2><p>Кампания переносит группу пользователей из одного исходного клиента в один целевой. В мастере шесть шагов; заголовок, шаги и фильтры всегда видны вверху, а кнопки «Назад» / «Далее» / «Сохранить кампанию» — внизу.</p>
+<ol><li><strong>Исходный клиент</strong> и <strong>Целевой клиент</strong>: по одному шагу.</li><li><strong>Выбор исходных пользователей</strong>: отфильтруйте по лицензии, домену или состоянию, отметьте пользователей в списке и добавьте их в выбранные.</li><li><strong>Сопоставление целевых пользователей</strong>: 365MG предлагает целевого пользователя по адресу, псевдониму или отображаемому имени. Отметьте строки и примените сразу ко всем <strong>Задать целевой домен…</strong>, <strong>Создать, если нет в целевом клиенте</strong> или <strong>Назначить лицензию…</strong>; флажок над списком отмечает все строки, которые показывает фильтр.</li><li><strong>Содержимое и расписание</strong>: почта, OneDrive, контакты, календарь; пропуск нежелательной почты; запуск один раз или каждые N часов; число потоков.</li><li><strong>Проверка</strong>: проверьте сводку и нужные лицензии, затем нажмите <strong>Сохранить кампанию</strong>.</li></ol>
+<figure class="shot"><img src="../assets/shots/ru/wizard-match.webp" alt="Сопоставление исходных пользователей с целевыми и массовые действия" loading="lazy"><figcaption>Сопоставление исходных пользователей с целевыми и массовые действия</figcaption></figure>
+<figure class="tour" data-tour="createCampaign">
+  <figcaption class="tour-head"><strong>Создание кампании</strong><span class="muted">От выбора пользователей до сохранения</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Создание кампании"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Предыдущий шаг">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Воспроизвести</button>
+    <button type="button" class="tb" data-act="next" aria-label="Следующий шаг">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Откройте «Кампании» и нажмите «Новая кампания».","Выберите исходный и целевой клиенты.","Отфильтруйте и отметьте переносимых исходных пользователей, затем нажмите «Далее».","Отметьте флажок в заголовке, чтобы выбрать все строки, которые показывает фильтр.","Задайте целевой домен сразу для всех отмеченных строк.","Выберите содержимое, расписание и потоки.","Сохраните кампанию."]</script>
+</figure></section>
+<section id="provision"><h2>5. Подготовка целевых пользователей</h2><p>На странице кампании кнопка <strong>Создать пользователей и назначить лицензии</strong> создает целевых пользователей, помеченных действием «Создать», и назначает каждому выбранную лицензию. Для строк с ошибкой показывается причина; устраните ее и запустите снова.</p>
+<p>Новые пользователи получают случайный начальный пароль, который нужно сменить при первом входе. Экспортируйте пароли из меню <strong>⋯</strong> в CSV, передайте их пользователям, затем удалите файл.</p></section>
+<section id="waves"><h2>6. Волны и пробные запуски</h2><p>На вкладке <strong>Пользователи</strong> отметьте пользователей и нажмите <strong>Переместить в волну</strong>, чтобы разделить крупную миграцию. После этого панель запуска может запускать волны по одной; запуски по расписанию продолжают синхронизировать все уже начатые волны.</p>
+<p><strong>Пробный запуск (только подсчет)</strong> читает обе стороны и сообщает, сколько элементов, файлов и мегабайт скопирует реальный запуск. Он ничего не записывает в целевой клиент и также проверяет, что каждый целевой почтовый ящик и OneDrive существует.</p></section>
+<section id="run"><h2>7. Запуск, приостановка, продолжение</h2><p>Панель запуска в верхней части каждой вкладки кампании показывает, что кампания делает сейчас и что будет дальше.</p>
+<div class="tw"><table><thead><tr><th>Состояние</th><th>Что показано</th><th>Кнопки</th></tr></thead><tbody><tr><td>Еще не запускалось</td><td>Расписание</td><td><strong>Запустить сейчас</strong>, «Пробный запуск»</td></tr><tr><td>Копирование</td><td>Прошедшее время, выполняющиеся и ожидающие потоки</td><td><strong>Приостановить</strong></td></tr><tr><td>Приостановлено</td><td>Последний запуск</td><td><strong>Продолжить</strong> (копирует остальное)</td></tr><tr><td>Синхронизировано</td><td>Время завершения и следующий запуск по расписанию</td><td><strong>Запустить снова (получить новые данные)</strong>, «Приостановить расписание»</td></tr></tbody></table></div>
+<p>Приостановка останавливает потоки и расписание. Все скопированное остается в журналах, поэтому продолжение никогда не копирует дважды. Вкладка <strong>Ход копирования</strong> показывает каждый почтовый ящик и OneDrive со скоростью; поток, переставший продвигаться, перезапускается автоматически.</p>
+<figure class="tour" data-tour="run">
+  <figcaption class="tour-head"><strong>Запуск, приостановка и продолжение</strong><span class="muted">Панель запуска кампании</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Запуск, приостановка и продолжение"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Предыдущий шаг">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Воспроизвести</button>
+    <button type="button" class="tb" data-act="next" aria-label="Следующий шаг">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Панель запуска показывает, что кампания делает сейчас и что будет дальше.","Нажмите «Запустить сейчас», чтобы сразу начать копирование.","«Ход копирования» показывает каждый почтовый ящик и OneDrive со скоростью.","«Приостановить» безопасно останавливает потоки и расписание.","«Продолжить» копирует остальное; ничего не копируется дважды."]</script>
+</figure></section>
+<section id="decisions"><h2>8. Требуется ваше решение</h2><p>Когда запуск сталкивается с тем, что не должен решать сам, кампания показывает панель <strong>Требуется ваше решение</strong>, сгруппированную по типам, с пояснением и действиями для каждого пользователя.</p>
+<div class="tw"><table><thead><tr><th>Тип</th><th>Что делать</th></tr></thead><tbody><tr><td>Целевой почтовый ящик не работает</td><td>Назначьте пользователю лицензию (или преобразуйте ящик в общий почтовый ящик), подождите 15–60 минут и нажмите <strong>Проверить снова (пробный запуск)</strong>. Если лицензия удалена намеренно, выберите <strong>Пропустить пользователя</strong>.</td></tr><tr><td>В целевом клиенте нет OneDrive</td><td>Нажмите <strong>Копировать команду создания OneDrive</strong> и выполните ее в Windows PowerShell как администратор SharePoint или попросите пользователя один раз войти; затем проверьте снова.</td></tr><tr><td>Целевой пользователь создан заново</td><td><strong>Копировать заново с нуля</strong> в новый почтовый ящик или OneDrive либо пропустить.</td></tr><tr><td>Элементы с неизвестным результатом</td><td><strong>Отправить повторно</strong> (уже дошедший элемент окажется в двух экземплярах) или <strong>Пропустить эти элементы</strong>.</td></tr><tr><td>В целевом клиенте меньше, чем скопировано</td><td>Обычно они намеренно удалены в целевом клиенте; подтвердите кнопкой <strong>Понятно</strong>.</td></tr></tbody></table></div>
+<figure class="shot"><img src="../assets/shots/ru/issues.webp" alt="Сгруппированные решения с действиями" loading="lazy"><figcaption>Сгруппированные решения с действиями</figcaption></figure>
+<figure class="tour" data-tour="issues">
+  <figcaption class="tour-head"><strong>Решение вопросов</strong><span class="muted">Панель «Требуется ваше решение»</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Решение вопросов"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Предыдущий шаг">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Воспроизвести</button>
+    <button type="button" class="tb" data-act="next" aria-label="Следующий шаг">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Здесь сгруппировано то, что 365MG не решает сам.","Откройте группу, чтобы увидеть каждого пользователя и действия.","Скопируйте команду, которая создает отсутствующие OneDrive.","Пропустите пользователя, у которого лицензия удалена намеренно."]</script>
+</figure>
+<aside class="note">Пропущенные пользователи исключаются из всех запусков и перечисляются в отчете. Кнопка <strong>Копировать снова</strong> на вкладке «Пользователи» возвращает пользователя.</aside></section>
+<section id="groups"><h2>9. Почтовые группы</h2><p>На вкладке <strong>Почтовые группы</strong> выберите исходные группы и нажмите <strong>Создать группы и добавить участников</strong>. Graph может создавать только группы Microsoft 365, поэтому списки рассылки и группы безопасности с поддержкой почты становятся группами Microsoft 365 с тем же псевдонимом, с доставкой во входящие участников и приемом почты от внешних отправителей. Участники без целевого пользователя перечисляются для каждой группы.</p></section>
+<section id="reports"><h2>10. Отчеты</h2><p>Раздел <strong>Отчеты</strong> показывает по каждой кампании исходные и скопированные объемы по пользователям и в целом, пользователей, требующих внимания, группы и примечания. <strong>Экспорт HTML</strong> создает одну страницу (светлая и темная тема, поиск и фильтр) и открывает ее; экспорт CSV выводит список пользователей или групп.</p>
+<figure class="tour" data-tour="report">
+  <figcaption class="tour-head"><strong>Экспорт отчета</strong><span class="muted">Исходные и скопированные данные по пользователям</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Экспорт отчета"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Предыдущий шаг">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Воспроизвести</button>
+    <button type="button" class="tb" data-act="next" aria-label="Следующий шаг">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Откройте «Отчеты» и выберите кампанию.","Итоги, пользователи, требующие внимания, группы и примечания.","«Экспорт HTML» создает одну автономную страницу и открывает ее."]</script>
+</figure></section>
+<section id="settings"><h2>11. Параметры и языки</h2><ul><li><strong>Язык</strong>: девять языков, применяются сразу; арабский переключает макет на направление справа налево.</li><li><strong>Временная папка (spool)</strong>: размещайте ее не на диске C.</li><li><strong>Считать поток зависшим через (минут)</strong>: сколько минут без продвижения проходит до перезапуска потока (не более двух раз).</li></ul>
+<figure class="tour" data-tour="language">
+  <figcaption class="tour-head"><strong>Смена языка</strong><span class="muted">Девять языков, включая письмо справа налево</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Смена языка"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Предыдущий шаг">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Воспроизвести</button>
+    <button type="button" class="tb" data-act="next" aria-label="Следующий шаг">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Откройте «Параметры».","Выберите язык: он применяется сразу.","Арабский переключает весь макет на направление справа налево."]</script>
+</figure></section>
+<section id="updates"><h2>12. Обновления</h2><p>В разделе <strong>Что нового</strong> перечислены изменения каждой версии. Когда выходит новая версия, это видно на боковой панели; кнопка <strong>Обновить до x.y.z</strong> загружает ее, проверяет подпись автора, закрывает приложение, устанавливает обновление и снова открывает его. Сначала приостановите выполняющиеся кампании; затем продолжите их.</p></section>
+<section id="faq"><h2>13. Устранение неполадок</h2><div class="tw"><table><thead><tr><th>Признак</th><th>Причина и решение</th></tr></thead><tbody><tr><td>«Ожидание вступления в силу разрешений приложения переноса данных»</td><td>Новое приложение принимается Exchange и SharePoint в течение нескольких минут; запуск сам ждет до 30 минут.</td></tr><tr><td>Скорость падает, много сообщений об ограничении (throttling)</td><td>Exchange и SharePoint ограничивают нагрузку на почтовый ящик и на приложение. Больше потоков не ускорит один почтовый ящик; они помогают, когда ожидает много ящиков.</td></tr><tr><td>Счетчики в целевом клиенте меньше исходных</td><td>Проверьте примечания в отчете: пропущенная нежелательная почта, элементы, исключенные по решению, или почта, удаленная в целевом клиенте.</td></tr><tr><td>В целевом почтовом ящике уже есть почта</td><td>365MG откажется копировать в него при первом запуске. Разрешайте это в кампании, только если в ящик не копировали другим средством.</td></tr></tbody></table></div></section>
+  </article>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · Миграция Microsoft 365 между клиентами от tuanhd</div>
+    <div>Установщик, демонстрация или помощь · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365, Exchange Online, OneDrive и Microsoft Graph являются товарными знаками корпорации Майкрософт. 365MG — независимое программное обеспечение, не связанное с корпорацией Майкрософт.</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/ru/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-addTenant-2.webp","box":[0.8522,0.0861,0.1228,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.4039],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/ru/tour-createCampaign-1.webp","box":[0.8558,0.0861,0.1192,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-createCampaign-2.webp","box":[0.2125,0.3066,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-createCampaign-3.webp","box":[0.2227,0.4041,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-createCampaign-4.webp","box":[0.2227,0.4422,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-createCampaign-5.webp","box":[0.3938,0.4725,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-createCampaign-6.webp","box":[0.2125,0.0972,0.525,0.855],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ru/tour-createCampaign-7.webp","box":[0.8285,0.95,0.1465,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/ru/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.1705],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ru/tour-run-2.webp","box":[0.3664,0.2215,0.2595,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-run-3.webp","box":[0.3274,0.5022,0.1293,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ru/tour-run-4.webp","box":[0.8522,0.17,0.1126,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-run-5.webp","box":[0.3664,0.2215,0.2595,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/ru/tour-issues-1.webp","box":[0.2125,0.1077,0.7625,0.8351],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ru/tour-issues-2.webp","box":[0.2234,0.4732,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-issues-3.webp","box":[0.2328,0.5081,0.2477,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-issues-4.webp","box":[0.8034,0.5073,0.1513,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/ru/tour-report-1.webp","box":[0.2125,0.1472,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ru/tour-report-2.webp","box":[0.2125,0.1972,0.7625,0.3046],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ru/tour-report-3.webp","box":[0.4469,0.1472,0.1094,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/ru/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ru/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"Воспроизвести","pause":"Пауза","replay":"Повторить","prev":"Предыдущий шаг","next":"Следующий шаг","empty":"Экраны для этой демонстрации готовятся."}</script>
+</body>
+</html>

@@ -1,0 +1,602 @@
+{
+  "lang": "vi",
+  "name": "Tiếng Việt",
+  "dir": "ltr",
+  "meta": {
+    "title": "365MG · Chuyển Microsoft 365 giữa các tenant, an toàn",
+    "description": "365MG là ứng dụng desktop chuyển mail, danh bạ, lịch, OneDrive và nhóm mail từ tenant Microsoft 365 này sang tenant khác, có nhật ký từng mục để không bao giờ chép trùng và hỏi bạn khi có nguy cơ mất dữ liệu."
+  },
+  "nav": {
+    "home": "Tổng quan",
+    "caseStudy": "Câu chuyện thực tế",
+    "guide": "Hướng dẫn",
+    "tours": "Xem minh hoạ",
+    "language": "Ngôn ngữ"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Di chuyển Microsoft 365 giữa các tenant",
+      "title": "Chuyển cả công ty sang Microsoft 365 mới, **không sót một lá thư**",
+      "subtitle": "365MG chép mail, danh bạ, lịch, OneDrive và nhóm mail giữa hai tenant ngay trên máy Windows của bạn. Mỗi mục đều được ghi nhật ký nên chạy lại không bao giờ trùng, và app dừng lại hỏi bạn mỗi khi một lựa chọn có thể làm mất hoặc trùng dữ liệu.",
+      "cta": "Đọc hướng dẫn",
+      "ctaTours": "Xem minh hoạ",
+      "shotAlt": "Một chiến dịch trong 365MG với thanh điều khiển chạy và các việc cần quyết định"
+    },
+    "features": {
+      "title": "365MG làm được gì",
+      "items": [
+        {
+          "icon": "🏢",
+          "title": "Nhiều tenant, nhiều chiến dịch",
+          "text": "Đăng nhập global admin một lần cho mỗi tenant. 365MG kiểm tra quyền và license, rồi chạy bao nhiêu chiến dịch giữa các tenant cũng được."
+        },
+        {
+          "icon": "🧭",
+          "title": "Wizard tạo chiến dịch",
+          "text": "Lọc và chọn user nguồn, tự khớp với user đích, gán domain đích và license hàng loạt, tạo user còn thiếu."
+        },
+        {
+          "icon": "✉️",
+          "title": "Mail, danh bạ, lịch",
+          "text": "Xuất và nhập từng mục qua Exchange mailbox API theo từng thư mục, có nhật ký từng mục nên lần chạy bị dừng sẽ chép tiếp đúng chỗ."
+        },
+        {
+          "icon": "☁️",
+          "title": "OneDrive có kiểm tra hash",
+          "text": "Chép file và thư mục, giữ ngày tạo và ngày sửa, kiểm tra từng file bằng quickXorHash, tải file lớn theo từng đoạn 64 MB có thể chạy tiếp."
+        },
+        {
+          "icon": "👥",
+          "title": "Nhóm mail",
+          "text": "Tạo lại danh sách phân phối và nhóm có mail thành nhóm Microsoft 365 cùng alias, kèm thành viên và chủ nhóm."
+        },
+        {
+          "icon": "🌊",
+          "title": "Chia đợt và chạy thử",
+          "text": "Chia user thành nhiều đợt, đếm trước những gì sẽ chép mà không ghi gì, rồi chép thật và đồng bộ định kỳ đến ngày chuyển hẳn."
+        },
+        {
+          "icon": "✋",
+          "title": "Hỏi trước khi đoán",
+          "text": "Mailbox hay OneDrive đích chưa có, user đích bị tạo lại, mục không rõ kết quả: mỗi việc vào danh sách \"Cần bạn quyết định\" kèm nút xử lý."
+        },
+        {
+          "icon": "📊",
+          "title": "Báo cáo",
+          "text": "Số liệu nguồn và đã chép theo từng user và tổng, user cần chú ý, nhóm, ghi chú; xuất một trang HTML độc lập hoặc CSV."
+        },
+        {
+          "icon": "🌐",
+          "title": "Chín ngôn ngữ",
+          "text": "English, Tiếng Việt, 简体中文, 한국어, 日本語, Deutsch, Русский, हिन्दी và العربية (viết từ phải sang trái)."
+        }
+      ]
+    },
+    "how": {
+      "title": "Một lần chuyển diễn ra thế nào",
+      "steps": [
+        {
+          "title": "Thêm hai tenant",
+          "text": "Đăng nhập global admin; 365MG kiểm tra quyền và liệt kê license."
+        },
+        {
+          "title": "Lập chiến dịch",
+          "text": "Chọn user, khớp user đích, chọn nội dung, số luồng và lịch chạy."
+        },
+        {
+          "title": "Chuẩn bị đích",
+          "text": "Tạo user còn thiếu và gán license bằng một nút bấm."
+        },
+        {
+          "title": "Chạy thử rồi chép",
+          "text": "Đếm trước, rồi chép từng đợt; tạm dừng và chạy tiếp tuỳ ý."
+        },
+        {
+          "title": "Quyết định và báo cáo",
+          "text": "Xử lý việc cần bạn, đồng bộ đến ngày chuyển hẳn, xuất báo cáo."
+        }
+      ]
+    },
+    "safety": {
+      "title": "Đúc kết từ một lần chuyển thật",
+      "text": "Mỗi lớp bảo vệ đều xuất phát từ một sự cố khi chuyển một công ty 350 người: mailbox bị gỡ license giữa chừng, OneDrive đích chưa được tạo, mất kết nối đúng lúc đang gửi.",
+      "items": [
+        "Mỗi mục được ghi nhật ký trước khi gửi: lần chạy bị dừng sẽ được chạy tiếp, không bao giờ lặp lại.",
+        "Mục không rõ kết quả không bao giờ được âm thầm gửi lại: bạn quyết định.",
+        "Không chép vào mailbox đích đã có thư, trừ khi bạn cho phép.",
+        "Dữ liệu chỉ đi qua máy của bạn; file tạm nằm trên ổ bạn chọn và bị xoá ngay sau khi tải lên.",
+        "Bản cập nhật có chữ ký: app chỉ cài bản do tác giả ký."
+      ],
+      "shotAlt": "Mục Cần bạn quyết định"
+    },
+    "cta": {
+      "title": "Sắp chuyển tenant?",
+      "text": "365MG do tác giả trực tiếp phân phối. Hãy liên hệ để nhận bộ cài, xem demo hoặc được hỗ trợ khi chuyển.",
+      "button": "Liên hệ tác giả",
+      "caseStudy": "Đọc câu chuyện thực tế"
+    }
+  },
+  "caseStudy": {
+    "eyebrow": "Câu chuyện thực tế",
+    "title": "350 user, 3,4 triệu email và 670 GB file sang tenant mới",
+    "intro": "Một công ty dịch vụ có văn phòng ở hai nước chuyển sang tenant Microsoft 365 mới sau khi đổi chủ sở hữu. Lần đầu làm bằng script chạy tay thì đứng yên nhiều tuần. Đây là những gì đã hỏng, cách việc chuyển được hoàn tất, và cách 365MG xử lý từng vấn đề hôm nay.",
+    "stats": [
+      {
+        "value": "352",
+        "label": "mailbox"
+      },
+      {
+        "value": "3,42 triệu",
+        "label": "email ở nguồn"
+      },
+      {
+        "value": "99,1 %",
+        "label": "đã khớp ở đích"
+      },
+      {
+        "value": "353 GB",
+        "label": "OneDrive của 284 user"
+      },
+      {
+        "value": "320 GB",
+        "label": "thư mục dùng chung"
+      },
+      {
+        "value": "0",
+        "label": "bản chép trùng"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Điểm xuất phát",
+        "blocks": [
+          {
+            "p": "Script chép từng thư một qua Microsoft Graph từ một máy. Sau một tháng, đích mới có khoảng 71 % số thư. Báo cáo ghi phần lớn mailbox \"đã bắt kịp\", nhưng có mailbox đích trống trơn."
+          },
+          {
+            "list": [
+              "Bộ điều phối bị lỗi kiểu dữ liệu và cứ mỗi giờ lại được watchdog khởi động lại, ở giữa không làm gì.",
+              "170 tài khoản đích bị xoá rồi tạo lại, 190 nhật ký bị đặt lại; bộ đồng bộ vẫn coi các mailbox đó là đã xong.",
+              "Worker giữ nguyên thư kèm đính kèm trong RAM: có worker lên tới 3 GB.",
+              "Một mục lịch bị từ chối làm dừng cả mailbox ở mọi lần chạy."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Điều gì đã sửa được",
+        "blocks": [
+          {
+            "list": [
+              "**Nhật ký từng mục** đối chiếu với số đếm trực tiếp ở cả hai tenant, để \"bắt kịp\" đúng nghĩa.",
+              "**Gom lô theo dung lượng** và ghi tạm ra đĩa thay vì RAM: mỗi worker chỉ còn khoảng 200 MB.",
+              "**Ghi nhận và bỏ qua mục bị từ chối** thay vì dừng cả mailbox.",
+              "**Tự giãn nhịp theo từng mailbox** khi Exchange giới hạn một hộp đích: một mailbox tăng từ 42 lên khoảng 200 thư/phút.",
+              "**24 luồng song song** cho mail và tới 44 cho OneDrive, chia qua nhiều app chép dữ liệu để không chạm giới hạn của từng app."
+            ]
+          },
+          {
+            "p": "Mail đạt 342/352 mailbox khớp (99,1 % số thư). Phần còn lại không phải lỗi công cụ: 4 mailbox admin cố ý gỡ license, và 6 mailbox có thư nằm ở hai thư mục bị ghép vào một bản, sau đó đã được sửa."
+          }
+        ]
+      },
+      {
+        "title": "Những chỗ cần người quyết định",
+        "blocks": [
+          {
+            "p": "Có những tình huống công cụ không thể tự xử lý mà không có nguy cơ mất dữ liệu. Giờ chúng nằm trong mục **Cần bạn quyết định** của 365MG:"
+          },
+          {
+            "table": [
+              [
+                "Chuyện gì xảy ra",
+                "Vì sao công cụ không được đoán",
+                "365MG cho bạn chọn"
+              ],
+              [
+                "Mailbox đích bị gỡ license",
+                "Admin có thể cố ý gỡ",
+                "Gán license rồi kiểm tra lại, hoặc bỏ qua user"
+              ],
+              [
+                "OneDrive đích chưa được tạo",
+                "Chỉ user đăng nhập hoặc admin SharePoint mới tạo được",
+                "Một nút chép lệnh tạo cho mọi OneDrive còn thiếu"
+              ],
+              [
+                "User đích bị xoá rồi tạo lại",
+                "Những gì đã chép trước đó không còn",
+                "Chép lại toàn bộ vào cái mới, hoặc bỏ qua"
+              ],
+              [
+                "Mất kết nối khi đang gửi",
+                "Mục có thể đã vào đích, có thể chưa",
+                "Gửi lại (có thể thành hai bản) hoặc bỏ qua"
+              ],
+              [
+                "Đích ít thư hơn số đã chép",
+                "Người dùng có thể đã cố ý xoá",
+                "Ghi nhận; không bao giờ tự chép lại"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bài học đã đưa vào 365MG",
+        "blocks": [
+          {
+            "list": [
+              "Exchange Online tự xoá thư Junk Email cũ hơn 30 ngày ở đích: 365MG mặc định bỏ qua Junk để số liệu khớp nhau.",
+              "File lớn được tải theo từng đoạn có giới hạn thời gian riêng: file 29,8 GB bị đứng không còn làm treo worker.",
+              "Worker đứng yên được tự khởi động lại và chép tiếp theo nhật ký.",
+              "Chạy thử kiểm tra trước mailbox và OneDrive đích trước khi chép thật."
+            ]
+          },
+          {
+            "note": "Tên công ty và người dùng được giữ kín, số liệu đã làm tròn."
+          }
+        ]
+      }
+    ]
+  },
+  "guide": {
+    "title": "Hướng dẫn sử dụng",
+    "tocTitle": "Trong trang này",
+    "intro": "Từ lúc cài 365MG đến bản báo cáo cuối cùng. Mỗi phần có ảnh chụp màn hình; phần minh hoạ chạy lại các thao tác chính bằng con trỏ chuột động.",
+    "sections": [
+      {
+        "id": "install",
+        "title": "1. Cài đặt",
+        "blocks": [
+          {
+            "p": "365MG chạy trên Windows 10 hoặc 11 (64-bit) với Microsoft Edge WebView2, đã có sẵn trong Windows. Bộ cài do tác giả cung cấp: liên hệ theo địa chỉ ở cuối trang."
+          },
+          {
+            "steps": [
+              "Chạy `365MG_x.y.z_x64-setup.exe` và làm theo trình cài đặt.",
+              "Mở 365MG từ menu Start. Dữ liệu nằm trên máy này, trong `%APPDATA%\\com.tuanhd.365mg`.",
+              "Vào **Cài đặt**, chọn ngôn ngữ giao diện và thư mục tạm trên ổ phụ."
+            ]
+          },
+          {
+            "note": "App tự kiểm tra cập nhật mỗi 6 giờ. Xem trang **Có gì mới** để đọc thay đổi và bấm cập nhật."
+          }
+        ]
+      },
+      {
+        "id": "requirements",
+        "title": "2. Trước khi bắt đầu",
+        "blocks": [
+          {
+            "list": [
+              "Một tài khoản **global administrator** ở cả tenant nguồn lẫn tenant đích.",
+              "Đủ **license** có Exchange Online (và OneDrive) ở đích cho các user sẽ tạo hoặc khớp.",
+              "Một máy có thể bật suốt thời gian chép, mạng nhanh và ổn định: dữ liệu đi qua máy này.",
+              "Một ổ phụ cho thư mục tạm; chỉ file OneDrive từ 4 MB trở lên đi qua đó."
+            ]
+          },
+          {
+            "warn": "Khi bắt đầu chiến dịch, 365MG tạo một **app chép dữ liệu** trong mỗi tenant, đăng nhập bằng chứng chỉ và được cấp quyền Graph toàn tổ chức (mailbox import/export, Files, Sites). Hãy xoá app này khỏi Entra ID khi đã chuyển xong."
+          }
+        ]
+      },
+      {
+        "id": "tenants",
+        "title": "3. Thêm tenant",
+        "blocks": [
+          {
+            "steps": [
+              "Mở **Tenant** và bấm **Thêm tenant**.",
+              "Đăng nhập global admin trong cửa sổ trình duyệt vừa mở và đồng ý cấp quyền.",
+              "Quay lại 365MG, tenant hiện domain, kết quả kiểm tra quyền và license. Bấm **Kiểm tra quyền** sau khi thay đổi gì trong admin center."
+            ]
+          },
+          {
+            "shot": "tenants",
+            "caption": "Tenant kèm kết quả kiểm tra quyền và license"
+          },
+          {
+            "tour": "addTenant"
+          }
+        ]
+      },
+      {
+        "id": "campaign",
+        "title": "4. Tạo chiến dịch",
+        "blocks": [
+          {
+            "p": "Một chiến dịch chuyển một nhóm user từ một tenant nguồn sang một tenant đích. Wizard có sáu bước; tiêu đề, các bước và bộ lọc luôn hiện ở trên, các nút Quay lại / Tiếp / Lưu chiến dịch luôn ở dưới."
+          },
+          {
+            "steps": [
+              "**Tenant nguồn** và **Tenant đích**: mỗi bước chọn một tenant.",
+              "**Chọn user nguồn**: lọc theo license, domain hoặc trạng thái, tích user trong danh sách rồi thêm vào phần đã chọn.",
+              "**Khớp user đích**: 365MG gợi ý user đích theo địa chỉ, alias hoặc tên hiển thị. Tích các dòng rồi dùng **Gán domain đích…**, **Tạo mới nếu chưa có ở đích** hoặc **Gán license…** hàng loạt; ô tích phía trên danh sách (**N user phù hợp**) chọn mọi dòng bộ lọc đang hiện.",
+              "**Nội dung & lịch chạy**: mail, OneDrive, danh bạ, lịch; bỏ qua Junk Email; chạy một lần hoặc mỗi N giờ; số luồng.",
+              "**Xem lại**: kiểm tra tóm tắt và số license cần, rồi bấm **Lưu chiến dịch**."
+            ]
+          },
+          {
+            "shot": "wizard-match",
+            "caption": "Khớp user nguồn với user đích, kèm thao tác hàng loạt"
+          },
+          {
+            "tour": "createCampaign"
+          }
+        ]
+      },
+      {
+        "id": "provision",
+        "title": "5. Chuẩn bị user đích",
+        "blocks": [
+          {
+            "p": "Trong trang chiến dịch, **Tạo user & gán license** tạo các user đích đánh dấu \"Tạo mới\" và gán license đã chọn cho mọi user. Dòng nào lỗi sẽ ghi lý do; sửa xong thì bấm lại."
+          },
+          {
+            "p": "User mới nhận mật khẩu ngẫu nhiên, phải đổi ở lần đăng nhập đầu. Xuất danh sách từ menu **⋯** thành CSV, giao cho người dùng rồi xoá file."
+          }
+        ]
+      },
+      {
+        "id": "waves",
+        "title": "6. Chia đợt và chạy thử",
+        "blocks": [
+          {
+            "p": "Ở tab **User**, tích chọn user và bấm **Xếp vào đợt** để chia nhỏ một lần chuyển lớn. Thanh điều khiển chạy khi đó cho chép từng đợt; lịch định kỳ tiếp tục đồng bộ mọi đợt đã mở."
+          },
+          {
+            "p": "**Chạy thử (chỉ đếm)** đọc cả hai phía và báo số mục, số file và dung lượng một lần chạy thật sẽ chép. Nó không ghi gì vào đích, đồng thời kiểm tra mailbox và OneDrive đích của từng user đã có chưa."
+          }
+        ]
+      },
+      {
+        "id": "run",
+        "title": "7. Chạy, tạm dừng, chạy tiếp",
+        "blocks": [
+          {
+            "p": "Thanh điều khiển ở đầu mọi tab của chiến dịch cho biết chiến dịch đang làm gì và sắp làm gì."
+          },
+          {
+            "table": [
+              [
+                "Trạng thái",
+                "Hiển thị",
+                "Nút"
+              ],
+              [
+                "Chưa chạy lần nào",
+                "Lịch chạy",
+                "**Bắt đầu ngay**, Chạy thử"
+              ],
+              [
+                "Đang chép",
+                "Thời gian đã chạy, số luồng đang chạy và đang chờ",
+                "**Tạm dừng**"
+              ],
+              [
+                "Tạm dừng",
+                "Lần chạy gần nhất",
+                "**Chạy tiếp** (chép nốt phần còn lại)"
+              ],
+              [
+                "Đã đồng bộ",
+                "Giờ xong và lần tự chạy tới",
+                "**Chạy lại (lấy dữ liệu mới)**, Tạm dừng lịch"
+              ]
+            ]
+          },
+          {
+            "p": "Tạm dừng sẽ dừng các luồng và giữ lịch không tự chạy. Mọi thứ đã chép vẫn nằm trong nhật ký nên chạy tiếp không bao giờ trùng. Tab **Tiến trình chép** hiện từng mailbox và OneDrive kèm tốc độ; luồng đứng yên sẽ được tự khởi động lại."
+          },
+          {
+            "tour": "run"
+          }
+        ]
+      },
+      {
+        "id": "decisions",
+        "title": "8. Cần bạn quyết định",
+        "blocks": [
+          {
+            "p": "Khi gặp việc không nên tự xử lý, chiến dịch hiện mục **Cần bạn quyết định**, nhóm theo loại, kèm giải thích và nút xử lý cho từng user."
+          },
+          {
+            "table": [
+              [
+                "Loại",
+                "Cần làm gì"
+              ],
+              [
+                "Mailbox đích không hoạt động",
+                "Gán license (hoặc chuyển thành shared mailbox), chờ 15–60 phút rồi **Kiểm tra lại**. Nếu cố ý gỡ license, bấm **Bỏ qua user này**."
+              ],
+              [
+                "Chưa có OneDrive ở đích",
+                "**Chép lệnh tạo OneDrive**, chạy trong Windows PowerShell bằng admin SharePoint, hoặc để user đăng nhập một lần; rồi kiểm tra lại."
+              ],
+              [
+                "User đích đã bị tạo lại",
+                "**Chép lại từ đầu** vào mailbox hoặc OneDrive mới, hoặc bỏ qua."
+              ],
+              [
+                "Mục không rõ đã vào đích chưa",
+                "**Gửi lại N mục** (mục đã vào sẽ thành hai bản) hoặc **Bỏ qua các mục này**."
+              ],
+              [
+                "Đích ít hơn số đã chép",
+                "Thường do người dùng cố ý xoá ở đích; bấm **Đã hiểu**."
+              ]
+            ]
+          },
+          {
+            "shot": "issues",
+            "caption": "Các việc cần quyết định, nhóm theo loại, kèm nút xử lý"
+          },
+          {
+            "tour": "issues"
+          },
+          {
+            "note": "User bị bỏ qua không được chạy nữa và được ghi trong báo cáo. Bấm **Chép lại** ở tab User để đưa lại vào."
+          }
+        ]
+      },
+      {
+        "id": "groups",
+        "title": "9. Nhóm mail",
+        "blocks": [
+          {
+            "p": "Ở tab **Nhóm mail**, chọn nhóm nguồn rồi bấm **Tạo nhóm & thêm thành viên**. Graph chỉ tạo được nhóm Microsoft 365, nên danh sách phân phối và nhóm bảo mật có mail được tạo thành nhóm Microsoft 365 cùng alias, gửi thư vào hộp thư thành viên và nhận thư từ bên ngoài. Thành viên chưa có user ở đích được liệt kê theo từng nhóm."
+          }
+        ]
+      },
+      {
+        "id": "reports",
+        "title": "10. Báo cáo",
+        "blocks": [
+          {
+            "p": "**Báo cáo** hiện, theo từng chiến dịch, số liệu nguồn và đã chép theo user và tổng, user cần chú ý, nhóm và ghi chú. **Xuất HTML** tạo một trang duy nhất (sáng và tối, tìm và lọc) rồi mở ra; xuất CSV cho danh sách user hoặc nhóm."
+          },
+          {
+            "tour": "report"
+          }
+        ]
+      },
+      {
+        "id": "settings",
+        "title": "11. Cài đặt và ngôn ngữ",
+        "blocks": [
+          {
+            "list": [
+              "**Ngôn ngữ**: chín ngôn ngữ, đổi là có tác dụng ngay; tiếng Ả Rập chuyển bố cục sang phải-sang-trái.",
+              "**Thư mục tạm**: không đặt trên ổ C.",
+              "**Coi luồng là kẹt sau**: số phút không có tiến triển trước khi luồng được khởi động lại (tối đa 2 lần)."
+            ]
+          },
+          {
+            "tour": "language"
+          }
+        ]
+      },
+      {
+        "id": "updates",
+        "title": "12. Cập nhật",
+        "blocks": [
+          {
+            "p": "**Có gì mới** liệt kê thay đổi của mọi phiên bản. Khi có bản mới, sidebar báo ngay; **Cập nhật lên x.y.z** tải bản mới, kiểm tra chữ ký của tác giả, đóng app, cài và mở lại. Hãy tạm dừng các chiến dịch đang chạy trước, cập nhật xong thì chạy tiếp."
+          }
+        ]
+      },
+      {
+        "id": "faq",
+        "title": "13. Xử lý sự cố",
+        "blocks": [
+          {
+            "table": [
+              [
+                "Hiện tượng",
+                "Nguyên nhân và cách xử lý"
+              ],
+              [
+                "\"Chờ quyền của app chép dữ liệu có hiệu lực\"",
+                "App mới cần vài phút để Exchange và SharePoint chấp nhận; lần chạy tự chờ tối đa 30 phút."
+              ],
+              [
+                "Tốc độ giảm, nhiều thông báo giới hạn tốc độ",
+                "Exchange và SharePoint giới hạn theo từng mailbox và từng app. Thêm luồng không làm một mailbox nhanh hơn; chỉ có ích khi nhiều mailbox đang chờ."
+              ],
+              [
+                "Số ở đích thấp hơn nguồn",
+                "Xem ghi chú trong báo cáo: Junk Email được bỏ qua, mục bị bỏ qua theo quyết định, hoặc thư bị xoá ở đích."
+              ],
+              [
+                "Mailbox đích đã có thư",
+                "365MG từ chối chép vào ở lần chạy đầu. Chỉ bật cho phép trong chiến dịch khi chắc chắn chưa công cụ nào chép vào đó."
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "tours": {
+    "title": "Xem minh hoạ",
+    "intro": "Mỗi phần minh hoạ chạy lại một thao tác trên màn hình thật với con trỏ chuột động. Dùng ‹ › để đi từng bước.",
+    "controls": {
+      "play": "Phát",
+      "pause": "Tạm dừng",
+      "replay": "Xem lại",
+      "prev": "Bước trước",
+      "next": "Bước sau",
+      "empty": "Đang chuẩn bị màn hình cho phần này."
+    },
+    "items": {
+      "addTenant": {
+        "title": "Thêm tenant",
+        "desc": "Đăng nhập global admin một lần",
+        "steps": [
+          "Mở Tenant ở sidebar.",
+          "Bấm Thêm tenant: trình duyệt mở ra để đăng nhập global admin.",
+          "Quay lại 365MG, tenant hiện kết quả kiểm tra quyền và license."
+        ]
+      },
+      "createCampaign": {
+        "title": "Tạo chiến dịch",
+        "desc": "Từ chọn user đến lưu",
+        "steps": [
+          "Mở Chiến dịch và bấm Chiến dịch mới.",
+          "Chọn tenant nguồn và tenant đích.",
+          "Lọc và tích chọn user nguồn cần chuyển, rồi bấm Tiếp.",
+          "Tích ô phía trên danh sách để chọn mọi dòng bộ lọc đang hiện.",
+          "Gán domain đích cho tất cả dòng đã chọn một lần.",
+          "Chọn nội dung, lịch chạy và số luồng.",
+          "Lưu chiến dịch."
+        ]
+      },
+      "run": {
+        "title": "Chạy, tạm dừng và chạy tiếp",
+        "desc": "Thanh điều khiển chạy của chiến dịch",
+        "steps": [
+          "Thanh điều khiển cho biết chiến dịch đang làm gì và sắp làm gì.",
+          "Bấm Bắt đầu ngay để chép luôn.",
+          "Tiến trình chép hiện từng mailbox và OneDrive kèm tốc độ.",
+          "Tạm dừng dừng các luồng an toàn và giữ lịch.",
+          "Chạy tiếp chép nốt phần còn lại; không có gì bị chép hai lần."
+        ]
+      },
+      "issues": {
+        "title": "Xử lý việc cần bạn",
+        "desc": "Mục Cần bạn quyết định",
+        "steps": [
+          "Những việc 365MG không tự xử lý được gom ở đây.",
+          "Mở một nhóm để xem từng user và nút xử lý.",
+          "Chép lệnh tạo các OneDrive còn thiếu.",
+          "Bỏ qua user mà bạn cố ý gỡ license."
+        ]
+      },
+      "report": {
+        "title": "Xuất báo cáo",
+        "desc": "Nguồn so với đã chép, theo từng user",
+        "steps": [
+          "Mở Báo cáo và chọn chiến dịch.",
+          "Tổng số, user cần chú ý, nhóm và ghi chú.",
+          "Xuất HTML tạo một trang độc lập rồi mở ra."
+        ]
+      },
+      "language": {
+        "title": "Đổi ngôn ngữ",
+        "desc": "Chín ngôn ngữ, kể cả viết từ phải sang trái",
+        "steps": [
+          "Mở Cài đặt.",
+          "Chọn ngôn ngữ: có tác dụng ngay.",
+          "Tiếng Ả Rập chuyển toàn bộ bố cục sang phải-sang-trái."
+        ]
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Di chuyển Microsoft 365 giữa các tenant, do tuanhd phát triển",
+    "contact": "Bộ cài, demo hoặc hỗ trợ",
+    "trademark": "Microsoft 365, Exchange Online, OneDrive và Microsoft Graph là thương hiệu của Microsoft Corporation. 365MG là phần mềm độc lập, không liên kết với Microsoft."
+  }
+}

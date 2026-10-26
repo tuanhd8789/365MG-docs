@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xem minh hoạ · 365MG</title>
+  <meta name="description" content="365MG là ứng dụng desktop chuyển mail, danh bạ, lịch, OneDrive và nhóm mail từ tenant Microsoft 365 này sang tenant khác, có nhật ký từng mục để không bao giờ chép trùng và hỏi bạn khi có nguy cơ mất dữ liệu.">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/tours.html">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/tours.html">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/tours.html">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/tours.html">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/tours.html">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/tours.html">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/tours.html">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/tours.html">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/tours.html">
+  
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./">Tổng quan</a><a href="case-study.html">Câu chuyện thực tế</a><a href="guide.html">Hướng dẫn</a><a href="tours.html" aria-current="page">Xem minh hoạ</a></nav>
+    <label class="lang"><span class="sr">Ngôn ngữ</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/tours.html">English</option><option value="../vi/tours.html" selected>Tiếng Việt</option><option value="../zh/tours.html">简体中文</option><option value="../ko/tours.html">한국어</option><option value="../ja/tours.html">日本語</option><option value="../de/tours.html">Deutsch</option><option value="../ru/tours.html">Русский</option><option value="../hi/tours.html">हिन्दी</option><option value="../ar/tours.html">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<section class="wrap block narrow"><h1>Xem minh hoạ</h1><p class="lead">Mỗi phần minh hoạ chạy lại một thao tác trên màn hình thật với con trỏ chuột động. Dùng ‹ › để đi từng bước.</p>
+  <figure class="tour" data-tour="addTenant">
+  <figcaption class="tour-head"><strong>Thêm tenant</strong><span class="muted">Đăng nhập global admin một lần</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Thêm tenant"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Bước trước">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Phát</button>
+    <button type="button" class="tb" data-act="next" aria-label="Bước sau">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Mở Tenant ở sidebar.","Bấm Thêm tenant: trình duyệt mở ra để đăng nhập global admin.","Quay lại 365MG, tenant hiện kết quả kiểm tra quyền và license."]</script>
+</figure>
+<figure class="tour" data-tour="createCampaign">
+  <figcaption class="tour-head"><strong>Tạo chiến dịch</strong><span class="muted">Từ chọn user đến lưu</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Tạo chiến dịch"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Bước trước">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Phát</button>
+    <button type="button" class="tb" data-act="next" aria-label="Bước sau">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Mở Chiến dịch và bấm Chiến dịch mới.","Chọn tenant nguồn và tenant đích.","Lọc và tích chọn user nguồn cần chuyển, rồi bấm Tiếp.","Tích ô phía trên danh sách để chọn mọi dòng bộ lọc đang hiện.","Gán domain đích cho tất cả dòng đã chọn một lần.","Chọn nội dung, lịch chạy và số luồng.","Lưu chiến dịch."]</script>
+</figure>
+<figure class="tour" data-tour="run">
+  <figcaption class="tour-head"><strong>Chạy, tạm dừng và chạy tiếp</strong><span class="muted">Thanh điều khiển chạy của chiến dịch</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Chạy, tạm dừng và chạy tiếp"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Bước trước">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Phát</button>
+    <button type="button" class="tb" data-act="next" aria-label="Bước sau">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Thanh điều khiển cho biết chiến dịch đang làm gì và sắp làm gì.","Bấm Bắt đầu ngay để chép luôn.","Tiến trình chép hiện từng mailbox và OneDrive kèm tốc độ.","Tạm dừng dừng các luồng an toàn và giữ lịch.","Chạy tiếp chép nốt phần còn lại; không có gì bị chép hai lần."]</script>
+</figure>
+<figure class="tour" data-tour="issues">
+  <figcaption class="tour-head"><strong>Xử lý việc cần bạn</strong><span class="muted">Mục Cần bạn quyết định</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Xử lý việc cần bạn"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Bước trước">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Phát</button>
+    <button type="button" class="tb" data-act="next" aria-label="Bước sau">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Những việc 365MG không tự xử lý được gom ở đây.","Mở một nhóm để xem từng user và nút xử lý.","Chép lệnh tạo các OneDrive còn thiếu.","Bỏ qua user mà bạn cố ý gỡ license."]</script>
+</figure>
+<figure class="tour" data-tour="report">
+  <figcaption class="tour-head"><strong>Xuất báo cáo</strong><span class="muted">Nguồn so với đã chép, theo từng user</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Xuất báo cáo"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Bước trước">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Phát</button>
+    <button type="button" class="tb" data-act="next" aria-label="Bước sau">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Mở Báo cáo và chọn chiến dịch.","Tổng số, user cần chú ý, nhóm và ghi chú.","Xuất HTML tạo một trang độc lập rồi mở ra."]</script>
+</figure>
+<figure class="tour" data-tour="language">
+  <figcaption class="tour-head"><strong>Đổi ngôn ngữ</strong><span class="muted">Chín ngôn ngữ, kể cả viết từ phải sang trái</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Đổi ngôn ngữ"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Bước trước">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Phát</button>
+    <button type="button" class="tb" data-act="next" aria-label="Bước sau">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Mở Cài đặt.","Chọn ngôn ngữ: có tác dụng ngay.","Tiếng Ả Rập chuyển toàn bộ bố cục sang phải-sang-trái."]</script>
+</figure>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · Di chuyển Microsoft 365 giữa các tenant, do tuanhd phát triển</div>
+    <div>Bộ cài, demo hoặc hỗ trợ · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365, Exchange Online, OneDrive và Microsoft Graph là thương hiệu của Microsoft Corporation. 365MG là phần mềm độc lập, không liên kết với Microsoft.</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/vi/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-addTenant-2.webp","box":[0.8781,0.0861,0.0969,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.3737],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/vi/tour-createCampaign-1.webp","box":[0.8666,0.0861,0.1084,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-2.webp","box":[0.2125,0.2597,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-3.webp","box":[0.2227,0.3572,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-4.webp","box":[0.2227,0.3953,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-5.webp","box":[0.4544,0.4256,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-6.webp","box":[0.2125,0.1341,0.525,0.7819],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-7.webp","box":[0.8682,0.95,0.1068,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/vi/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.1049],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-run-2.webp","box":[0.5619,0.1822,0.1574,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-run-3.webp","box":[0.2758,0.5016,0.1144,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-run-4.webp","box":[0.8826,0.17,0.0822,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-run-5.webp","box":[0.5619,0.1822,0.1574,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/vi/tour-issues-1.webp","box":[0.2125,0.1684,0.7625,0.7132],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-issues-2.webp","box":[0.2234,0.4732,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-issues-3.webp","box":[0.2328,0.5081,0.1548,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-issues-4.webp","box":[0.8592,0.5013,0.0955,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/vi/tour-report-1.webp","box":[0.5647,0.0861,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-report-2.webp","box":[0.2125,0.1472,0.7625,0.2725],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-report-3.webp","box":[0.799,0.0861,0.0891,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/vi/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"Phát","pause":"Tạm dừng","replay":"Xem lại","prev":"Bước trước","next":"Bước sau","empty":"Đang chuẩn bị màn hình cho phần này."}</script>
+</body>
+</html>

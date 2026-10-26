@@ -1,0 +1,14 @@
+{
+  "name": "365mg-docs",
+  "private": true,
+  "type": "module",
+  "description": "Landing page, case study, user guide and animated tours of 365MG",
+  "scripts": {
+    "build": "node build.mjs",
+    "shots": "node tools/capture.mjs",
+    "serve": "node tools/serve.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "23.11.1"
+  }
+}

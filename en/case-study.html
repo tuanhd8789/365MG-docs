@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>350 users, 3.4 million emails and 670 GB of files to a new tenant · 365MG</title>
+  <meta name="description" content="365MG is a desktop app that moves mail, contacts, calendars, OneDrive and mail groups from one Microsoft 365 tenant to another, with journals that never copy twice and clear decisions where data could be lost.">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/case-study.html">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/case-study.html">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/case-study.html">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/case-study.html">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/case-study.html">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/case-study.html">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/case-study.html">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/case-study.html">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/case-study.html">
+  
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./">Overview</a><a href="case-study.html" aria-current="page">Case study</a><a href="guide.html">User guide</a><a href="tours.html">Guided tours</a></nav>
+    <label class="lang"><span class="sr">Language</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/case-study.html" selected>English</option><option value="../vi/case-study.html">Tiếng Việt</option><option value="../zh/case-study.html">简体中文</option><option value="../ko/case-study.html">한국어</option><option value="../ja/case-study.html">日本語</option><option value="../de/case-study.html">Deutsch</option><option value="../ru/case-study.html">Русский</option><option value="../hi/case-study.html">हिन्दी</option><option value="../ar/case-study.html">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<section class="wrap block narrow">
+  <p class="eyebrow">Case study</p><h1>350 users, 3.4 million emails and 670 GB of files to a new tenant</h1><p class="lead">A services company with offices in two countries moved to a new Microsoft 365 tenant after a change of ownership. The first attempt, with scripts run by hand, stalled for weeks. This is what went wrong, how the migration was finished, and what 365MG does about each problem today.</p>
+  <div class="stats"><div class="stat"><div class="val">352</div><div class="muted">mailboxes</div></div><div class="stat"><div class="val">3.42 M</div><div class="muted">emails in the source</div></div><div class="stat"><div class="val">99.1 %</div><div class="muted">matched in the target</div></div><div class="stat"><div class="val">353 GB</div><div class="muted">OneDrive, 284 users</div></div><div class="stat"><div class="val">320 GB</div><div class="muted">shared folders</div></div><div class="stat"><div class="val">0</div><div class="muted">duplicate copies</div></div></div>
+  <h2>The starting point</h2><p>Scripts copied one message at a time through Microsoft Graph from a single PC. After a month the target held about 71 % of the mail. Reports said most mailboxes had &quot;caught up&quot;, yet some target mailboxes were empty.</p>
+<ul><li>A controller crashed on a data type error and was restarted every hour by a watchdog, doing nothing in between.</li><li>170 target accounts had been deleted and recreated, and 190 journals reset; the sync kept treating those mailboxes as finished.</li><li>Workers held whole messages with attachments in memory: some reached 3 GB of RAM.</li><li>One rejected calendar item stopped a whole mailbox on every run.</li></ul>
+<h2>What fixed it</h2><ul><li><strong>Journals per item</strong> checked against live counts in both tenants, so &quot;caught up&quot; meant what it said.</li><li><strong>Size-aware batches</strong> spooled to disk instead of memory: each worker stayed around 200 MB.</li><li><strong>Rejected items recorded and skipped</strong> instead of stopping the mailbox.</li><li><strong>Adaptive pacing per mailbox</strong> when Exchange throttled one target: one mailbox went from 42 to about 200 messages per minute.</li><li><strong>24 parallel workers</strong> for mail and up to 44 for OneDrive, spread over several data mover apps to stay under per-app limits.</li></ul>
+<p>Mail reached 342 of 352 mailboxes matched (99.1 % of messages). The rest were not tool errors: 4 mailboxes whose license the admin had removed on purpose, and 6 mailboxes where messages filed in two folders had been matched to one copy, then repaired.</p>
+<h2>Where a person had to decide</h2><p>Some situations cannot be settled by a tool without risking data. They now appear in 365MG's <strong>Needs your decision</strong> panel:</p>
+<div class="tw"><table><thead><tr><th>What happened</th><th>Why a tool must not guess</th><th>What 365MG offers</th></tr></thead><tbody><tr><td>Target mailbox lost its license</td><td>The admin may have removed it on purpose</td><td>License it and check again, or skip the user</td></tr><tr><td>Target OneDrive did not exist yet</td><td>Only a sign-in or a SharePoint admin can create it</td><td>One click copies the command for every missing OneDrive</td></tr><tr><td>Target user deleted and recreated</td><td>What was copied before is gone</td><td>Copy everything again into the new one, or skip</td></tr><tr><td>Connection broke while sending</td><td>The item may or may not be in the target</td><td>Send again (maybe twice) or leave it out</td></tr><tr><td>Target holds fewer messages than copied</td><td>Users may have deleted them on purpose</td><td>Noted; never copied back without you</td></tr></tbody></table></div>
+<h2>Lessons built into 365MG</h2><ul><li>Junk Email older than 30 days is deleted by Exchange Online in the target: 365MG skips it by default so counts agree.</li><li>Large files are downloaded in ranges with their own timeout: a stalled 29.8 GB file no longer hangs a worker.</li><li>A worker that stops moving is restarted automatically and continues from the journal.</li><li>Dry runs check target mailboxes and OneDrives before the real copy.</li></ul>
+<aside class="note">Company and people are not named, and the figures are rounded.</aside>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · Microsoft 365 tenant-to-tenant migration by tuanhd</div>
+    <div>Installer, demo or help · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365, Exchange Online, OneDrive and Microsoft Graph are trademarks of Microsoft Corporation. 365MG is independent software, not affiliated with Microsoft.</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/en/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-addTenant-2.webp","box":[0.8868,0.0861,0.0882,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.4039],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/en/tour-createCampaign-1.webp","box":[0.8672,0.0861,0.1078,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-2.webp","box":[0.2125,0.2597,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-3.webp","box":[0.2227,0.3572,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-4.webp","box":[0.2227,0.3953,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-5.webp","box":[0.4637,0.4256,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-6.webp","box":[0.2125,0.1216,0.525,0.8062],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-7.webp","box":[0.8651,0.95,0.1099,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/en/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.1529],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-2.webp","box":[0.5361,0.2062,0.1696,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-3.webp","box":[0.2816,0.5016,0.1115,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-4.webp","box":[0.9022,0.17,0.0627,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-5.webp","box":[0.5361,0.2062,0.1696,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/en/tour-issues-1.webp","box":[0.2125,0.1438,0.7625,0.762],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-issues-2.webp","box":[0.2234,0.4737,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-issues-3.webp","box":[0.2328,0.5073,0.2089,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-issues-4.webp","box":[0.8723,0.5078,0.0824,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/en/tour-report-1.webp","box":[0.2125,0.1472,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-report-2.webp","box":[0.2125,0.1972,0.7625,0.2927],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-report-3.webp","box":[0.4469,0.1472,0.0992,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/en/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"Play","pause":"Pause","replay":"Replay","prev":"Previous step","next":"Next step","empty":"Screens for this tour are being prepared."}</script>
+</body>
+</html>

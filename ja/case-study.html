@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>350 ユーザー、342 万通のメール、670 GB のファイルを新しいテナントへ · 365MG</title>
+  <meta name="description" content="365MG は、メール、連絡先、予定表、OneDrive、メール グループをある Microsoft 365 テナントから別のテナントへ移行するデスクトップ アプリです。ジャーナルにより二重コピーを防ぎ、データが失われるおそれのある場面では明確な判断を求めます。">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/case-study.html">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/case-study.html">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/case-study.html">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/case-study.html">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/case-study.html">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/case-study.html">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/case-study.html">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/case-study.html">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/case-study.html">
+  
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./">概要</a><a href="case-study.html" aria-current="page">事例</a><a href="guide.html">ユーザー ガイド</a><a href="tours.html">ガイド ツアー</a></nav>
+    <label class="lang"><span class="sr">言語</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/case-study.html">English</option><option value="../vi/case-study.html">Tiếng Việt</option><option value="../zh/case-study.html">简体中文</option><option value="../ko/case-study.html">한국어</option><option value="../ja/case-study.html" selected>日本語</option><option value="../de/case-study.html">Deutsch</option><option value="../ru/case-study.html">Русский</option><option value="../hi/case-study.html">हिन्दी</option><option value="../ar/case-study.html">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<section class="wrap block narrow">
+  <p class="eyebrow">事例</p><h1>350 ユーザー、342 万通のメール、670 GB のファイルを新しいテナントへ</h1><p class="lead">2 か国に拠点を持つサービス企業が、所有者の変更に伴い新しい Microsoft 365 テナントへ移行しました。手動で実行するスクリプトによる最初の試みは、数週間停滞しました。ここでは、何が問題だったのか、移行をどのように完了したのか、そして現在の 365MG がそれぞれの問題にどう対処しているのかを説明します。</p>
+  <div class="stats"><div class="stat"><div class="val">352</div><div class="muted">メールボックス</div></div><div class="stat"><div class="val">342 万</div><div class="muted">移行元のメール</div></div><div class="stat"><div class="val">99.1 %</div><div class="muted">移行先で一致</div></div><div class="stat"><div class="val">353 GB</div><div class="muted">OneDrive、284 ユーザー</div></div><div class="stat"><div class="val">320 GB</div><div class="muted">共有フォルダー</div></div><div class="stat"><div class="val">0</div><div class="muted">重複コピー</div></div></div>
+  <h2>出発点</h2><p>スクリプトは 1 台の PC から Microsoft Graph を通じてメッセージを 1 通ずつコピーしていました。1 か月後、移行先にあるメールは約 71 % でした。レポートではほとんどのメールボックスが「追いついた」とされていましたが、空の移行先メールボックスもありました。</p>
+<ul><li>コントローラーがデータ型エラーでクラッシュし、ウォッチドッグによって 1 時間ごとに再起動されていましたが、その間は何もしていませんでした。</li><li>170 の移行先アカウントが削除されて再作成され、190 のジャーナルがリセットされていました。同期処理はそれらのメールボックスを完了済みとして扱い続けていました。</li><li>ワーカーは添付ファイルを含むメッセージ全体をメモリに保持しており、RAM が 3 GB に達するものもありました。</li><li>拒否された予定表アイテム 1 件のために、実行のたびにメールボックス全体が停止していました。</li></ul>
+<h2>解決策</h2><ul><li><strong>アイテムごとのジャーナル</strong>を両テナントの実際の件数と照合し、「追いついた」が本当にその意味になるようにしました。</li><li><strong>サイズを考慮したバッチ</strong>をメモリではなくディスクにスプールし、各ワーカーは約 200 MB に収まりました。</li><li><strong>拒否されたアイテムは記録してスキップ</strong>し、メールボックスを停止しないようにしました。</li><li>Exchange が移行先を調整 (スロットリング) した場合の<strong>メールボックスごとの適応的なペース制御</strong>により、あるメールボックスは毎分 42 通から約 200 通になりました。</li><li>メールに <strong>24 個の並列ワーカー</strong>、OneDrive に最大 44 個を使用し、アプリごとの制限内に収まるよう複数のデータ移行アプリに分散しました。</li></ul>
+<p>メールは 352 のメールボックスのうち 342 で一致しました (メッセージの 99.1 %)。残りはツールのエラーではありません。管理者が意図的にライセンスを削除した 4 つのメールボックスと、2 つのフォルダーに保存されたメッセージが 1 つのコピーと照合されていた 6 つのメールボックス (後に修復) です。</p>
+<h2>人による判断が必要だった場面</h2><p>状況によっては、データを危険にさらさずにツールが解決することはできません。これらは現在、365MG の <strong>判断が必要</strong> パネルに表示されます:</p>
+<div class="tw"><table><thead><tr><th>発生した事象</th><th>ツールが推測してはいけない理由</th><th>365MG が提供する操作</th></tr></thead><tbody><tr><td>移行先メールボックスがライセンスを失った</td><td>管理者が意図的に削除した可能性がある</td><td>ライセンスを割り当てて再確認するか、ユーザーをスキップ</td></tr><tr><td>移行先の OneDrive がまだ存在しなかった</td><td>作成できるのはサインインまたは SharePoint 管理者のみ</td><td>1 回のクリックで、不足しているすべての OneDrive の作成コマンドをコピー</td></tr><tr><td>移行先ユーザーが削除されて再作成された</td><td>以前にコピーしたものは失われている</td><td>新しいものにすべてを再コピーするか、スキップ</td></tr><tr><td>送信中に接続が切断された</td><td>アイテムが移行先にあるかどうか不明</td><td>再送信 (2 件になる可能性あり) するか、除外</td></tr><tr><td>移行先のメッセージがコピーした件数より少ない</td><td>ユーザーが意図的に削除した可能性がある</td><td>記録のみ。お客様の判断なしに再コピーはしない</td></tr></tbody></table></div>
+<h2>365MG に組み込まれた教訓</h2><ul><li>移行先では、30 日を超えた迷惑メールが Exchange Online によって削除されます。件数を一致させるため、365MG は既定で迷惑メールをスキップします。</li><li>大きなファイルは独自のタイムアウトを持つ範囲単位でダウンロードされます。29.8 GB のファイルが停滞してもワーカーが止まることはなくなりました。</li><li>処理が進まなくなったワーカーは自動的に再起動され、ジャーナルから続行します。</li><li>ドライ ランでは、実際のコピーの前に移行先のメールボックスと OneDrive を確認します。</li></ul>
+<aside class="note">会社名と個人名は記載しておらず、数値は概数です。</aside>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · tuanhd による Microsoft 365 テナント間移行</div>
+    <div>インストーラー、デモ、支援 · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365、Exchange Online、OneDrive、Microsoft Graph は Microsoft Corporation の商標です。365MG は独立したソフトウェアであり、Microsoft とは提携していません。</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/ja/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-addTenant-2.webp","box":[0.8656,0.0861,0.1094,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.3737],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/ja/tour-createCampaign-1.webp","box":[0.8433,0.0861,0.1317,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-2.webp","box":[0.2125,0.3066,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-3.webp","box":[0.2227,0.4041,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-4.webp","box":[0.2227,0.4422,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-5.webp","box":[0.4734,0.4725,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-6.webp","box":[0.2125,0.1097,0.525,0.8306],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-7.webp","box":[0.8433,0.95,0.1317,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/ja/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.226],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-2.webp","box":[0.4771,0.2427,0.1758,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-3.webp","box":[0.296,0.5016,0.1248,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-4.webp","box":[0.889,0.17,0.0759,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-5.webp","box":[0.4771,0.2427,0.1758,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/ja/tour-issues-1.webp","box":[0.2125,0.1445,0.7625,0.762],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-issues-2.webp","box":[0.2234,0.4743,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-issues-3.webp","box":[0.2328,0.5079,0.1942,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-issues-4.webp","box":[0.8195,0.5071,0.1352,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/ja/tour-report-1.webp","box":[0.2125,0.1472,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-report-2.webp","box":[0.2125,0.1972,0.7625,0.2927],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-report-3.webp","box":[0.4469,0.1472,0.1436,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/ja/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"再生","pause":"一時停止","replay":"もう一度再生","prev":"前のステップ","next":"次のステップ","empty":"このツアーの画面は準備中です。"}</script>
+</body>
+</html>

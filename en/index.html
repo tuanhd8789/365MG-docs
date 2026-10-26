@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>365MG · Move Microsoft 365 between tenants, safely</title>
+  <meta name="description" content="365MG is a desktop app that moves mail, contacts, calendars, OneDrive and mail groups from one Microsoft 365 tenant to another, with journals that never copy twice and clear decisions where data could be lost.">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/">
+  
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./" aria-current="page">Overview</a><a href="case-study.html">Case study</a><a href="guide.html">User guide</a><a href="tours.html">Guided tours</a></nav>
+    <label class="lang"><span class="sr">Language</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/" selected>English</option><option value="../vi/">Tiếng Việt</option><option value="../zh/">简体中文</option><option value="../ko/">한국어</option><option value="../ja/">日本語</option><option value="../de/">Deutsch</option><option value="../ru/">Русский</option><option value="../hi/">हिन्दी</option><option value="../ar/">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<section class="hero"><div class="wrap hero-in">
+  <div>
+    <p class="eyebrow">Microsoft 365 tenant-to-tenant migration</p>
+    <h1>Move a whole company's Microsoft 365, <strong>without losing a single message</strong></h1>
+    <p class="lead">365MG copies mail, contacts, calendars, OneDrive and mail groups between tenants from your own Windows PC. It keeps a journal of every item, runs again without duplicates, and stops to ask you whenever a choice could lose or duplicate data.</p>
+    <div class="ctas"><a class="btn primary" href="guide.html">Read the guide</a><a class="btn" href="tours.html">Watch the tours</a></div>
+  </div>
+  <figure class="hero-shot"><img src="../assets/shots/en/campaign.webp" alt="A campaign in 365MG with its run controls and the decisions it needs"></figure>
+</div></section>
+<section class="wrap block"><h2>What it does</h2>
+  <div class="grid"><article class="card"><span class="ico">🏢</span><h3>Many tenants, many campaigns</h3><p>Sign in once as global admin per tenant. 365MG checks permissions and licenses, then runs any number of campaigns between them.</p></article><article class="card"><span class="ico">🧭</span><h3>Guided campaign wizard</h3><p>Pick source users with filters, match them to target users automatically, assign a target domain and license in bulk, create the users that are missing.</p></article><article class="card"><span class="ico">✉️</span><h3>Mail, contacts, calendar</h3><p>Exports and imports every item through the Exchange mailbox API, folder by folder, with a journal per item so a stopped run carries on where it left off.</p></article><article class="card"><span class="ico">☁️</span><h3>OneDrive with hash checks</h3><p>Copies files and folders, keeps created and modified dates, verifies every file by quickXorHash and downloads large files in resumable 64 MB ranges.</p></article><article class="card"><span class="ico">👥</span><h3>Mail groups</h3><p>Recreates distribution lists and mail-enabled groups as Microsoft 365 groups with the same alias, members and owners.</p></article><article class="card"><span class="ico">🌊</span><h3>Waves and dry runs</h3><p>Split users into waves, count what a run would copy without writing anything, then copy for real and keep syncing on a schedule until cutover.</p></article><article class="card"><span class="ico">✋</span><h3>Asks before it guesses</h3><p>Missing target mailboxes or OneDrives, recreated users, items with an unknown outcome: each lands in a &quot;Needs your decision&quot; list with the actions that settle it.</p></article><article class="card"><span class="ico">📊</span><h3>Reports</h3><p>Source versus copied per user and in total, users that need a look, groups, and notes; export a self-contained HTML page or CSV.</p></article><article class="card"><span class="ico">🌐</span><h3>Nine languages</h3><p>English, Tiếng Việt, 简体中文, 한국어, 日本語, Deutsch, Русский, हिन्दी and العربية (right to left).</p></article></div>
+</section>
+<section class="band"><div class="wrap block"><h2>How a migration goes</h2>
+  <ol class="how"><li><strong>Add both tenants</strong><span>Sign in as global admin; 365MG checks permissions and lists licenses.</span></li><li><strong>Plan a campaign</strong><span>Choose users, match targets, choose content, threads and schedule.</span></li><li><strong>Prepare targets</strong><span>Create missing users and assign licenses in one click.</span></li><li><strong>Dry run, then copy</strong><span>Count first, then copy wave by wave; pause and resume at will.</span></li><li><strong>Decide and report</strong><span>Settle what needs you, re-sync until cutover, export the report.</span></li></ol>
+</div></section>
+<section class="wrap block split">
+  <div><h2>Built from a real migration's lessons</h2><p class="lead">Every safeguard comes from something that went wrong while moving a 350-user company: mailboxes that lost their license mid-way, OneDrives that did not exist yet, connections that broke while sending.</p><ul class="checks"><li>Each item is journaled before it is sent: a run that stops is resumed, never repeated.</li><li>An item whose outcome is unknown is never re-sent silently: you choose.</li><li>A target mailbox that already holds mail is not copied into unless you allow it.</li><li>Data moves through your PC only; temporary files sit on a drive you choose and are deleted right after upload.</li><li>Updates are signed: the app installs only builds signed by the author.</li></ul></div>
+  <figure class="shot"><img src="../assets/shots/en/issues.webp" alt="The Needs your decision panel" loading="lazy"></figure>
+</section>
+<section class="wrap block"><figure class="tour" data-tour="run">
+  <figcaption class="tour-head"><strong>Run, pause and resume</strong><span class="muted">The run bar of a campaign</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Run, pause and resume"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Previous step">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Play</button>
+    <button type="button" class="tb" data-act="next" aria-label="Next step">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["The run bar says what the campaign is doing and what comes next.","Click Start now to copy right away.","Copy progress shows every mailbox and OneDrive with its speed.","Pause stops the threads safely and holds the schedule.","Resume copies the rest; nothing is copied twice."]</script>
+</figure></section>
+<section class="band"><div class="wrap block center"><h2>Planning a tenant-to-tenant move?</h2><p class="lead">365MG is distributed by its author. Write for an installer, a demo or help with a migration.</p>
+  <div class="ctas center"><a class="btn primary" href="mailto:thanks@tuanhd.com">Contact the author</a><a class="btn" href="case-study.html">Read the case study</a></div>
+</div></section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · Microsoft 365 tenant-to-tenant migration by tuanhd</div>
+    <div>Installer, demo or help · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365, Exchange Online, OneDrive and Microsoft Graph are trademarks of Microsoft Corporation. 365MG is independent software, not affiliated with Microsoft.</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/en/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-addTenant-2.webp","box":[0.8868,0.0861,0.0882,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.4039],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/en/tour-createCampaign-1.webp","box":[0.8672,0.0861,0.1078,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-2.webp","box":[0.2125,0.2597,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-3.webp","box":[0.2227,0.3572,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-4.webp","box":[0.2227,0.3953,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-5.webp","box":[0.4637,0.4256,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-6.webp","box":[0.2125,0.1216,0.525,0.8062],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-7.webp","box":[0.8651,0.95,0.1099,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/en/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.1529],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-2.webp","box":[0.5361,0.2062,0.1696,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-3.webp","box":[0.2816,0.5016,0.1115,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-4.webp","box":[0.9022,0.17,0.0627,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-5.webp","box":[0.5361,0.2062,0.1696,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/en/tour-issues-1.webp","box":[0.2125,0.1438,0.7625,0.762],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-issues-2.webp","box":[0.2234,0.4737,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-issues-3.webp","box":[0.2328,0.5073,0.2089,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-issues-4.webp","box":[0.8723,0.5078,0.0824,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/en/tour-report-1.webp","box":[0.2125,0.1472,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-report-2.webp","box":[0.2125,0.1972,0.7625,0.2927],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-report-3.webp","box":[0.4469,0.1472,0.0992,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/en/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"Play","pause":"Pause","replay":"Replay","prev":"Previous step","next":"Next step","empty":"Screens for this tour are being prepared."}</script>
+</body>
+</html>

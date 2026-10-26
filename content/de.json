@@ -1,0 +1,602 @@
+{
+  "lang": "de",
+  "name": "Deutsch",
+  "dir": "ltr",
+  "meta": {
+    "title": "365MG · Microsoft 365 sicher zwischen Mandanten verschieben",
+    "description": "365MG ist eine Desktop-App, die E-Mails, Kontakte, Kalender, OneDrive und E-Mail-Gruppen von einem Microsoft 365-Mandanten in einen anderen verschiebt – mit Journalen, die nie doppelt kopieren, und klaren Entscheidungen dort, wo Daten verloren gehen könnten."
+  },
+  "nav": {
+    "home": "Übersicht",
+    "caseStudy": "Fallstudie",
+    "guide": "Benutzerhandbuch",
+    "tours": "Geführte Touren",
+    "language": "Sprache"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Microsoft 365-Migration von Mandant zu Mandant",
+      "title": "Das gesamte Microsoft 365 eines Unternehmens verschieben, **ohne eine einzige Nachricht zu verlieren**",
+      "subtitle": "365MG kopiert E-Mails, Kontakte, Kalender, OneDrive und E-Mail-Gruppen zwischen Mandanten von Ihrem eigenen Windows-PC aus. Es führt ein Journal über jedes Element, läuft ohne Duplikate erneut und hält an, um Sie zu fragen, sobald eine Entscheidung Daten verlieren oder verdoppeln könnte.",
+      "cta": "Handbuch lesen",
+      "ctaTours": "Touren ansehen",
+      "shotAlt": "Eine Kampagne in 365MG mit ihren Ausführungssteuerelementen und den erforderlichen Entscheidungen"
+    },
+    "features": {
+      "title": "Was es leistet",
+      "items": [
+        {
+          "icon": "🏢",
+          "title": "Viele Mandanten, viele Kampagnen",
+          "text": "Melden Sie sich pro Mandant einmal als globaler Administrator an. 365MG prüft Berechtigungen und Lizenzen und führt dann beliebig viele Kampagnen zwischen ihnen aus."
+        },
+        {
+          "icon": "🧭",
+          "title": "Geführter Kampagnen-Assistent",
+          "text": "Wählen Sie Quellbenutzer mit Filtern aus, ordnen Sie sie automatisch Zielbenutzern zu, weisen Sie Zieldomäne und Lizenz per Massenaktion zu und erstellen Sie fehlende Benutzer."
+        },
+        {
+          "icon": "✉️",
+          "title": "E-Mail, Kontakte, Kalender",
+          "text": "Exportiert und importiert jedes Element über die Exchange-Postfach-API, Ordner für Ordner, mit einem Journal pro Element, sodass eine beendete Ausführung dort fortsetzt, wo sie aufgehört hat."
+        },
+        {
+          "icon": "☁️",
+          "title": "OneDrive mit Hash-Prüfung",
+          "text": "Kopiert Dateien und Ordner, behält Erstellungs- und Änderungsdatum bei, prüft jede Datei per quickXorHash und lädt große Dateien in fortsetzbaren 64-MB-Bereichen herunter."
+        },
+        {
+          "icon": "👥",
+          "title": "E-Mail-Gruppen",
+          "text": "Erstellt Verteilerlisten und E-Mail-aktivierte Gruppen als Microsoft 365-Gruppen mit demselben Alias, denselben Mitgliedern und Besitzern neu."
+        },
+        {
+          "icon": "🌊",
+          "title": "Wellen und Testläufe",
+          "text": "Teilen Sie Benutzer in Wellen auf, zählen Sie, was eine Ausführung kopieren würde, ohne etwas zu schreiben, kopieren Sie dann wirklich und synchronisieren Sie nach Zeitplan weiter bis zur Umstellung."
+        },
+        {
+          "icon": "✋",
+          "title": "Fragt, statt zu raten",
+          "text": "Fehlende Zielpostfächer oder OneDrives, neu erstellte Benutzer, Elemente mit unbekanntem Ergebnis: Jeder Fall landet in der Liste „Ihre Entscheidung erforderlich“, mit den Aktionen, die ihn klären."
+        },
+        {
+          "icon": "📊",
+          "title": "Berichte",
+          "text": "Quelle gegenüber Kopiertem pro Benutzer und insgesamt, zu prüfende Benutzer, Gruppen und Hinweise; Export als eigenständige HTML-Seite oder CSV."
+        },
+        {
+          "icon": "🌐",
+          "title": "Neun Sprachen",
+          "text": "English, Tiếng Việt, 简体中文, 한국어, 日本語, Deutsch, Русский, हिन्दी und العربية (von rechts nach links)."
+        }
+      ]
+    },
+    "how": {
+      "title": "So läuft eine Migration ab",
+      "steps": [
+        {
+          "title": "Beide Mandanten hinzufügen",
+          "text": "Als globaler Administrator anmelden; 365MG prüft Berechtigungen und listet Lizenzen auf."
+        },
+        {
+          "title": "Kampagne planen",
+          "text": "Benutzer auswählen, Ziele zuordnen, Inhalte, Threads und Zeitplan festlegen."
+        },
+        {
+          "title": "Ziele vorbereiten",
+          "text": "Fehlende Benutzer erstellen und Lizenzen mit einem Klick zuweisen."
+        },
+        {
+          "title": "Testlauf, dann kopieren",
+          "text": "Erst zählen, dann Welle für Welle kopieren; jederzeit anhalten und fortsetzen."
+        },
+        {
+          "title": "Entscheiden und berichten",
+          "text": "Klären, was Sie braucht, bis zur Umstellung neu synchronisieren, den Bericht exportieren."
+        }
+      ]
+    },
+    "safety": {
+      "title": "Aus den Lehren einer echten Migration entstanden",
+      "text": "Jede Schutzmaßnahme geht auf etwas zurück, das beim Umzug eines Unternehmens mit 350 Benutzern schiefging: Postfächer, die mittendrin ihre Lizenz verloren, OneDrives, die noch nicht existierten, Verbindungen, die beim Senden abbrachen.",
+      "items": [
+        "Jedes Element wird vor dem Senden im Journal erfasst: Eine abgebrochene Ausführung wird fortgesetzt, nie wiederholt.",
+        "Ein Element mit unbekanntem Ergebnis wird nie stillschweigend erneut gesendet: Sie entscheiden.",
+        "In ein Zielpostfach, das bereits E-Mails enthält, wird nur kopiert, wenn Sie es erlauben.",
+        "Daten laufen nur über Ihren PC; temporäre Dateien liegen auf einem Laufwerk Ihrer Wahl und werden direkt nach dem Hochladen gelöscht.",
+        "Updates sind signiert: Die App installiert nur vom Autor signierte Builds."
+      ],
+      "shotAlt": "Der Bereich „Ihre Entscheidung erforderlich“"
+    },
+    "cta": {
+      "title": "Planen Sie einen Umzug von Mandant zu Mandant?",
+      "text": "365MG wird vom Autor vertrieben. Schreiben Sie für ein Installationsprogramm, eine Demo oder Hilfe bei einer Migration.",
+      "button": "Autor kontaktieren",
+      "caseStudy": "Fallstudie lesen"
+    }
+  },
+  "caseStudy": {
+    "eyebrow": "Fallstudie",
+    "title": "350 Benutzer, 3,4 Millionen E-Mails und 670 GB Dateien in einen neuen Mandanten",
+    "intro": "Ein Dienstleistungsunternehmen mit Niederlassungen in zwei Ländern zog nach einem Eigentümerwechsel in einen neuen Microsoft 365-Mandanten um. Der erste Versuch mit manuell ausgeführten Skripten stockte wochenlang. Hier lesen Sie, was schiefging, wie die Migration abgeschlossen wurde und was 365MG heute gegen jedes dieser Probleme tut.",
+    "stats": [
+      {
+        "value": "352",
+        "label": "Postfächer"
+      },
+      {
+        "value": "3,42 Mio.",
+        "label": "E-Mails in der Quelle"
+      },
+      {
+        "value": "99,1 %",
+        "label": "im Ziel abgeglichen"
+      },
+      {
+        "value": "353 GB",
+        "label": "OneDrive, 284 Benutzer"
+      },
+      {
+        "value": "320 GB",
+        "label": "freigegebene Ordner"
+      },
+      {
+        "value": "0",
+        "label": "doppelte Kopien"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Die Ausgangslage",
+        "blocks": [
+          {
+            "p": "Skripte kopierten von einem einzigen PC aus Nachricht für Nachricht über Microsoft Graph. Nach einem Monat enthielt das Ziel etwa 71 % der E-Mails. Berichte meldeten, die meisten Postfächer seien „auf dem aktuellen Stand“, doch einige Zielpostfächer waren leer."
+          },
+          {
+            "list": [
+              "Ein Steuerprozess stürzte an einem Datentypfehler ab und wurde von einem Watchdog stündlich neu gestartet – dazwischen tat er nichts.",
+              "170 Zielkonten waren gelöscht und neu erstellt und 190 Journale zurückgesetzt worden; die Synchronisierung behandelte diese Postfächer weiterhin als abgeschlossen.",
+              "Worker hielten ganze Nachrichten samt Anlagen im Arbeitsspeicher: Einige erreichten 3 GB RAM.",
+              "Ein einziges abgelehntes Kalenderelement stoppte bei jeder Ausführung ein ganzes Postfach."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Was das Problem löste",
+        "blocks": [
+          {
+            "list": [
+              "**Journale pro Element**, abgeglichen mit Live-Zahlen in beiden Mandanten, sodass „auf dem aktuellen Stand“ auch stimmte.",
+              "**Größenbewusste Stapel**, auf die Festplatte statt in den Arbeitsspeicher ausgelagert: Jeder Worker blieb bei etwa 200 MB.",
+              "**Abgelehnte Elemente protokolliert und übersprungen**, statt das Postfach anzuhalten.",
+              "**Adaptive Taktung pro Postfach**, wenn Exchange ein Ziel drosselte: Ein Postfach stieg von 42 auf etwa 200 Nachrichten pro Minute.",
+              "**24 parallele Worker** für E-Mail und bis zu 44 für OneDrive, verteilt auf mehrere Datenübertragungs-Apps, um unter den Grenzwerten pro App zu bleiben."
+            ]
+          },
+          {
+            "p": "Bei den E-Mails stimmten 342 von 352 Postfächern überein (99,1 % der Nachrichten). Der Rest waren keine Toolfehler: 4 Postfächer, deren Lizenz der Administrator absichtlich entfernt hatte, und 6 Postfächer, in denen in zwei Ordnern abgelegte Nachrichten einer einzigen Kopie zugeordnet und anschließend repariert worden waren."
+          }
+        ]
+      },
+      {
+        "title": "Wo ein Mensch entscheiden musste",
+        "blocks": [
+          {
+            "p": "Manche Situationen kann ein Tool nicht ohne Datenrisiko klären. Sie erscheinen jetzt im Bereich **Ihre Entscheidung erforderlich** von 365MG:"
+          },
+          {
+            "table": [
+              [
+                "Was passiert ist",
+                "Warum ein Tool nicht raten darf",
+                "Was 365MG anbietet"
+              ],
+              [
+                "Zielpostfach hat seine Lizenz verloren",
+                "Der Administrator hat sie vielleicht absichtlich entfernt",
+                "Lizenz zuweisen und erneut prüfen oder den Benutzer überspringen"
+              ],
+              [
+                "Ziel-OneDrive existierte noch nicht",
+                "Nur eine Anmeldung oder ein SharePoint-Administrator kann es erstellen",
+                "Ein Klick kopiert den Befehl für jedes fehlende OneDrive"
+              ],
+              [
+                "Zielbenutzer gelöscht und neu erstellt",
+                "Das zuvor Kopierte ist weg",
+                "Alles erneut in das neue kopieren oder überspringen"
+              ],
+              [
+                "Verbindung brach beim Senden ab",
+                "Das Element ist eventuell im Ziel, eventuell nicht",
+                "Erneut senden (eventuell doppelt) oder weglassen"
+              ],
+              [
+                "Ziel enthält weniger Nachrichten als kopiert",
+                "Benutzer haben sie vielleicht absichtlich gelöscht",
+                "Vermerkt; nie ohne Sie zurückkopiert"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "In 365MG eingebaute Lehren",
+        "blocks": [
+          {
+            "list": [
+              "Junk-E-Mails, die älter als 30 Tage sind, löscht Exchange Online im Ziel: 365MG überspringt sie standardmäßig, damit die Zahlen übereinstimmen.",
+              "Große Dateien werden in Bereichen mit eigenem Timeout heruntergeladen: Eine hängende 29,8-GB-Datei blockiert keinen Worker mehr.",
+              "Ein Worker, der nicht mehr vorankommt, wird automatisch neu gestartet und setzt anhand des Journals fort.",
+              "Testläufe prüfen Zielpostfächer und OneDrives vor dem eigentlichen Kopieren."
+            ]
+          },
+          {
+            "note": "Unternehmen und Personen werden nicht genannt, die Zahlen sind gerundet."
+          }
+        ]
+      }
+    ]
+  },
+  "guide": {
+    "title": "Benutzerhandbuch",
+    "tocTitle": "Auf dieser Seite",
+    "intro": "Von der Installation von 365MG bis zum letzten Bericht. Jeder Teil enthält Screenshots; die geführten Touren spielen die wichtigsten Aufgaben mit einem animierten Mauszeiger ab.",
+    "sections": [
+      {
+        "id": "install",
+        "title": "1. Installation",
+        "blocks": [
+          {
+            "p": "365MG läuft unter Windows 10 oder 11 (64 Bit) mit Microsoft Edge WebView2, das in Windows bereits enthalten ist. Das Installationsprogramm stellt der Autor bereit: Schreiben Sie an die unten stehende Adresse."
+          },
+          {
+            "steps": [
+              "Führen Sie `365MG_x.y.z_x64-setup.exe` aus und folgen Sie dem Installationsprogramm.",
+              "Öffnen Sie 365MG über das Startmenü. Die Daten bleiben auf diesem PC in `%APPDATA%\\com.tuanhd.365mg`.",
+              "Wählen Sie unter **Einstellungen** die Sprache der Oberfläche und einen temporären Ordner auf einem zweiten Laufwerk."
+            ]
+          },
+          {
+            "note": "Die App sucht alle 6 Stunden nach Updates. Unter **Neuigkeiten** finden Sie das Änderungsprotokoll und die Schaltfläche zum Aktualisieren."
+          }
+        ]
+      },
+      {
+        "id": "requirements",
+        "title": "2. Bevor Sie beginnen",
+        "blocks": [
+          {
+            "list": [
+              "Ein Konto als **globaler Administrator** sowohl im Quell- als auch im Zielmandanten.",
+              "Genügend **Lizenzen** mit Exchange Online (und OneDrive) im Ziel für die Benutzer, die Sie erstellen oder zuordnen.",
+              "Ein PC, der während des Kopierens eingeschaltet bleiben kann, mit schneller, stabiler Verbindung: Die Daten laufen über ihn.",
+              "Ein zweites Laufwerk für den temporären Ordner; nur OneDrive-Dateien ab 4 MB laufen darüber."
+            ]
+          },
+          {
+            "warn": "Beim Start einer Kampagne erstellt 365MG in jedem Mandanten eine **Datenübertragungs-App**, die sich mit einem Zertifikat anmeldet und organisationsweite Graph-Berechtigungen erhält (Postfachimport/-export, Files, Sites). Entfernen Sie diese App nach Abschluss der Migration aus Entra ID."
+          }
+        ]
+      },
+      {
+        "id": "tenants",
+        "title": "3. Mandanten hinzufügen",
+        "blocks": [
+          {
+            "steps": [
+              "Öffnen Sie **Mandanten** und klicken Sie auf **Mandant hinzufügen**.",
+              "Melden Sie sich im sich öffnenden Browserfenster als globaler Administrator an und akzeptieren Sie die Berechtigungen.",
+              "Zurück in 365MG zeigt der Mandant seine Domänen, die Berechtigungsprüfungen und seine Lizenzen. Verwenden Sie **Berechtigungen prüfen**, nachdem Sie etwas im Admin Center geändert haben."
+            ]
+          },
+          {
+            "shot": "tenants",
+            "caption": "Mandanten mit ihren Berechtigungsprüfungen und Lizenzen"
+          },
+          {
+            "tour": "addTenant"
+          }
+        ]
+      },
+      {
+        "id": "campaign",
+        "title": "4. Kampagne erstellen",
+        "blocks": [
+          {
+            "p": "Eine Kampagne verschiebt eine Gruppe von Benutzern von einem Quellmandanten in einen Zielmandanten. Der Assistent hat sechs Schritte; Titel, Schritte und Filter bleiben oben sichtbar, Zurück / Weiter / Kampagne speichern bleiben unten."
+          },
+          {
+            "steps": [
+              "**Quellmandant** und **Zielmandant**: je ein Schritt.",
+              "**Quellbenutzer auswählen**: nach Lizenz, Domäne oder Status filtern, Benutzer in der Liste markieren und zur Auswahl hinzufügen.",
+              "**Zielbenutzer zuordnen**: 365MG schlägt einen Zielbenutzer nach Adresse, Alias oder Anzeigename vor. Zeilen markieren und dann **Zieldomäne festlegen…**, **Erstellen, falls im Ziel nicht vorhanden** oder **Lizenz zuweisen…** gesammelt anwenden; das Kontrollkästchen über der Liste markiert alle Zeilen, die der Filter zeigt.",
+              "**Inhalt & Zeitplan**: E-Mail, OneDrive, Kontakte, Kalender; Junk-E-Mail überspringen; einmal oder alle N Stunden ausführen; Anzahl der Threads.",
+              "**Überprüfen**: Zusammenfassung und benötigte Lizenzen prüfen, dann **Kampagne speichern**."
+            ]
+          },
+          {
+            "shot": "wizard-match",
+            "caption": "Zuordnung von Quellbenutzern zu Zielbenutzern, mit Massenaktionen"
+          },
+          {
+            "tour": "createCampaign"
+          }
+        ]
+      },
+      {
+        "id": "provision",
+        "title": "5. Zielbenutzer vorbereiten",
+        "blocks": [
+          {
+            "p": "Auf der Kampagnenseite erstellt **Benutzer erstellen & Lizenzen zuweisen** die mit „Erstellen“ markierten Zielbenutzer und weist jedem Benutzer die gewählte Lizenz zu. Fehlgeschlagene Zeilen zeigen den Grund; beheben Sie ihn und führen Sie den Vorgang erneut aus."
+          },
+          {
+            "p": "Neue Benutzer erhalten ein zufälliges Anfangskennwort, das sie bei der ersten Anmeldung ändern müssen. Exportieren Sie die Kennwörter über das Menü **⋯** als CSV, übergeben Sie sie und löschen Sie dann die Datei."
+          }
+        ]
+      },
+      {
+        "id": "waves",
+        "title": "6. Wellen und Testläufe",
+        "blocks": [
+          {
+            "p": "Markieren Sie auf der Registerkarte **Benutzer** Benutzer und verwenden Sie **In Welle verschieben**, um eine große Migration aufzuteilen. Die Ausführungsleiste kann dann jeweils eine Welle starten; geplante Ausführungen synchronisieren jede bereits geöffnete Welle weiter."
+          },
+          {
+            "p": "**Testlauf (nur zählen)** liest beide Seiten und meldet, wie viele Elemente, Dateien und Megabyte eine echte Ausführung kopieren würde. Er schreibt nichts in das Ziel und prüft außerdem, ob jedes Zielpostfach und jedes OneDrive existiert."
+          }
+        ]
+      },
+      {
+        "id": "run",
+        "title": "7. Ausführen, anhalten, fortsetzen",
+        "blocks": [
+          {
+            "p": "Die Ausführungsleiste oben auf jeder Registerkarte der Kampagne zeigt, was die Kampagne gerade tut und was als Nächstes folgt."
+          },
+          {
+            "table": [
+              [
+                "Status",
+                "Angezeigt",
+                "Schaltflächen"
+              ],
+              [
+                "Noch nicht ausgeführt",
+                "Der Zeitplan",
+                "**Jetzt starten**, Testlauf"
+              ],
+              [
+                "Wird kopiert",
+                "Verstrichene Zeit, aktive und wartende Threads",
+                "**Anhalten**"
+              ],
+              [
+                "Angehalten",
+                "Letzte Ausführung",
+                "**Fortsetzen** (kopiert den Rest)"
+              ],
+              [
+                "Synchronisiert",
+                "Wann sie endete und die nächste geplante Ausführung",
+                "**Erneut ausführen (neue Daten abrufen)**, Zeitplan anhalten"
+              ]
+            ]
+          },
+          {
+            "p": "Anhalten beendet die Threads und hält den Zeitplan an. Alles Kopierte bleibt in den Journalen, daher wird beim Fortsetzen nie doppelt kopiert. Die Registerkarte **Kopierfortschritt** zeigt jedes Postfach und OneDrive mit seiner Geschwindigkeit; ein Thread, der nicht mehr vorankommt, wird automatisch neu gestartet."
+          },
+          {
+            "tour": "run"
+          }
+        ]
+      },
+      {
+        "id": "decisions",
+        "title": "8. Ihre Entscheidung erforderlich",
+        "blocks": [
+          {
+            "p": "Trifft eine Ausführung auf etwas, das sie nicht allein klären sollte, zeigt die Kampagne einen Bereich **Ihre Entscheidung erforderlich**, nach Art gruppiert, mit einer Erklärung und den Aktionen für jeden Benutzer."
+          },
+          {
+            "table": [
+              [
+                "Art",
+                "Was zu tun ist"
+              ],
+              [
+                "Zielpostfach funktioniert nicht",
+                "Weisen Sie dem Benutzer eine Lizenz zu (oder machen Sie daraus ein freigegebenes Postfach), warten Sie 15–60 Minuten, dann **Erneut prüfen**. Wurde die Lizenz absichtlich entfernt: **Diesen Benutzer überspringen**."
+              ],
+              [
+                "Kein OneDrive im Ziel",
+                "**Befehl zum Erstellen von OneDrive kopieren**, in Windows PowerShell als SharePoint-Administrator ausführen oder den Benutzer sich einmal anmelden lassen; dann erneut prüfen."
+              ],
+              [
+                "Zielbenutzer wurde neu erstellt",
+                "**Von Grund auf neu kopieren** in das neue Postfach bzw. OneDrive oder überspringen."
+              ],
+              [
+                "Elemente mit unbekanntem Ergebnis",
+                "**Elemente erneut senden** (ein bereits vorhandenes Element liegt dann doppelt vor) oder **Diese Elemente überspringen**."
+              ],
+              [
+                "Ziel enthält weniger als kopiert",
+                "Meist absichtlich im Ziel gelöscht; mit **Verstanden** bestätigen."
+              ]
+            ]
+          },
+          {
+            "shot": "issues",
+            "caption": "Gruppierte Entscheidungen mit ihren Aktionen"
+          },
+          {
+            "tour": "issues"
+          },
+          {
+            "note": "Übersprungene Benutzer werden bei jeder Ausführung ausgelassen und im Bericht aufgeführt. **Erneut kopieren** auf der Registerkarte „Benutzer“ holt einen Benutzer zurück."
+          }
+        ]
+      },
+      {
+        "id": "groups",
+        "title": "9. E-Mail-Gruppen",
+        "blocks": [
+          {
+            "p": "Wählen Sie auf der Registerkarte **E-Mail-Gruppen** Quellgruppen aus und klicken Sie auf **Gruppen erstellen & Mitglieder hinzufügen**. Graph kann nur Microsoft 365-Gruppen erstellen, daher werden Verteilerlisten und E-Mail-aktivierte Sicherheitsgruppen zu Microsoft 365-Gruppen mit demselben Alias, die an die Posteingänge der Mitglieder zustellen und externe Absender akzeptieren. Mitglieder ohne Zielbenutzer werden pro Gruppe aufgeführt."
+          }
+        ]
+      },
+      {
+        "id": "reports",
+        "title": "10. Berichte",
+        "blocks": [
+          {
+            "p": "**Berichte** zeigt pro Kampagne die Quell- und Kopierzahlen pro Benutzer und insgesamt, zu prüfende Benutzer, Gruppen und Hinweise. **HTML exportieren** schreibt eine einzelne Seite (hell und dunkel, mit Suche und Filter) und öffnet sie; CSV-Exporte listen Benutzer oder Gruppen auf."
+          },
+          {
+            "tour": "report"
+          }
+        ]
+      },
+      {
+        "id": "settings",
+        "title": "11. Einstellungen und Sprachen",
+        "blocks": [
+          {
+            "list": [
+              "**Sprache**: neun Sprachen, sofort übernommen; Arabisch stellt das Layout auf rechts nach links um.",
+              "**Temporärer Ordner**: nicht auf Laufwerk C.",
+              "**Thread als hängend behandeln nach**: Minuten ohne Fortschritt, bevor ein Thread neu gestartet wird (höchstens zweimal)."
+            ]
+          },
+          {
+            "tour": "language"
+          }
+        ]
+      },
+      {
+        "id": "updates",
+        "title": "12. Updates",
+        "blocks": [
+          {
+            "p": "**Neuigkeiten** listet die Änderungen jeder Version auf. Wenn eine neuere Version veröffentlicht ist, zeigt die Seitenleiste sie an; **Auf x.y.z aktualisieren** lädt sie herunter, prüft die Signatur des Autors, schließt die App, installiert und öffnet sie wieder. Halten Sie laufende Kampagnen zuvor an und setzen Sie sie danach fort."
+          }
+        ]
+      },
+      {
+        "id": "faq",
+        "title": "13. Problembehandlung",
+        "blocks": [
+          {
+            "table": [
+              [
+                "Symptom",
+                "Ursache und Lösung"
+              ],
+              [
+                "„Warten, bis die Berechtigungen der Datenübertragungs-App wirksam werden“",
+                "Eine neue App wird von Exchange und SharePoint erst nach einigen Minuten akzeptiert; die Ausführung wartet selbstständig bis zu 30 Minuten."
+              ],
+              [
+                "Geschwindigkeit sinkt, viele Meldungen „Exchange drosselt“",
+                "Exchange bzw. SharePoint begrenzen pro Postfach und pro App. Mehr Threads helfen einem einzelnen Postfach nicht; sie helfen, wenn viele Postfächer warten."
+              ],
+              [
+                "Zahlen im Ziel niedriger als in der Quelle",
+                "Prüfen Sie die Hinweise im Bericht: übersprungene Junk-E-Mails, per Entscheidung ausgelassene Elemente oder im Ziel gelöschte E-Mails."
+              ],
+              [
+                "Ein Postfach enthält im Ziel bereits E-Mails",
+                "365MG lehnt das Kopieren in dieses Postfach bei der ersten Ausführung ab. Erlauben Sie es in der Kampagne nur, wenn kein anderes Tool hineinkopiert hat."
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "tours": {
+    "title": "Geführte Touren",
+    "intro": "Jede Tour spielt eine Aufgabe auf echten Bildschirmen mit einem animierten Mauszeiger ab. Mit ‹ › gehen Sie Schritt für Schritt vor.",
+    "controls": {
+      "play": "Abspielen",
+      "pause": "Pause",
+      "replay": "Erneut abspielen",
+      "prev": "Vorheriger Schritt",
+      "next": "Nächster Schritt",
+      "empty": "Die Bildschirme für diese Tour werden vorbereitet."
+    },
+    "items": {
+      "addTenant": {
+        "title": "Mandant hinzufügen",
+        "desc": "Einmal als globaler Administrator anmelden",
+        "steps": [
+          "Öffnen Sie „Mandanten“ in der Seitenleiste.",
+          "Klicken Sie auf „Mandant hinzufügen“: Ein Browserfenster für die Anmeldung als globaler Administrator öffnet sich.",
+          "Zurück in 365MG zeigt der Mandant seine Berechtigungsprüfungen und Lizenzen."
+        ]
+      },
+      "createCampaign": {
+        "title": "Kampagne erstellen",
+        "desc": "Von der Benutzerauswahl bis zum Speichern",
+        "steps": [
+          "Öffnen Sie „Kampagnen“ und klicken Sie auf „Neue Kampagne“.",
+          "Wählen Sie den Quell- und den Zielmandanten.",
+          "Filtern und markieren Sie die zu verschiebenden Quellbenutzer und klicken Sie dann auf „Weiter“.",
+          "Markieren Sie „Alle passenden auswählen“, um jede vom Filter angezeigte Zeile auszuwählen.",
+          "Weisen Sie allen markierten Zeilen auf einmal eine Zieldomäne zu.",
+          "Wählen Sie Inhalte, Zeitplan und Threads.",
+          "Speichern Sie die Kampagne."
+        ]
+      },
+      "run": {
+        "title": "Ausführen, anhalten und fortsetzen",
+        "desc": "Die Ausführungsleiste einer Kampagne",
+        "steps": [
+          "Die Ausführungsleiste zeigt, was die Kampagne gerade tut und was als Nächstes folgt.",
+          "Klicken Sie auf „Jetzt starten“, um sofort zu kopieren.",
+          "„Kopierfortschritt“ zeigt jedes Postfach und OneDrive mit seiner Geschwindigkeit.",
+          "„Anhalten“ beendet die Threads sicher und hält den Zeitplan an.",
+          "„Fortsetzen“ kopiert den Rest; nichts wird doppelt kopiert."
+        ]
+      },
+      "issues": {
+        "title": "Klären, was Sie braucht",
+        "desc": "Der Bereich „Ihre Entscheidung erforderlich“",
+        "steps": [
+          "Was 365MG nicht allein klärt, wird hier gruppiert.",
+          "Öffnen Sie eine Gruppe, um jeden Benutzer und die Aktionen zu sehen.",
+          "Kopieren Sie den Befehl, der die fehlenden OneDrives erstellt.",
+          "Überspringen Sie einen Benutzer, dessen Lizenz absichtlich entfernt wurde."
+        ]
+      },
+      "report": {
+        "title": "Bericht exportieren",
+        "desc": "Quelle gegenüber Kopiertem, pro Benutzer",
+        "steps": [
+          "Öffnen Sie „Berichte“ und wählen Sie eine Kampagne.",
+          "Summen, zu prüfende Benutzer, Gruppen und Hinweise.",
+          "„HTML exportieren“ schreibt eine eigenständige Seite und öffnet sie."
+        ]
+      },
+      "language": {
+        "title": "Sprache ändern",
+        "desc": "Neun Sprachen, auch von rechts nach links",
+        "steps": [
+          "Öffnen Sie „Einstellungen“.",
+          "Wählen Sie eine Sprache: Sie wird sofort übernommen.",
+          "Arabisch stellt das gesamte Layout auf rechts nach links um."
+        ]
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Microsoft 365-Migration von Mandant zu Mandant von tuanhd",
+    "contact": "Installationsprogramm, Demo oder Hilfe",
+    "trademark": "Microsoft 365, Exchange Online, OneDrive und Microsoft Graph sind Marken der Microsoft Corporation. 365MG ist unabhängige Software und steht in keiner Verbindung zu Microsoft."
+  }
+}

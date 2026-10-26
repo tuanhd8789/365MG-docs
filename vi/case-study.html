@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>350 user, 3,4 triệu email và 670 GB file sang tenant mới · 365MG</title>
+  <meta name="description" content="365MG là ứng dụng desktop chuyển mail, danh bạ, lịch, OneDrive và nhóm mail từ tenant Microsoft 365 này sang tenant khác, có nhật ký từng mục để không bao giờ chép trùng và hỏi bạn khi có nguy cơ mất dữ liệu.">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/case-study.html">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/case-study.html">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/case-study.html">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/case-study.html">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/case-study.html">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/case-study.html">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/case-study.html">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/case-study.html">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/case-study.html">
+  
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./">Tổng quan</a><a href="case-study.html" aria-current="page">Câu chuyện thực tế</a><a href="guide.html">Hướng dẫn</a><a href="tours.html">Xem minh hoạ</a></nav>
+    <label class="lang"><span class="sr">Ngôn ngữ</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/case-study.html">English</option><option value="../vi/case-study.html" selected>Tiếng Việt</option><option value="../zh/case-study.html">简体中文</option><option value="../ko/case-study.html">한국어</option><option value="../ja/case-study.html">日本語</option><option value="../de/case-study.html">Deutsch</option><option value="../ru/case-study.html">Русский</option><option value="../hi/case-study.html">हिन्दी</option><option value="../ar/case-study.html">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<section class="wrap block narrow">
+  <p class="eyebrow">Câu chuyện thực tế</p><h1>350 user, 3,4 triệu email và 670 GB file sang tenant mới</h1><p class="lead">Một công ty dịch vụ có văn phòng ở hai nước chuyển sang tenant Microsoft 365 mới sau khi đổi chủ sở hữu. Lần đầu làm bằng script chạy tay thì đứng yên nhiều tuần. Đây là những gì đã hỏng, cách việc chuyển được hoàn tất, và cách 365MG xử lý từng vấn đề hôm nay.</p>
+  <div class="stats"><div class="stat"><div class="val">352</div><div class="muted">mailbox</div></div><div class="stat"><div class="val">3,42 triệu</div><div class="muted">email ở nguồn</div></div><div class="stat"><div class="val">99,1 %</div><div class="muted">đã khớp ở đích</div></div><div class="stat"><div class="val">353 GB</div><div class="muted">OneDrive của 284 user</div></div><div class="stat"><div class="val">320 GB</div><div class="muted">thư mục dùng chung</div></div><div class="stat"><div class="val">0</div><div class="muted">bản chép trùng</div></div></div>
+  <h2>Điểm xuất phát</h2><p>Script chép từng thư một qua Microsoft Graph từ một máy. Sau một tháng, đích mới có khoảng 71 % số thư. Báo cáo ghi phần lớn mailbox &quot;đã bắt kịp&quot;, nhưng có mailbox đích trống trơn.</p>
+<ul><li>Bộ điều phối bị lỗi kiểu dữ liệu và cứ mỗi giờ lại được watchdog khởi động lại, ở giữa không làm gì.</li><li>170 tài khoản đích bị xoá rồi tạo lại, 190 nhật ký bị đặt lại; bộ đồng bộ vẫn coi các mailbox đó là đã xong.</li><li>Worker giữ nguyên thư kèm đính kèm trong RAM: có worker lên tới 3 GB.</li><li>Một mục lịch bị từ chối làm dừng cả mailbox ở mọi lần chạy.</li></ul>
+<h2>Điều gì đã sửa được</h2><ul><li><strong>Nhật ký từng mục</strong> đối chiếu với số đếm trực tiếp ở cả hai tenant, để &quot;bắt kịp&quot; đúng nghĩa.</li><li><strong>Gom lô theo dung lượng</strong> và ghi tạm ra đĩa thay vì RAM: mỗi worker chỉ còn khoảng 200 MB.</li><li><strong>Ghi nhận và bỏ qua mục bị từ chối</strong> thay vì dừng cả mailbox.</li><li><strong>Tự giãn nhịp theo từng mailbox</strong> khi Exchange giới hạn một hộp đích: một mailbox tăng từ 42 lên khoảng 200 thư/phút.</li><li><strong>24 luồng song song</strong> cho mail và tới 44 cho OneDrive, chia qua nhiều app chép dữ liệu để không chạm giới hạn của từng app.</li></ul>
+<p>Mail đạt 342/352 mailbox khớp (99,1 % số thư). Phần còn lại không phải lỗi công cụ: 4 mailbox admin cố ý gỡ license, và 6 mailbox có thư nằm ở hai thư mục bị ghép vào một bản, sau đó đã được sửa.</p>
+<h2>Những chỗ cần người quyết định</h2><p>Có những tình huống công cụ không thể tự xử lý mà không có nguy cơ mất dữ liệu. Giờ chúng nằm trong mục <strong>Cần bạn quyết định</strong> của 365MG:</p>
+<div class="tw"><table><thead><tr><th>Chuyện gì xảy ra</th><th>Vì sao công cụ không được đoán</th><th>365MG cho bạn chọn</th></tr></thead><tbody><tr><td>Mailbox đích bị gỡ license</td><td>Admin có thể cố ý gỡ</td><td>Gán license rồi kiểm tra lại, hoặc bỏ qua user</td></tr><tr><td>OneDrive đích chưa được tạo</td><td>Chỉ user đăng nhập hoặc admin SharePoint mới tạo được</td><td>Một nút chép lệnh tạo cho mọi OneDrive còn thiếu</td></tr><tr><td>User đích bị xoá rồi tạo lại</td><td>Những gì đã chép trước đó không còn</td><td>Chép lại toàn bộ vào cái mới, hoặc bỏ qua</td></tr><tr><td>Mất kết nối khi đang gửi</td><td>Mục có thể đã vào đích, có thể chưa</td><td>Gửi lại (có thể thành hai bản) hoặc bỏ qua</td></tr><tr><td>Đích ít thư hơn số đã chép</td><td>Người dùng có thể đã cố ý xoá</td><td>Ghi nhận; không bao giờ tự chép lại</td></tr></tbody></table></div>
+<h2>Bài học đã đưa vào 365MG</h2><ul><li>Exchange Online tự xoá thư Junk Email cũ hơn 30 ngày ở đích: 365MG mặc định bỏ qua Junk để số liệu khớp nhau.</li><li>File lớn được tải theo từng đoạn có giới hạn thời gian riêng: file 29,8 GB bị đứng không còn làm treo worker.</li><li>Worker đứng yên được tự khởi động lại và chép tiếp theo nhật ký.</li><li>Chạy thử kiểm tra trước mailbox và OneDrive đích trước khi chép thật.</li></ul>
+<aside class="note">Tên công ty và người dùng được giữ kín, số liệu đã làm tròn.</aside>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · Di chuyển Microsoft 365 giữa các tenant, do tuanhd phát triển</div>
+    <div>Bộ cài, demo hoặc hỗ trợ · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365, Exchange Online, OneDrive và Microsoft Graph là thương hiệu của Microsoft Corporation. 365MG là phần mềm độc lập, không liên kết với Microsoft.</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/vi/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-addTenant-2.webp","box":[0.8781,0.0861,0.0969,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.3737],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/vi/tour-createCampaign-1.webp","box":[0.8666,0.0861,0.1084,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-2.webp","box":[0.2125,0.2597,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-3.webp","box":[0.2227,0.3572,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-4.webp","box":[0.2227,0.3953,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-5.webp","box":[0.4544,0.4256,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-6.webp","box":[0.2125,0.1341,0.525,0.7819],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-createCampaign-7.webp","box":[0.8682,0.95,0.1068,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/vi/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.1049],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-run-2.webp","box":[0.5619,0.1822,0.1574,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-run-3.webp","box":[0.2758,0.5016,0.1144,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-run-4.webp","box":[0.8826,0.17,0.0822,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-run-5.webp","box":[0.5619,0.1822,0.1574,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/vi/tour-issues-1.webp","box":[0.2125,0.1684,0.7625,0.7132],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-issues-2.webp","box":[0.2234,0.4732,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-issues-3.webp","box":[0.2328,0.5081,0.1548,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-issues-4.webp","box":[0.8592,0.5013,0.0955,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/vi/tour-report-1.webp","box":[0.5647,0.0861,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-report-2.webp","box":[0.2125,0.1472,0.7625,0.2725],"action":"look","w":1280,"h":800},{"shot":"assets/shots/vi/tour-report-3.webp","box":[0.799,0.0861,0.0891,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/vi/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/vi/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"Phát","pause":"Tạm dừng","replay":"Xem lại","prev":"Bước trước","next":"Bước sau","empty":"Đang chuẩn bị màn hình cho phần này."}</script>
+</body>
+</html>

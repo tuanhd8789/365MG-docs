@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guided tours · 365MG</title>
+  <meta name="description" content="365MG is a desktop app that moves mail, contacts, calendars, OneDrive and mail groups from one Microsoft 365 tenant to another, with journals that never copy twice and clear decisions where data could be lost.">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/tours.html">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/tours.html">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/tours.html">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/tours.html">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/tours.html">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/tours.html">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/tours.html">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/tours.html">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/tours.html">
+  
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./">Overview</a><a href="case-study.html">Case study</a><a href="guide.html">User guide</a><a href="tours.html" aria-current="page">Guided tours</a></nav>
+    <label class="lang"><span class="sr">Language</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/tours.html" selected>English</option><option value="../vi/tours.html">Tiếng Việt</option><option value="../zh/tours.html">简体中文</option><option value="../ko/tours.html">한국어</option><option value="../ja/tours.html">日本語</option><option value="../de/tours.html">Deutsch</option><option value="../ru/tours.html">Русский</option><option value="../hi/tours.html">हिन्दी</option><option value="../ar/tours.html">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<section class="wrap block narrow"><h1>Guided tours</h1><p class="lead">Each tour replays a task on real screens with an animated cursor. Use ‹ › to go step by step.</p>
+  <figure class="tour" data-tour="addTenant">
+  <figcaption class="tour-head"><strong>Add a tenant</strong><span class="muted">Sign in once as global admin</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Add a tenant"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Previous step">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Play</button>
+    <button type="button" class="tb" data-act="next" aria-label="Next step">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Open Tenants in the sidebar.","Click Add tenant: a browser window opens for the global admin sign-in.","Back in 365MG, the tenant shows its permission checks and licenses."]</script>
+</figure>
+<figure class="tour" data-tour="createCampaign">
+  <figcaption class="tour-head"><strong>Create a campaign</strong><span class="muted">From choosing users to saving</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Create a campaign"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Previous step">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Play</button>
+    <button type="button" class="tb" data-act="next" aria-label="Next step">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Open Campaigns and click New campaign.","Choose the source and the target tenant.","Filter and tick the source users to move, then click Next.","Tick the box above the list to pick every row the filter shows.","Assign a target domain to all ticked rows at once.","Choose the content, schedule and threads.","Save the campaign."]</script>
+</figure>
+<figure class="tour" data-tour="run">
+  <figcaption class="tour-head"><strong>Run, pause and resume</strong><span class="muted">The run bar of a campaign</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Run, pause and resume"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Previous step">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Play</button>
+    <button type="button" class="tb" data-act="next" aria-label="Next step">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["The run bar says what the campaign is doing and what comes next.","Click Start now to copy right away.","Copy progress shows every mailbox and OneDrive with its speed.","Pause stops the threads safely and holds the schedule.","Resume copies the rest; nothing is copied twice."]</script>
+</figure>
+<figure class="tour" data-tour="issues">
+  <figcaption class="tour-head"><strong>Settle what needs you</strong><span class="muted">The Needs your decision panel</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Settle what needs you"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Previous step">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Play</button>
+    <button type="button" class="tb" data-act="next" aria-label="Next step">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Things 365MG will not settle alone are grouped here.","Open a group to see each user and the actions.","Copy the command that creates the missing OneDrives.","Skip a user whose license was removed on purpose."]</script>
+</figure>
+<figure class="tour" data-tour="report">
+  <figcaption class="tour-head"><strong>Export a report</strong><span class="muted">Source versus copied, per user</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Export a report"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Previous step">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Play</button>
+    <button type="button" class="tb" data-act="next" aria-label="Next step">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Open Reports and choose a campaign.","Totals, users that need a look, groups and notes.","Export HTML writes one self-contained page and opens it."]</script>
+</figure>
+<figure class="tour" data-tour="language">
+  <figcaption class="tour-head"><strong>Change the language</strong><span class="muted">Nine languages, including right to left</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="Change the language"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="Previous step">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">Play</button>
+    <button type="button" class="tb" data-act="next" aria-label="Next step">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["Open Settings.","Choose a language: it applies at once.","Arabic turns the whole layout right to left."]</script>
+</figure>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · Microsoft 365 tenant-to-tenant migration by tuanhd</div>
+    <div>Installer, demo or help · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365, Exchange Online, OneDrive and Microsoft Graph are trademarks of Microsoft Corporation. 365MG is independent software, not affiliated with Microsoft.</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/en/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-addTenant-2.webp","box":[0.8868,0.0861,0.0882,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.4039],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/en/tour-createCampaign-1.webp","box":[0.8672,0.0861,0.1078,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-2.webp","box":[0.2125,0.2597,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-3.webp","box":[0.2227,0.3572,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-4.webp","box":[0.2227,0.3953,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-5.webp","box":[0.4637,0.4256,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-6.webp","box":[0.2125,0.1216,0.525,0.8062],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-createCampaign-7.webp","box":[0.8651,0.95,0.1099,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/en/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.1529],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-2.webp","box":[0.5361,0.2062,0.1696,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-3.webp","box":[0.2816,0.5016,0.1115,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-4.webp","box":[0.9022,0.17,0.0627,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-run-5.webp","box":[0.5361,0.2062,0.1696,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/en/tour-issues-1.webp","box":[0.2125,0.1438,0.7625,0.762],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-issues-2.webp","box":[0.2234,0.4737,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-issues-3.webp","box":[0.2328,0.5073,0.2089,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-issues-4.webp","box":[0.8723,0.5078,0.0824,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/en/tour-report-1.webp","box":[0.2125,0.1472,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-report-2.webp","box":[0.2125,0.1972,0.7625,0.2927],"action":"look","w":1280,"h":800},{"shot":"assets/shots/en/tour-report-3.webp","box":[0.4469,0.1472,0.0992,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/en/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/en/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"Play","pause":"Pause","replay":"Replay","prev":"Previous step","next":"Next step","empty":"Screens for this tour are being prepared."}</script>
+</body>
+</html>

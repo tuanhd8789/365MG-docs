@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ガイド ツアー · 365MG</title>
+  <meta name="description" content="365MG は、メール、連絡先、予定表、OneDrive、メール グループをある Microsoft 365 テナントから別のテナントへ移行するデスクトップ アプリです。ジャーナルにより二重コピーを防ぎ、データが失われるおそれのある場面では明確な判断を求めます。">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/tours.html">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/tours.html">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/tours.html">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/tours.html">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/tours.html">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/tours.html">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/tours.html">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/tours.html">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/tours.html">
+  
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./">概要</a><a href="case-study.html">事例</a><a href="guide.html">ユーザー ガイド</a><a href="tours.html" aria-current="page">ガイド ツアー</a></nav>
+    <label class="lang"><span class="sr">言語</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/tours.html">English</option><option value="../vi/tours.html">Tiếng Việt</option><option value="../zh/tours.html">简体中文</option><option value="../ko/tours.html">한국어</option><option value="../ja/tours.html" selected>日本語</option><option value="../de/tours.html">Deutsch</option><option value="../ru/tours.html">Русский</option><option value="../hi/tours.html">हिन्दी</option><option value="../ar/tours.html">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<section class="wrap block narrow"><h1>ガイド ツアー</h1><p class="lead">各ツアーでは、実際の画面とアニメーション カーソルで作業を再現します。‹ › で 1 ステップずつ進めます。</p>
+  <figure class="tour" data-tour="addTenant">
+  <figcaption class="tour-head"><strong>テナントを追加する</strong><span class="muted">グローバル管理者として一度サインイン</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="テナントを追加する"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["サイドバーで [テナント] を開きます。","[テナントを追加] をクリックすると、グローバル管理者のサインイン用にブラウザー ウィンドウが開きます。","365MG に戻ると、テナントのアクセス許可の確認結果とライセンスが表示されます。"]</script>
+</figure>
+<figure class="tour" data-tour="createCampaign">
+  <figcaption class="tour-head"><strong>キャンペーンを作成する</strong><span class="muted">ユーザーの選択から保存まで</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="キャンペーンを作成する"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["[キャンペーン] を開き、[新しいキャンペーン] をクリックします。","移行元テナントと移行先テナントを選択します。","移行する移行元ユーザーをフィルターしてチェックし、[次へ] をクリックします。","[一致するものをすべて選択] をチェックして、フィルターで表示されているすべての行を選択します。","チェックしたすべての行に移行先ドメインを一度に設定します。","コンテンツ、スケジュール、スレッドを選択します。","キャンペーンを保存します。"]</script>
+</figure>
+<figure class="tour" data-tour="run">
+  <figcaption class="tour-head"><strong>実行、一時停止、再開</strong><span class="muted">キャンペーンの実行バー</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="実行、一時停止、再開"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["実行バーには、キャンペーンが現在行っていることと次に行うことが表示されます。","[今すぐ開始] をクリックすると、すぐにコピーが始まります。","[コピーの進行状況] には、すべてのメールボックスと OneDrive が速度とともに表示されます。","[一時停止] はスレッドを安全に停止し、スケジュールを保留します。","[再開] で残りをコピーします。二重にコピーされるものはありません。"]</script>
+</figure>
+<figure class="tour" data-tour="issues">
+  <figcaption class="tour-head"><strong>判断が必要な項目を解決する</strong><span class="muted">[判断が必要] パネル</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="判断が必要な項目を解決する"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["365MG が自動で解決しない事項は、ここにグループ化されます。","グループを開くと、各ユーザーと操作が表示されます。","不足している OneDrive を作成するコマンドをコピーします。","意図的にライセンスが削除されたユーザーをスキップします。"]</script>
+</figure>
+<figure class="tour" data-tour="report">
+  <figcaption class="tour-head"><strong>レポートをエクスポートする</strong><span class="muted">ユーザー別の移行元とコピー済みの比較</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="レポートをエクスポートする"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["[レポート] を開き、キャンペーンを選択します。","合計、確認が必要なユーザー、グループ、メモ。","[HTML をエクスポート] は単一のページを書き出して開きます。"]</script>
+</figure>
+<figure class="tour" data-tour="language">
+  <figcaption class="tour-head"><strong>言語を変更する</strong><span class="muted">右から左の言語を含む 9 つの言語</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="言語を変更する"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="前のステップ">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">再生</button>
+    <button type="button" class="tb" data-act="next" aria-label="次のステップ">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["[設定] を開きます。","言語を選択すると、すぐに適用されます。","アラビア語では、レイアウト全体が右から左になります。"]</script>
+</figure>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · tuanhd による Microsoft 365 テナント間移行</div>
+    <div>インストーラー、デモ、支援 · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365、Exchange Online、OneDrive、Microsoft Graph は Microsoft Corporation の商標です。365MG は独立したソフトウェアであり、Microsoft とは提携していません。</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/ja/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-addTenant-2.webp","box":[0.8656,0.0861,0.1094,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.3737],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/ja/tour-createCampaign-1.webp","box":[0.8433,0.0861,0.1317,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-2.webp","box":[0.2125,0.3066,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-3.webp","box":[0.2227,0.4041,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-4.webp","box":[0.2227,0.4422,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-5.webp","box":[0.4734,0.4725,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-6.webp","box":[0.2125,0.1097,0.525,0.8306],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-createCampaign-7.webp","box":[0.8433,0.95,0.1317,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/ja/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.226],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-2.webp","box":[0.4771,0.2427,0.1758,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-3.webp","box":[0.296,0.5016,0.1248,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-4.webp","box":[0.889,0.17,0.0759,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-run-5.webp","box":[0.4771,0.2427,0.1758,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/ja/tour-issues-1.webp","box":[0.2125,0.1445,0.7625,0.762],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-issues-2.webp","box":[0.2234,0.4743,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-issues-3.webp","box":[0.2328,0.5079,0.1942,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-issues-4.webp","box":[0.8195,0.5071,0.1352,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/ja/tour-report-1.webp","box":[0.2125,0.1472,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-report-2.webp","box":[0.2125,0.1972,0.7625,0.2927],"action":"look","w":1280,"h":800},{"shot":"assets/shots/ja/tour-report-3.webp","box":[0.4469,0.1472,0.1436,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/ja/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/ja/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"再生","pause":"一時停止","replay":"もう一度再生","prev":"前のステップ","next":"次のステップ","empty":"このツアーの画面は準備中です。"}</script>
+</body>
+</html>

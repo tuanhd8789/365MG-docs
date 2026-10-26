@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>365MG · 在租户之间安全迁移 Microsoft 365</title>
+  <meta name="description" content="365MG 是一款桌面应用，可将邮件、联系人、日历、OneDrive 和邮件组从一个 Microsoft 365 租户迁移到另一个租户；复制日志确保绝不重复复制，可能丢失数据时会给出明确的决定选项。">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/">
+  
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./" aria-current="page">概览</a><a href="case-study.html">案例研究</a><a href="guide.html">用户指南</a><a href="tours.html">操作演示</a></nav>
+    <label class="lang"><span class="sr">语言</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/">English</option><option value="../vi/">Tiếng Việt</option><option value="../zh/" selected>简体中文</option><option value="../ko/">한국어</option><option value="../ja/">日本語</option><option value="../de/">Deutsch</option><option value="../ru/">Русский</option><option value="../hi/">हिन्दी</option><option value="../ar/">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<section class="hero"><div class="wrap hero-in">
+  <div>
+    <p class="eyebrow">Microsoft 365 租户到租户迁移</p>
+    <h1>迁移整个公司的 Microsoft 365，<strong>不丢失任何一封邮件</strong></h1>
+    <p class="lead">365MG 从您自己的 Windows 电脑在租户之间复制邮件、联系人、日历、OneDrive 和邮件组。它为每个项目记录日志，再次运行不会产生重复，并且在任何可能导致数据丢失或重复的选择前都会停下来询问您。</p>
+    <div class="ctas"><a class="btn primary" href="guide.html">阅读指南</a><a class="btn" href="tours.html">观看演示</a></div>
+  </div>
+  <figure class="hero-shot"><img src="../assets/shots/zh/campaign.webp" alt="365MG 中的一个迁移任务，包括运行控制和待您决定的事项"></figure>
+</div></section>
+<section class="wrap block"><h2>功能</h2>
+  <div class="grid"><article class="card"><span class="ico">🏢</span><h3>多个租户，多个迁移任务</h3><p>每个租户只需以全局管理员身份登录一次。365MG 会检查权限和许可证，然后在租户之间运行任意数量的迁移任务。</p></article><article class="card"><span class="ico">🧭</span><h3>引导式迁移任务向导</h3><p>用筛选器选择源用户，自动将其匹配到目标用户，批量设置目标域和许可证，并创建缺少的用户。</p></article><article class="card"><span class="ico">✉️</span><h3>邮件、联系人、日历</h3><p>通过 Exchange 邮箱 API 逐个文件夹导出并导入每个项目，每个项目都有日志，中断的运行会从停止处继续。</p></article><article class="card"><span class="ico">☁️</span><h3>带哈希校验的 OneDrive</h3><p>复制文件和文件夹，保留创建和修改日期，用 quickXorHash 校验每个文件，并以可续传的 64 MB 分段下载大文件。</p></article><article class="card"><span class="ico">👥</span><h3>邮件组</h3><p>将通讯组列表和启用邮件的组重建为具有相同别名、成员和所有者的 Microsoft 365 组。</p></article><article class="card"><span class="ico">🌊</span><h3>批次和试运行</h3><p>将用户分成多个批次，在不写入任何内容的情况下统计一次运行将复制的数量，然后正式复制，并按计划持续同步直至切换。</p></article><article class="card"><span class="ico">✋</span><h3>先询问，不猜测</h3><p>目标邮箱或 OneDrive 缺失、用户被重新创建、项目结果未知：每种情况都会进入“待您决定”列表，并附上解决它的操作。</p></article><article class="card"><span class="ico">📊</span><h3>报告</h3><p>按用户和总计对比源与已复制数量，列出需要查看的用户、组和备注；可导出独立的 HTML 页面或 CSV。</p></article><article class="card"><span class="ico">🌐</span><h3>九种语言</h3><p>English、Tiếng Việt、简体中文、한국어、日本語、Deutsch、Русский、हिन्दी 和 العربية（从右到左）。</p></article></div>
+</section>
+<section class="band"><div class="wrap block"><h2>迁移流程</h2>
+  <ol class="how"><li><strong>添加两个租户</strong><span>以全局管理员身份登录；365MG 检查权限并列出许可证。</span></li><li><strong>规划迁移任务</strong><span>选择用户、匹配目标，选择内容、线程数和计划。</span></li><li><strong>准备目标</strong><span>一键创建缺少的用户并分配许可证。</span></li><li><strong>先试运行，再复制</strong><span>先计数，再逐批复制；可随时暂停和继续。</span></li><li><strong>决定并生成报告</strong><span>处理需要您决定的事项，持续同步直至切换，导出报告。</span></li></ol>
+</div></section>
+<section class="wrap block split">
+  <div><h2>源自真实迁移的经验</h2><p class="lead">每一项保护措施都来自一次 350 名用户的公司迁移中出过的问题：中途失去许可证的邮箱、尚不存在的 OneDrive、发送过程中断开的连接。</p><ul class="checks"><li>每个项目在发送前都会记入日志：中断的运行会继续，而不会重复。</li><li>结果未知的项目绝不会被悄悄重新发送：由您决定。</li><li>除非您允许，否则不会复制到已有邮件的目标邮箱。</li><li>数据只经过您的电脑；临时文件存放在您选择的驱动器上，上传后立即删除。</li><li>更新经过签名：应用只安装作者签名的版本。</li></ul></div>
+  <figure class="shot"><img src="../assets/shots/zh/issues.webp" alt="“待您决定”面板" loading="lazy"></figure>
+</section>
+<section class="wrap block"><figure class="tour" data-tour="run">
+  <figcaption class="tour-head"><strong>运行、暂停和继续</strong><span class="muted">迁移任务的运行栏</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="运行、暂停和继续"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="上一步">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">播放</button>
+    <button type="button" class="tb" data-act="next" aria-label="下一步">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["运行栏显示迁移任务正在做什么以及接下来做什么。","单击“立即开始”立即复制。","“复制进度”显示每个邮箱和 OneDrive 及其速度。","“暂停”会安全地停止线程并挂起计划。","“继续”复制剩余内容；不会重复复制任何内容。"]</script>
+</figure></section>
+<section class="band"><div class="wrap block center"><h2>正在规划租户到租户的迁移？</h2><p class="lead">365MG 由作者分发。如需安装程序、演示或迁移帮助，请来信联系。</p>
+  <div class="ctas center"><a class="btn primary" href="mailto:thanks@tuanhd.com">联系作者</a><a class="btn" href="case-study.html">阅读案例研究</a></div>
+</div></section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · Microsoft 365 租户到租户迁移，作者 tuanhd</div>
+    <div>安装程序、演示或帮助 · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365、Exchange Online、OneDrive 和 Microsoft Graph 是 Microsoft Corporation 的商标。365MG 是独立软件，与 Microsoft 无关联。</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/zh/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-addTenant-2.webp","box":[0.8991,0.0861,0.0759,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.3737],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/zh/tour-createCampaign-1.webp","box":[0.8768,0.0861,0.0982,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-createCampaign-2.webp","box":[0.2125,0.2597,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-createCampaign-3.webp","box":[0.2227,0.3572,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-createCampaign-4.webp","box":[0.2227,0.3953,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-createCampaign-5.webp","box":[0.4957,0.3912,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-createCampaign-6.webp","box":[0.2125,0.1516,0.525,0.7575],"action":"look","w":1280,"h":800},{"shot":"assets/shots/zh/tour-createCampaign-7.webp","box":[0.8768,0.95,0.0982,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/zh/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.1049],"action":"look","w":1280,"h":800},{"shot":"assets/shots/zh/tour-run-2.webp","box":[0.602,0.1822,0.154,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-run-3.webp","box":[0.2738,0.5022,0.0803,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/zh/tour-run-4.webp","box":[0.9113,0.17,0.0536,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-run-5.webp","box":[0.602,0.1822,0.154,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/zh/tour-issues-1.webp","box":[0.2125,0.1809,0.7625,0.6888],"action":"look","w":1280,"h":800},{"shot":"assets/shots/zh/tour-issues-2.webp","box":[0.2234,0.4732,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-issues-3.webp","box":[0.2328,0.5081,0.1527,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-issues-4.webp","box":[0.8864,0.5013,0.0683,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/zh/tour-report-1.webp","box":[0.5672,0.0861,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/zh/tour-report-2.webp","box":[0.2125,0.1472,0.7625,0.2927],"action":"look","w":1280,"h":800},{"shot":"assets/shots/zh/tour-report-3.webp","box":[0.8016,0.0861,0.0878,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/zh/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/zh/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"播放","pause":"暂停","replay":"重播","prev":"上一步","next":"下一步","empty":"此演示的界面正在准备中。"}</script>
+</body>
+</html>

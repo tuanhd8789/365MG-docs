@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>365MG · Microsoft 365 tenant-to-tenant migration</title>
+  <link rel="icon" href="assets/logo.svg"><link rel="stylesheet" href="assets/style.css">
+  <script>
+    (function () {
+      var have = ["en","vi","zh","ko","ja","de","ru","hi","ar"], names = {"en":"English","vi":"Tiếng Việt","zh":"简体中文","ko":"한국어","ja":"日本語","de":"Deutsch","ru":"Русский","hi":"हिन्दी","ar":"العربية"};
+      var saved = null; try { saved = localStorage.getItem('365mg-docs-lang') } catch (e) {}
+      for (var k in names) if (names[k] === saved) { location.replace(k + '/'); return }
+      var nav = (navigator.languages || [navigator.language || 'en']).map(function (l) { return l.toLowerCase().split('-')[0] });
+      for (var i = 0; i < nav.length; i++) if (have.indexOf(nav[i]) >= 0) { location.replace(nav[i] + '/'); return }
+      location.replace('en/');
+    })();
+  </script>
+</head>
+<body><main class="wrap block center"><img src="assets/logo.svg" width="56" height="56" alt=""><h1>365MG</h1>
+<ul class="langs"><li><a href="en/" hreflang="en">English</a></li><li><a href="vi/" hreflang="vi">Tiếng Việt</a></li><li><a href="zh/" hreflang="zh">简体中文</a></li><li><a href="ko/" hreflang="ko">한국어</a></li><li><a href="ja/" hreflang="ja">日本語</a></li><li><a href="de/" hreflang="de">Deutsch</a></li><li><a href="ru/" hreflang="ru">Русский</a></li><li><a href="hi/" hreflang="hi">हिन्दी</a></li><li><a href="ar/" hreflang="ar">العربية</a></li></ul></main></body>
+</html>

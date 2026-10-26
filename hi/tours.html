@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>निर्देशित टूर · 365MG</title>
+  <meta name="description" content="365MG एक डेस्कटॉप ऐप है जो मेल, संपर्क, कैलेंडर, OneDrive और मेल समूहों को एक Microsoft 365 टेनेंट से दूसरे में ले जाता है, ऐसे जर्नल के साथ जो कभी दो बार कॉपी नहीं करते, और जहाँ डेटा खो सकता है वहाँ स्पष्ट निर्णय माँगता है।">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="alternate" hreflang="en" href="https://tuanhd8789.github.io/365MG-docs/en/tours.html">
+  <link rel="alternate" hreflang="vi" href="https://tuanhd8789.github.io/365MG-docs/vi/tours.html">
+  <link rel="alternate" hreflang="zh" href="https://tuanhd8789.github.io/365MG-docs/zh/tours.html">
+  <link rel="alternate" hreflang="ko" href="https://tuanhd8789.github.io/365MG-docs/ko/tours.html">
+  <link rel="alternate" hreflang="ja" href="https://tuanhd8789.github.io/365MG-docs/ja/tours.html">
+  <link rel="alternate" hreflang="de" href="https://tuanhd8789.github.io/365MG-docs/de/tours.html">
+  <link rel="alternate" hreflang="ru" href="https://tuanhd8789.github.io/365MG-docs/ru/tours.html">
+  <link rel="alternate" hreflang="hi" href="https://tuanhd8789.github.io/365MG-docs/hi/tours.html">
+  <link rel="alternate" hreflang="ar" href="https://tuanhd8789.github.io/365MG-docs/ar/tours.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>365MG</span></a>
+    <nav class="links"><a href="./">अवलोकन</a><a href="case-study.html">केस स्टडी</a><a href="guide.html">उपयोगकर्ता गाइड</a><a href="tours.html" aria-current="page">निर्देशित टूर</a></nav>
+    <label class="lang"><span class="sr">भाषा</span>
+      <select onchange="localStorage.setItem('365mg-docs-lang', this.selectedOptions[0].text); location.href=this.value"><option value="../en/tours.html">English</option><option value="../vi/tours.html">Tiếng Việt</option><option value="../zh/tours.html">简体中文</option><option value="../ko/tours.html">한국어</option><option value="../ja/tours.html">日本語</option><option value="../de/tours.html">Deutsch</option><option value="../ru/tours.html">Русский</option><option value="../hi/tours.html" selected>हिन्दी</option><option value="../ar/tours.html">العربية</option></select>
+    </label>
+  </div>
+</header>
+<main>
+<section class="wrap block narrow"><h1>निर्देशित टूर</h1><p class="lead">हर टूर वास्तविक स्क्रीन पर एनिमेटेड कर्सर के साथ एक कार्य दोबारा दिखाता है। चरण-दर-चरण आगे बढ़ने के लिए ‹ › का उपयोग करें।</p>
+  <figure class="tour" data-tour="addTenant">
+  <figcaption class="tour-head"><strong>टेनेंट जोड़ें</strong><span class="muted">ग्लोबल एडमिन के रूप में एक बार साइन इन करें</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="टेनेंट जोड़ें"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="पिछला चरण">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">चलाएँ</button>
+    <button type="button" class="tb" data-act="next" aria-label="अगला चरण">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["साइडबार में टेनेंट खोलें।","टेनेंट जोड़ें पर क्लिक करें: ग्लोबल एडमिन साइन इन के लिए एक ब्राउज़र विंडो खुलती है।","365MG में वापस आने पर टेनेंट अपनी अनुमति जाँच और लाइसेंस दिखाता है।"]</script>
+</figure>
+<figure class="tour" data-tour="createCampaign">
+  <figcaption class="tour-head"><strong>कैंपेन बनाएँ</strong><span class="muted">उपयोगकर्ता चुनने से लेकर सहेजने तक</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="कैंपेन बनाएँ"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="पिछला चरण">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">चलाएँ</button>
+    <button type="button" class="tb" data-act="next" aria-label="अगला चरण">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["कैंपेन खोलें और नया कैंपेन पर क्लिक करें।","स्रोत और लक्ष्य टेनेंट चुनें।","ले जाने वाले स्रोत उपयोगकर्ताओं को फ़िल्टर करें और उन पर टिक करें, फिर आगे पर क्लिक करें।","फ़िल्टर में दिख रही हर पंक्ति चुनने के लिए सभी मेल खाते चुनें पर टिक करें।","सभी टिक की गई पंक्तियों को एक साथ लक्ष्य डोमेन असाइन करें।","सामग्री, शेड्यूल और थ्रेड चुनें।","कैंपेन सहेजें।"]</script>
+</figure>
+<figure class="tour" data-tour="run">
+  <figcaption class="tour-head"><strong>चलाएँ, रोकें और फिर से शुरू करें</strong><span class="muted">कैंपेन की रन पट्टी</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="चलाएँ, रोकें और फिर से शुरू करें"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="पिछला चरण">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">चलाएँ</button>
+    <button type="button" class="tb" data-act="next" aria-label="अगला चरण">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["रन पट्टी बताती है कि कैंपेन क्या कर रहा है और आगे क्या होगा।","तुरंत कॉपी करने के लिए अभी शुरू करें पर क्लिक करें।","कॉपी प्रगति हर मेलबॉक्स और OneDrive को उसकी गति के साथ दिखाती है।","रोकें थ्रेड को सुरक्षित रूप से बंद करता है और शेड्यूल रोक देता है।","फिर से शुरू करें बाकी कॉपी करता है; कुछ भी दो बार कॉपी नहीं होता।"]</script>
+</figure>
+<figure class="tour" data-tour="issues">
+  <figcaption class="tour-head"><strong>जो आपसे जुड़ा है उसे सुलझाएँ</strong><span class="muted">आपके निर्णय की आवश्यकता पैनल</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="जो आपसे जुड़ा है उसे सुलझाएँ"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="पिछला चरण">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">चलाएँ</button>
+    <button type="button" class="tb" data-act="next" aria-label="अगला चरण">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["जो चीज़ें 365MG अकेले नहीं सुलझाता, वे यहाँ समूहित होती हैं।","हर उपयोगकर्ता और कार्रवाइयाँ देखने के लिए एक समूह खोलें।","अनुपलब्ध OneDrive बनाने वाला कमांड कॉपी करें।","जिस उपयोगकर्ता का लाइसेंस जान-बूझकर हटाया गया था उसे छोड़ें।"]</script>
+</figure>
+<figure class="tour" data-tour="report">
+  <figcaption class="tour-head"><strong>रिपोर्ट निर्यात करें</strong><span class="muted">स्रोत बनाम कॉपी किया गया, प्रति उपयोगकर्ता</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="रिपोर्ट निर्यात करें"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="पिछला चरण">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">चलाएँ</button>
+    <button type="button" class="tb" data-act="next" aria-label="अगला चरण">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["रिपोर्ट खोलें और एक कैंपेन चुनें।","कुल योग, ध्यान देने योग्य उपयोगकर्ता, समूह और टिप्पणियाँ।","HTML निर्यात करें एक स्व-निहित पेज लिखता है और उसे खोलता है।"]</script>
+</figure>
+<figure class="tour" data-tour="language">
+  <figcaption class="tour-head"><strong>भाषा बदलें</strong><span class="muted">नौ भाषाएँ, दाएँ से बाएँ वाली भी</span></figcaption>
+  <div class="tour-stage"><img class="tour-img" alt="भाषा बदलें"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
+  <div class="tour-bar">
+    <button type="button" class="tb" data-act="prev" aria-label="पिछला चरण">‹</button>
+    <button type="button" class="tb tb-main" data-act="play">चलाएँ</button>
+    <button type="button" class="tb" data-act="next" aria-label="अगला चरण">›</button>
+    <p class="tour-cap" aria-live="polite"></p>
+    <span class="tour-count muted"></span>
+  </div>
+  <script type="application/json" class="tour-steps">["सेटिंग्स खोलें।","एक भाषा चुनें: यह तुरंत लागू होती है।","अरबी पूरे लेआउट को दाएँ से बाएँ कर देती है।"]</script>
+</figure>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong>365MG</strong> · tuanhd द्वारा Microsoft 365 टेनेंट-से-टेनेंट माइग्रेशन</div>
+    <div>इंस्टॉलर, डेमो या मदद · <a href="mailto:thanks@tuanhd.com">thanks@tuanhd.com</a> · <a href="https://t.me/tuanhd8789">t.me/tuanhd8789</a></div>
+    <div class="muted">Microsoft 365, Exchange Online, OneDrive और Microsoft Graph, Microsoft Corporation के ट्रेडमार्क हैं। 365MG एक स्वतंत्र सॉफ़्टवेयर है, Microsoft से संबद्ध नहीं है।</div>
+  </div>
+</footer>
+<script src="../assets/tour.js" defer></script>
+<script>window.TOURS={"addTenant":[{"shot":"assets/shots/hi/tour-addTenant-1.webp","box":[0.0063,0.1,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-addTenant-2.webp","box":[0.9012,0.0861,0.0738,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-addTenant-3.webp","box":[0.2125,0.1472,0.375,0.3737],"action":"look","w":1280,"h":800}],"createCampaign":[{"shot":"assets/shots/hi/tour-createCampaign-1.webp","box":[0.9004,0.0861,0.0746,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-createCampaign-2.webp","box":[0.2125,0.2597,0.45,0.0869],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-createCampaign-3.webp","box":[0.2227,0.3572,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-createCampaign-4.webp","box":[0.2227,0.3953,0.0109,0.0175],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-createCampaign-5.webp","box":[0.5036,0.4256,0.1625,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-createCampaign-6.webp","box":[0.2125,0.1216,0.525,0.8062],"action":"look","w":1280,"h":800},{"shot":"assets/shots/hi/tour-createCampaign-7.webp","box":[0.8938,0.95,0.0812,0.035],"action":"click","w":1280,"h":800}],"run":[{"shot":"assets/shots/hi/tour-run-1.webp","box":[0.2125,0.1472,0.7625,0.1049],"action":"look","w":1280,"h":800},{"shot":"assets/shots/hi/tour-run-2.webp","box":[0.5835,0.1822,0.1573,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-run-3.webp","box":[0.3023,0.5016,0.0843,0.0461],"action":"look","w":1280,"h":800},{"shot":"assets/shots/hi/tour-run-4.webp","box":[0.9155,0.17,0.0493,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-run-5.webp","box":[0.5835,0.1822,0.1573,0.035],"action":"click","w":1280,"h":800}],"issues":[{"shot":"assets/shots/hi/tour-issues-1.webp","box":[0.2125,0.1446,0.7625,0.762],"action":"look","w":1280,"h":800},{"shot":"assets/shots/hi/tour-issues-2.webp","box":[0.2234,0.4732,0.7406,0.1024],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-issues-3.webp","box":[0.2328,0.5081,0.1965,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-issues-4.webp","box":[0.8352,0.5073,0.1195,0.035],"action":"click","w":1280,"h":800}],"report":[{"shot":"assets/shots/hi/tour-report-1.webp","box":[0.2125,0.1472,0.2,0.035],"action":"look","w":1280,"h":800},{"shot":"assets/shots/hi/tour-report-2.webp","box":[0.2125,0.1972,0.7625,0.2802],"action":"look","w":1280,"h":800},{"shot":"assets/shots/hi/tour-report-3.webp","box":[0.4469,0.1472,0.1103,0.035],"action":"click","w":1280,"h":800}],"language":[{"shot":"assets/shots/hi/tour-language-1.webp","box":[0.0063,0.24,0.175,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-language-2.webp","box":[0.2125,0.1734,0.4,0.035],"action":"click","w":1280,"h":800},{"shot":"assets/shots/hi/tour-language-3.webp","box":[0.3875,0.1734,0.4,0.035],"action":"look","w":1280,"h":800}]};window.TOUR_BASE='../';window.TOUR_TEXT={"play":"चलाएँ","pause":"रोकें","replay":"फिर से चलाएँ","prev":"पिछला चरण","next":"अगला चरण","empty":"इस टूर की स्क्रीन तैयार की जा रही हैं।"}</script>
+</body>
+</html>
