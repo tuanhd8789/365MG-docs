@@ -134,6 +134,36 @@
     })
   }
 
+  // Live monitor: one fake sample per second, a transfer log and the demo campaign's jobs.
+  var limits = { workers: 24, cores: 4, priority: 'below_normal', lanes: 4 }
+  var mSeq = 0, mSamples = [], mLog = [], mTot = { files: 18342, bytes: 96.4e9, errors: 3, throttled: 41 }
+  var fileNames = ['Hợp đồng 2024.docx', 'Q3 forecast.xlsx', 'Brand guideline.pdf', 'IMG_2041.jpg', 'Campaign video.mp4', 'Pitch deck.pptx', 'Invoice 0912.pdf', 'Site photos.zip']
+  function tickMonitor() {
+    var t = Date.now(), k = mSamples.length
+    var wave = Math.sin(k / 9) * 0.5 + 0.5
+    var bytes = Math.round((22 + 18 * wave + Math.random() * 12) * 1048576), files = Math.round(3 + wave * 6 + Math.random() * 4)
+    mTot.bytes += bytes; mTot.files += files
+    mSamples.push({ at: t, cpu_cores: 2.2 + wave * 1.4 + Math.random() * 0.3, cpu_machine: 31 + wave * 18, ram_bytes: 412e6 + wave * 60e6,
+      disk_read: 38e6 * wave + 4e6, disk_write: 41e6 * wave + 5e6, net_rx: bytes * 1.05, net_tx: bytes * 1.02, workers: limits.workers,
+      active: Math.min(limits.workers, Math.round(limits.workers * (0.7 + wave * 0.3))), files: files, bytes: bytes })
+    if (mSamples.length > 300) mSamples.shift()
+    for (var i = 0; i < 2; i++) {
+      var kind = Math.random() < 0.06 ? 'throttled' : Math.random() < 0.05 ? 'adopt' : Math.random() < 0.15 ? 'start' : Math.random() < 0.02 ? 'error' : 'done'
+      var u = people[(k + i) % people.length][1] + '@contoso.com'
+      mLog.push({ seq: ++mSeq, at: t, kind: kind, user: u, name: kind === 'throttled' ? 'fabrikam.sharepoint.com' : fileNames[(k * 3 + i) % fileNames.length],
+        bytes: kind === 'throttled' ? 0 : Math.round(Math.random() * 80e6), detail: kind === 'throttled' ? '429' : kind === 'error' ? 'VERIFY_MISMATCH' : kind === 'done' ? 'quickXorHash' : '' })
+    }
+    if (mLog.length > 400) mLog.splice(0, mLog.length - 400)
+  }
+  for (var w = 0; w < 120; w++) tickMonitor()
+  setInterval(tickMonitor, 1000)
+  function monitor(since, after) {
+    var rv = runView()
+    return { machine: { cores: 16, ram_total: 34e9, spool_dir: 'J:\\onedrive-spool', spool_free: 1.36e12, spool_total: 2e12, sensors: [{ label: 'CPU', celsius: 64 }], gpu_celsius: 51 },
+      samples: mSamples.filter(function (s) { return s.at > after }), log: mLog.filter(function (l) { return l.seq > since }), totals: mTot, limits: limits,
+      runs: [Object.assign({ name: campaign.name }, rv)] }
+  }
+
   var handlers = {
     app_info: function () { return { name: '365MG', version: '0.7.0', data_dir: 'C:\\Users\\admin\\AppData\\Roaming\\com.tuanhd.365mg' } },
     set_locale: function () { return null },
@@ -183,6 +213,8 @@
     report_export: function () { return null },
     settings_get: function () { return { spool_dir: 'D:\\365mg-spool', stuck_minutes: 30 } },
     settings_set: function () { return null },
+    monitor_snapshot: function (a) { return monitor(a.since, a.after) },
+    monitor_set_limits: function (a) { limits = a.limits; return null },
     update_check: function () { return { current: '0.7.0', channel: true, latest: null, releases: [] } },
   }
   window.__demo = { setRunning: function (v) { running = v; campaign.status = v ? 'running' : 'synced'; campaign.paused = false } }
