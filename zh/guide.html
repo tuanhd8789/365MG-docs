@@ -30,7 +30,7 @@
 </header>
 <main>
 <div class="wrap docs">
-  <aside class="toc"><nav><p class="muted">本页内容</p><ol><li><a href="#install">1. 安装</a></li><li><a href="#requirements">2. 开始之前</a></li><li><a href="#tenants">3. 添加云平台</a></li><li><a href="#google">4. Google Workspace</a></li><li><a href="#campaign">5. 创建迁移任务</a></li><li><a href="#provision">6. 准备目标用户</a></li><li><a href="#waves">7. 批次和试运行</a></li><li><a href="#run">8. 运行、暂停、继续</a></li><li><a href="#decisions">9. 待您决定</a></li><li><a href="#groups">10. 邮件组</a></li><li><a href="#reports">11. 报告</a></li><li><a href="#settings">12. 设置和语言</a></li><li><a href="#updates">13. 更新</a></li><li><a href="#faq">14. 故障排除</a></li></ol></nav></aside>
+  <aside class="toc"><nav><p class="muted">本页内容</p><ol><li><a href="#install">1. 安装</a></li><li><a href="#requirements">2. 开始之前</a></li><li><a href="#tenants">3. 添加云平台</a></li><li><a href="#google">4. Google Workspace</a></li><li><a href="#campaign">5. 创建迁移任务</a></li><li><a href="#provision">6. 准备目标用户</a></li><li><a href="#waves">7. 批次和试运行</a></li><li><a href="#run">8. 运行、暂停、继续</a></li><li><a href="#decisions">9. 待您决定</a></li><li><a href="#groups">10. 邮件组</a></li><li><a href="#reports">11. 报告</a></li><li><a href="#utilities">12. 实用工具：按邮箱检查</a></li><li><a href="#settings">13. 设置和语言</a></li><li><a href="#updates">14. 更新</a></li><li><a href="#faq">15. 故障排除</a></li></ol></nav></aside>
   <article class="doc">
     <h1>用户指南</h1><p class="lead">从安装 365MG 到最后一份报告。每部分都有屏幕截图；操作演示用动画光标重现主要任务。</p>
     <section id="install"><h2>1. 安装</h2><p>365MG 运行于 Windows 10 或 11（64 位），需要 Microsoft Edge WebView2，Windows 已自带。安装程序由作者提供：请发邮件到下方地址。</p>
@@ -122,7 +122,10 @@
   </div>
   <script type="application/json" class="tour-steps">["打开“报告”并选择一个迁移任务。","总计、需要查看的用户、组和备注。","“导出 HTML”会生成并打开一个独立页面。"]</script>
 </figure></section>
-<section id="settings"><h2>12. 设置和语言</h2><ul><li><strong>语言</strong>：九种语言，立即生效；阿拉伯语会将布局切换为从右到左。</li><li><strong>临时文件夹 (spool)</strong>：不要放在 C 盘。</li><li><strong>线程无进展多久后视为卡住</strong>：线程在无进展多少分钟后被重新启动（最多两次）。</li></ul>
+<section id="utilities"><h2>12. 实用工具：按邮箱检查</h2><p><strong>实用工具 → 按邮箱检查</strong>针对单个地址回答：“这个邮箱在哪里、有多大、迁移是否已全部复制？”</p>
+<ol><li>输入地址（主地址或别名），然后单击<strong>检查</strong>。勾选<strong>统计文件数</strong>可同时统计云端硬盘中的文件数；这会列出整个云端硬盘，可能需要几分钟。</li><li>每个包含该地址的云平台都会显示一张卡片：邮件项数和大小、OneDrive 或 Google Drive 的大小（及配额）、用户所属的 SharePoint 组网站（Microsoft）或 Google Photos 存储用量（Google）。</li><li>对于包含该地址的每个迁移任务，会即时测量源和目标，并与日志中已复制的数量及差异并排显示，随后是待处理的决定和<strong>运行历史</strong>（每一轮：开始时间、内容、结果、项目数、数据、用时）。</li></ol>
+<aside class="note">Google 仅在约两天前的使用情况报告中提供 Gmail 和 Photos 存储用量，超级管理员重新登录一次后才能读取（0.9.0 新增的权限）。运行历史从 0.9.0 版开始记录。</aside></section>
+<section id="settings"><h2>13. 设置和语言</h2><ul><li><strong>语言</strong>：九种语言，立即生效；阿拉伯语会将布局切换为从右到左。</li><li><strong>临时文件夹 (spool)</strong>：不要放在 C 盘。</li><li><strong>线程无进展多久后视为卡住</strong>：线程在无进展多少分钟后被重新启动（最多两次）。</li></ul>
 <figure class="tour" data-tour="language">
   <figcaption class="tour-head"><strong>更改语言</strong><span class="muted">九种语言，包括从右到左</span></figcaption>
   <div class="tour-stage"><img class="tour-img" alt="更改语言"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
@@ -135,8 +138,8 @@
   </div>
   <script type="application/json" class="tour-steps">["打开“设置”。","选择一种语言：立即生效。","阿拉伯语会将整个布局切换为从右到左。"]</script>
 </figure></section>
-<section id="updates"><h2>13. 更新</h2><p><strong>新增功能</strong>列出每个版本的更改。发布新版本后，侧边栏会显示；<strong>更新到 x.y.z</strong> 会下载新版本、检查作者签名、关闭应用、安装并重新打开。请先暂停正在运行的迁移任务，之后再继续。</p></section>
-<section id="faq"><h2>14. 故障排除</h2><div class="tw"><table><thead><tr><th>症状</th><th>原因和解决方法</th></tr></thead><tbody><tr><td>“正在等待数据迁移应用的权限生效”</td><td>新应用需要几分钟才能被 Exchange 和 SharePoint 接受；运行会自行等待最多 30 分钟。</td></tr><tr><td>速度下降，出现大量“限流”消息</td><td>Exchange 或 SharePoint 按邮箱和按应用进行限制。增加线程对单个邮箱没有帮助；当有许多邮箱在等待时才有帮助。</td></tr><tr><td>目标数量低于源数量</td><td>查看报告备注：跳过的垃圾邮件、因决定而未复制的项目，或在目标中被删除的邮件。</td></tr><tr><td>某个邮箱在目标中已有邮件</td><td>365MG 在首次运行时拒绝复制到该邮箱。只有在确定没有其他工具复制过时，才在迁移任务中允许。</td></tr></tbody></table></div></section>
+<section id="updates"><h2>14. 更新</h2><p><strong>新增功能</strong>列出每个版本的更改。发布新版本后，侧边栏会显示；<strong>更新到 x.y.z</strong> 会下载新版本、检查作者签名、关闭应用、安装并重新打开。请先暂停正在运行的迁移任务，之后再继续。</p></section>
+<section id="faq"><h2>15. 故障排除</h2><div class="tw"><table><thead><tr><th>症状</th><th>原因和解决方法</th></tr></thead><tbody><tr><td>“正在等待数据迁移应用的权限生效”</td><td>新应用需要几分钟才能被 Exchange 和 SharePoint 接受；运行会自行等待最多 30 分钟。</td></tr><tr><td>速度下降，出现大量“限流”消息</td><td>Exchange 或 SharePoint 按邮箱和按应用进行限制。增加线程对单个邮箱没有帮助；当有许多邮箱在等待时才有帮助。</td></tr><tr><td>目标数量低于源数量</td><td>查看报告备注：跳过的垃圾邮件、因决定而未复制的项目，或在目标中被删除的邮件。</td></tr><tr><td>某个邮箱在目标中已有邮件</td><td>365MG 在首次运行时拒绝复制到该邮箱。只有在确定没有其他工具复制过时，才在迁移任务中允许。</td></tr></tbody></table></div></section>
   </article>
 </div>
 </main>

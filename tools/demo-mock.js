@@ -156,6 +156,25 @@
     campaign_groups: function () { return report().groups },
     tenant_groups: function () { return [] },
     tenant_shared_drives: function () { return [] },
+    inspect_email: function (a) {
+      var u = cusers[0]
+      var acct = function (tenant, name, id, email, mailItems, mailBytes, driveFiles, driveBytes) {
+        return { tenant_id: tenant, tenant_name: name, provider: 'microsoft', user_id: id, email: email, display_name: u.source_name, enabled: true,
+          mail: { items: mailItems, bytes: mailBytes }, drive: { items: a.countFiles ? driveFiles : null, bytes: driveBytes }, quota_bytes: 1099511627776,
+          photos_bytes: null, report_date: null, notes: [],
+          sites: [{ name: 'Sales', url: 'https://x/sites/sales', bytes: 7.6e9 }, { name: 'Projects', url: 'https://x/sites/projects', bytes: 2.1e9 }] }
+      }
+      var src = acct('src', 'Contoso Ltd', u.source_id, u.source_upn, 42110, 3.9e9, 1310, 3.4e9)
+      var tgt = acct('tgt', 'Fabrikam Inc', u.target_id, u.target_upn, 41980, 3.88e9, 1308, 3.39e9)
+      var run = function (minAgo, kind, state, done, total, bytes, dry) {
+        return { campaign_id: 7, user_id: u.source_id, kind: kind, started_at: iso(minAgo), finished_at: iso(minAgo - 37), state: state, dry_run: !!dry,
+          items_done: done, items_total: total, bytes_done: bytes, bytes_total: bytes, errors: state === 'done_with_errors' ? 2 : 0, last_error: '' }
+      }
+      return { email: a.email, checked_at: new Date().toISOString(), accounts: [src],
+        campaigns: [{ campaign_id: 7, campaign_name: campaign.name, role: 'source', user: Object.assign({}, u, { mail_state: 'done', drive_state: 'done_with_errors' }),
+          source: src, target: tgt, copied: { mail_source: 42110, mail_copied: 41975, mail_bytes: 3.87e9, mail_rejected: 1, mail_uncertain: 0, drive_source_bytes: 3.4e9, drive_files: 1308, drive_bytes: 3.39e9 },
+          issues: [], runs: [run(95, 'mail', 'done', 812, 812, 6.1e7), run(96, 'drive', 'done_with_errors', 14, 16, 2.2e8), run(60 * 26, 'mail', 'done', 41163, 41163, 3.8e9), run(60 * 27, 'mail', 'done', 0, 41163, 0, true)] }] }
+    },
     campaign_shared_drives: function () { return [
       { source_id: 'd1', source_name: 'Sales / Documents', source_site: 'g1', target_id: 't1', target_name: 'Sales', target_site: 'tg1', state: 'ready', copy_state: 'done', error: '', files: 1840, bytes: 7.6e9, source_bytes: 7.6e9 },
       { source_id: 'd2', source_name: 'Projects / Documents', source_site: 'g2', target_id: null, target_name: '', target_site: '', state: 'pending', copy_state: '', error: '', files: 0, bytes: 0, source_bytes: null },

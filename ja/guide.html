@@ -30,7 +30,7 @@
 </header>
 <main>
 <div class="wrap docs">
-  <aside class="toc"><nav><p class="muted">このページの内容</p><ol><li><a href="#install">1. インストール</a></li><li><a href="#requirements">2. 開始する前に</a></li><li><a href="#tenants">3. クラウドを追加する</a></li><li><a href="#google">4. Google Workspace</a></li><li><a href="#campaign">5. キャンペーンを作成する</a></li><li><a href="#provision">6. 移行先ユーザーを準備する</a></li><li><a href="#waves">7. ウェーブとドライ ラン</a></li><li><a href="#run">8. 実行、一時停止、再開</a></li><li><a href="#decisions">9. 判断が必要</a></li><li><a href="#groups">10. メール グループ</a></li><li><a href="#reports">11. レポート</a></li><li><a href="#settings">12. 設定と言語</a></li><li><a href="#updates">13. 更新</a></li><li><a href="#faq">14. トラブルシューティング</a></li></ol></nav></aside>
+  <aside class="toc"><nav><p class="muted">このページの内容</p><ol><li><a href="#install">1. インストール</a></li><li><a href="#requirements">2. 開始する前に</a></li><li><a href="#tenants">3. クラウドを追加する</a></li><li><a href="#google">4. Google Workspace</a></li><li><a href="#campaign">5. キャンペーンを作成する</a></li><li><a href="#provision">6. 移行先ユーザーを準備する</a></li><li><a href="#waves">7. ウェーブとドライ ラン</a></li><li><a href="#run">8. 実行、一時停止、再開</a></li><li><a href="#decisions">9. 判断が必要</a></li><li><a href="#groups">10. メール グループ</a></li><li><a href="#reports">11. レポート</a></li><li><a href="#utilities">12. ユーティリティ: メール アドレスで確認</a></li><li><a href="#settings">13. 設定と言語</a></li><li><a href="#updates">14. 更新</a></li><li><a href="#faq">15. トラブルシューティング</a></li></ol></nav></aside>
   <article class="doc">
     <h1>ユーザー ガイド</h1><p class="lead">365MG のインストールから最後のレポートまで。各パートにスクリーンショットがあり、ガイド ツアーではアニメーション カーソルで主な作業を再現します。</p>
     <section id="install"><h2>1. インストール</h2><p>365MG は Windows 10 または 11 (64 ビット) で動作し、Windows に標準で含まれる Microsoft Edge WebView2 を使用します。インストーラーは作成者が提供します。下記のアドレスまでご連絡ください。</p>
@@ -122,7 +122,10 @@
   </div>
   <script type="application/json" class="tour-steps">["[レポート] を開き、キャンペーンを選択します。","合計、確認が必要なユーザー、グループ、メモ。","[HTML をエクスポート] は単一のページを書き出して開きます。"]</script>
 </figure></section>
-<section id="settings"><h2>12. 設定と言語</h2><ul><li><strong>言語</strong>: 9 つの言語があり、すぐに適用されます。アラビア語ではレイアウトが右から左に切り替わります。</li><li><strong>一時フォルダー (スプール)</strong>: C ドライブ以外に配置してください。</li><li><strong>スレッドを停滞と見なすまでの時間</strong>: スレッドを再起動するまでの、進行のない時間 (分) です (最大 2 回)。</li></ul>
+<section id="utilities"><h2>12. ユーティリティ: メール アドレスで確認</h2><p><strong>ユーティリティ → メール アドレスで確認</strong> は、1 つのアドレスについて「このメールボックスはどこにあり、どのくらいの大きさで、移行ですべてコピーされたか」に答えます。</p>
+<ol><li>アドレス (プライマリ アドレスまたはエイリアス) を入力し、<strong>確認</strong> をクリックします。ドライブのファイル数もカウントするには <strong>ファイル数をカウント</strong> をオンにします。ドライブ全体を列挙するため、数分かかることがあります。</li><li>アドレスが存在するクラウドごとにカードが表示されます。メール アイテム数とサイズ、OneDrive または Google Drive のサイズ (とクォータ)、ユーザーが所属する SharePoint グループ サイト (Microsoft)、または Google Photos のストレージ使用量 (Google) です。</li><li>アドレスを含むキャンペーンごとに、移行元と移行先をその場で測定し、ジャーナルでコピーされた量および差分と並べて表示します。続いて未解決の判断と <strong>実行履歴</strong> (各回の開始日時、コンテンツ、結果、アイテム、データ、所要時間) が表示されます。</li></ol>
+<aside class="note">Google は Gmail と Photos のストレージ使用量を約 2 日前の使用状況レポートでのみ提供しており、特権管理者が一度サインインし直すと読み取れるようになります (0.9.0 で追加されたアクセス許可)。実行履歴はバージョン 0.9.0 以降に記録されます。</aside></section>
+<section id="settings"><h2>13. 設定と言語</h2><ul><li><strong>言語</strong>: 9 つの言語があり、すぐに適用されます。アラビア語ではレイアウトが右から左に切り替わります。</li><li><strong>一時フォルダー (スプール)</strong>: C ドライブ以外に配置してください。</li><li><strong>スレッドを停滞と見なすまでの時間</strong>: スレッドを再起動するまでの、進行のない時間 (分) です (最大 2 回)。</li></ul>
 <figure class="tour" data-tour="language">
   <figcaption class="tour-head"><strong>言語を変更する</strong><span class="muted">右から左の言語を含む 9 つの言語</span></figcaption>
   <div class="tour-stage"><img class="tour-img" alt="言語を変更する"><div class="tour-box"></div><div class="tour-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M4 2l16 9.5-7 1.6 3.9 7.3-2.9 1.5-3.9-7.3L5 19z" fill="#111" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="tour-ripple"></div></div>
@@ -135,8 +138,8 @@
   </div>
   <script type="application/json" class="tour-steps">["[設定] を開きます。","言語を選択すると、すぐに適用されます。","アラビア語では、レイアウト全体が右から左になります。"]</script>
 </figure></section>
-<section id="updates"><h2>13. 更新</h2><p><strong>新機能</strong> には各バージョンの変更点が一覧表示されます。新しいバージョンが公開されるとサイドバーに表示され、<strong>x.y.z に更新</strong> をクリックするとダウンロード、作成者の署名の確認、アプリの終了、インストール、再起動が行われます。実行中のキャンペーンは先に一時停止し、更新後に再開してください。</p></section>
-<section id="faq"><h2>14. トラブルシューティング</h2><div class="tw"><table><thead><tr><th>症状</th><th>原因と対処</th></tr></thead><tbody><tr><td>「データ移行アプリのアクセス許可が有効になるのを待っています」</td><td>新しいアプリが Exchange と SharePoint で受け入れられるまでには数分かかります。実行は最大 30 分間自動的に待機します。</td></tr><tr><td>速度が低下し、「調整 (スロットリング)」のメッセージが多数表示される</td><td>Exchange と SharePoint はメールボックスごと、アプリごとに制限を設けています。スレッドを増やしても 1 つのメールボックスは速くなりませんが、多数のメールボックスが待機している場合には効果があります。</td></tr><tr><td>移行先の件数が移行元より少ない</td><td>レポートのメモを確認してください。スキップされた迷惑メール、判断により除外されたアイテム、移行先で削除されたメールなどが考えられます。</td></tr><tr><td>移行先のメールボックスに既にメールがある</td><td>365MG は初回の実行でそのメールボックスへのコピーを拒否します。他のツールでコピーされていない場合にのみ、キャンペーンで許可してください。</td></tr></tbody></table></div></section>
+<section id="updates"><h2>14. 更新</h2><p><strong>新機能</strong> には各バージョンの変更点が一覧表示されます。新しいバージョンが公開されるとサイドバーに表示され、<strong>x.y.z に更新</strong> をクリックするとダウンロード、作成者の署名の確認、アプリの終了、インストール、再起動が行われます。実行中のキャンペーンは先に一時停止し、更新後に再開してください。</p></section>
+<section id="faq"><h2>15. トラブルシューティング</h2><div class="tw"><table><thead><tr><th>症状</th><th>原因と対処</th></tr></thead><tbody><tr><td>「データ移行アプリのアクセス許可が有効になるのを待っています」</td><td>新しいアプリが Exchange と SharePoint で受け入れられるまでには数分かかります。実行は最大 30 分間自動的に待機します。</td></tr><tr><td>速度が低下し、「調整 (スロットリング)」のメッセージが多数表示される</td><td>Exchange と SharePoint はメールボックスごと、アプリごとに制限を設けています。スレッドを増やしても 1 つのメールボックスは速くなりませんが、多数のメールボックスが待機している場合には効果があります。</td></tr><tr><td>移行先の件数が移行元より少ない</td><td>レポートのメモを確認してください。スキップされた迷惑メール、判断により除外されたアイテム、移行先で削除されたメールなどが考えられます。</td></tr><tr><td>移行先のメールボックスに既にメールがある</td><td>365MG は初回の実行でそのメールボックスへのコピーを拒否します。他のツールでコピーされていない場合にのみ、キャンペーンで許可してください。</td></tr></tbody></table></div></section>
   </article>
 </div>
 </main>

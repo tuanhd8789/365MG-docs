@@ -528,8 +528,27 @@
         ]
       },
       {
+        "id": "utilities",
+        "title": "12. Utilities: check by email",
+        "blocks": [
+          {
+            "p": "**Utilities → Check by email** answers \"where is this mailbox, how big is it, and did the migration get all of it?\" for one address."
+          },
+          {
+            "steps": [
+              "Type the address (primary address or alias) and click **Check**. Tick **Count files** to also count drive files; it lists the whole drive and can take minutes.",
+              "Each cloud that has the address shows a card: mail items and size, OneDrive or Google Drive size (and quota), SharePoint group sites the user belongs to (Microsoft) or Google Photos storage (Google).",
+              "For every campaign with the address, source and target are measured now and set side by side with what the journal copied and the difference, followed by open decisions and the **history of runs** (each pass: when, content, result, items, data, duration)."
+            ]
+          },
+          {
+            "note": "Google keeps Gmail and Photos storage only in usage reports about two days old, readable after the super admin signs in again once (new permission in 0.9.0). Run history is recorded from version 0.9.0 on."
+          }
+        ]
+      },
+      {
         "id": "settings",
-        "title": "12. Settings and languages",
+        "title": "13. Settings and languages",
         "blocks": [
           {
             "list": [
@@ -545,7 +564,7 @@
       },
       {
         "id": "updates",
-        "title": "13. Updates",
+        "title": "14. Updates",
         "blocks": [
           {
             "p": "**What's new** lists the changes of every version. When a newer version is published the sidebar shows it; **Update to x.y.z** downloads it, checks the author's signature, closes the app, installs and reopens it. Pause running campaigns first; resume them afterwards."
@@ -554,7 +573,7 @@
       },
       {
         "id": "faq",
-        "title": "14. Troubleshooting",
+        "title": "15. Troubleshooting",
         "blocks": [
           {
             "table": [

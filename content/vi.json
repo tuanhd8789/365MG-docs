@@ -528,8 +528,27 @@
         ]
       },
       {
+        "id": "utilities",
+        "title": "12. Tiện ích: kiểm tra theo email",
+        "blocks": [
+          {
+            "p": "**Tiện ích → Kiểm tra theo email** trả lời cho một địa chỉ: \"mailbox này nằm ở đâu, lớn bao nhiêu, và đã được chuyển đủ chưa?\"."
+          },
+          {
+            "steps": [
+              "Nhập địa chỉ (địa chỉ chính hoặc alias) rồi bấm **Kiểm tra**. Tích **Đếm số file** nếu muốn đếm cả số file trên drive; việc này duyệt toàn bộ drive nên có thể mất vài phút.",
+              "Mỗi cloud có địa chỉ đó hiện một thẻ: số thư và dung lượng mail, dung lượng OneDrive hoặc Google Drive (kèm hạn mức), các site nhóm SharePoint user là thành viên (Microsoft) hoặc dung lượng Google Photos (Google).",
+              "Với mỗi chiến dịch có địa chỉ đó, nguồn và đích được đo ngay lúc này và đặt cạnh số liệu nhật ký đã chép cùng phần chênh lệch, tiếp theo là các việc cần quyết định và **lịch sử các lần chạy** (mỗi lượt: lúc nào, nội dung, kết quả, số mục, dữ liệu, thời gian)."
+            ]
+          },
+          {
+            "note": "Google chỉ giữ dung lượng Gmail và Photos trong báo cáo sử dụng trễ khoảng hai ngày, đọc được sau khi super admin đăng nhập lại một lần (quyền mới của bản 0.9.0). Lịch sử các lần chạy được ghi từ bản 0.9.0 trở đi."
+          }
+        ]
+      },
+      {
         "id": "settings",
-        "title": "12. Cài đặt và ngôn ngữ",
+        "title": "13. Cài đặt và ngôn ngữ",
         "blocks": [
           {
             "list": [
@@ -545,7 +564,7 @@
       },
       {
         "id": "updates",
-        "title": "13. Cập nhật",
+        "title": "14. Cập nhật",
         "blocks": [
           {
             "p": "**Có gì mới** liệt kê thay đổi của mọi phiên bản. Khi có bản mới, sidebar báo ngay; **Cập nhật lên x.y.z** tải bản mới, kiểm tra chữ ký của tác giả, đóng app, cài và mở lại. Hãy tạm dừng các chiến dịch đang chạy trước, cập nhật xong thì chạy tiếp."
@@ -554,7 +573,7 @@
       },
       {
         "id": "faq",
-        "title": "14. Xử lý sự cố",
+        "title": "15. Xử lý sự cố",
         "blocks": [
           {
             "table": [

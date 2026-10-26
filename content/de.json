@@ -528,8 +528,27 @@
         ]
       },
       {
+        "id": "utilities",
+        "title": "12. Werkzeuge: nach E-Mail prüfen",
+        "blocks": [
+          {
+            "p": "**Werkzeuge → Nach E-Mail prüfen** beantwortet für eine Adresse die Frage „Wo liegt dieses Postfach, wie groß ist es, und hat die Migration alles übernommen?“"
+          },
+          {
+            "steps": [
+              "Geben Sie die Adresse (primäre Adresse oder Alias) ein und klicken Sie auf **Prüfen**. Aktivieren Sie **Dateien zählen**, um auch die Drive-Dateien zu zählen; dabei wird das gesamte Drive aufgelistet, was einige Minuten dauern kann.",
+              "Jede Cloud, in der die Adresse vorkommt, zeigt eine Karte: Anzahl und Größe der E-Mail-Elemente, Größe von OneDrive oder Google Drive (und Kontingent), die SharePoint-Gruppenwebsites, zu denen der Benutzer gehört (Microsoft), oder den Google Photos-Speicher (Google).",
+              "Für jede Kampagne mit dieser Adresse werden Quelle und Ziel jetzt gemessen und neben dem, was laut Journal kopiert wurde, und der Differenz angezeigt; danach folgen offene Entscheidungen und der **Verlauf der Ausführungen** (jeder Durchlauf: Zeitpunkt, Inhalt, Ergebnis, Elemente, Daten, Dauer)."
+            ]
+          },
+          {
+            "note": "Google stellt den Gmail- und Photos-Speicher nur in etwa zwei Tage alten Nutzungsberichten bereit, die lesbar sind, nachdem sich der Super Admin einmal erneut angemeldet hat (neue Berechtigung in 0.9.0). Der Verlauf der Ausführungen wird ab Version 0.9.0 aufgezeichnet."
+          }
+        ]
+      },
+      {
         "id": "settings",
-        "title": "12. Einstellungen und Sprachen",
+        "title": "13. Einstellungen und Sprachen",
         "blocks": [
           {
             "list": [
@@ -545,7 +564,7 @@
       },
       {
         "id": "updates",
-        "title": "13. Updates",
+        "title": "14. Updates",
         "blocks": [
           {
             "p": "**Neuigkeiten** listet die Änderungen jeder Version auf. Wenn eine neuere Version veröffentlicht ist, zeigt die Seitenleiste sie an; **Auf x.y.z aktualisieren** lädt sie herunter, prüft die Signatur des Autors, schließt die App, installiert und öffnet sie wieder. Halten Sie laufende Kampagnen zuvor an und setzen Sie sie danach fort."
@@ -554,7 +573,7 @@
       },
       {
         "id": "faq",
-        "title": "14. Problembehandlung",
+        "title": "15. Problembehandlung",
         "blocks": [
           {
             "table": [
