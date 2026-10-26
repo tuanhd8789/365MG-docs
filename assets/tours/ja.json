@@ -15,9 +15,9 @@
   {
    "shot": "assets/shots/ja/tour-addTenant-2.webp",
    "box": [
-    0.8656,
+    0.8469,
     0.0861,
-    0.1094,
+    0.1281,
     0.035
    ],
    "action": "click",
@@ -29,8 +29,8 @@
    "box": [
     0.2125,
     0.1472,
-    0.375,
-    0.3737
+    0.2458,
+    0.22
    ],
    "action": "look",
    "w": 1280,
@@ -102,9 +102,9 @@
    "shot": "assets/shots/ja/tour-createCampaign-6.webp",
    "box": [
     0.2125,
-    0.1097,
+    0.0485,
     0.525,
-    0.8306
+    0.9525
    ],
    "action": "look",
    "w": 1280,

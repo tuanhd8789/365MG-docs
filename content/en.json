@@ -3,8 +3,8 @@
   "name": "English",
   "dir": "ltr",
   "meta": {
-    "title": "365MG · Move Microsoft 365 between tenants, safely",
-    "description": "365MG is a desktop app that moves mail, contacts, calendars, OneDrive and mail groups from one Microsoft 365 tenant to another, with journals that never copy twice and clear decisions where data could be lost."
+    "title": "365MG · Move Microsoft 365 and Google Workspace, safely",
+    "description": "365MG is a desktop app that moves mail, contacts, calendars, drives, shared drives and groups between Microsoft 365 tenants and Google Workspace, in any direction, with journals that never copy twice and clear decisions where data could be lost."
   },
   "nav": {
     "home": "Overview",
@@ -15,9 +15,9 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Microsoft 365 tenant-to-tenant migration",
+      "eyebrow": "Microsoft 365 ↔ Google Workspace migration",
       "title": "Move a whole company's Microsoft 365, **without losing a single message**",
-      "subtitle": "365MG copies mail, contacts, calendars, OneDrive and mail groups between tenants from your own Windows PC. It keeps a journal of every item, runs again without duplicates, and stops to ask you whenever a choice could lose or duplicate data.",
+      "subtitle": "365MG copies mail, contacts, calendars, OneDrive and Google Drive, shared drives and groups between Microsoft 365 and Google Workspace, in any direction, from your own Windows PC. It keeps a journal of every item, runs again without duplicates, and stops to ask you whenever a choice could lose or duplicate data.",
       "cta": "Read the guide",
       "ctaTours": "Watch the tours",
       "shotAlt": "A campaign in 365MG with its run controls and the decisions it needs"
@@ -27,8 +27,8 @@
       "items": [
         {
           "icon": "🏢",
-          "title": "Many tenants, many campaigns",
-          "text": "Sign in once as global admin per tenant. 365MG checks permissions and licenses, then runs any number of campaigns between them."
+          "title": "Microsoft 365 and Google Workspace",
+          "text": "Connect any number of Microsoft 365 tenants and Google Workspace accounts, then copy in any direction: Microsoft ↔ Google, Microsoft → Microsoft, Google → Google."
         },
         {
           "icon": "🧭",
@@ -76,8 +76,8 @@
       "title": "How a migration goes",
       "steps": [
         {
-          "title": "Add both tenants",
-          "text": "Sign in as global admin; 365MG checks permissions and lists licenses."
+          "title": "Connect both clouds",
+          "text": "Sign in as Microsoft global admin or Google super admin; 365MG checks permissions and sets up its data mover."
         },
         {
           "title": "Plan a campaign",
@@ -110,7 +110,7 @@
       "shotAlt": "The Needs your decision panel"
     },
     "cta": {
-      "title": "Planning a tenant-to-tenant move?",
+      "title": "Planning a move between clouds?",
       "text": "365MG is distributed by its author. Write for an installer, a demo or help with a migration.",
       "button": "Contact the author",
       "caseStudy": "Read the case study"
@@ -283,18 +283,18 @@
       },
       {
         "id": "tenants",
-        "title": "3. Add the tenants",
+        "title": "3. Add clouds",
         "blocks": [
           {
             "steps": [
-              "Open **Tenants** and click **Add tenant**.",
+              "Open **Cloud management**, click **Add cloud** and choose **Microsoft 365**.",
               "Sign in as global admin in the browser window that opens and accept the permissions.",
-              "Back in 365MG, the tenant shows its domains, the permission checks and its licenses. Use **Check permissions** after changing anything in the admin center."
+              "Back in 365MG, the cloud appears as a card with a **Microsoft 365** tag and a health badge. Click it for its domains, permission checks and licenses; use **Check permissions** after changing anything in the admin center."
             ]
           },
           {
             "shot": "tenants",
-            "caption": "Tenants with their permission checks and licenses"
+            "caption": "Connected clouds; click a card for its details"
           },
           {
             "tour": "addTenant"
@@ -302,15 +302,80 @@
         ]
       },
       {
+        "id": "google",
+        "title": "4. Google Workspace",
+        "blocks": [
+          {
+            "p": "Google Workspace works as a source and as a target, for mail, contacts, calendars, Google Drive, shared drives and groups. Connecting it takes three steps, once per Workspace."
+          },
+          {
+            "steps": [
+              "**OAuth client (once for the app):** in Google Cloud Console → APIs & Services → Credentials, create an OAuth client ID of type **Desktop app** and enter its Client ID and secret in 365MG **Settings → Google Workspace OAuth client**. Settings has the steps and a button to the right page.",
+              "**Sign in:** in **Cloud management**, click **Add cloud → Google Workspace** and sign in as a **super admin**.",
+              "**Data mover:** open the new card and click **Set up data mover**. 365MG creates a Google Cloud project, turns on the APIs it needs and creates a service account with a key kept encrypted on this PC.",
+              "**Domain-wide delegation:** copy the Client ID and the scope list shown, open Admin console → Security → Access and data control → API controls → **Domain-wide delegation**, click **Add new**, paste both and authorize. Back in 365MG, click **I've added it — check**."
+            ]
+          },
+          {
+            "warn": "New Google Cloud organizations may block service account keys by policy. 365MG then says so: allow keys for the project in Organization policies, or create a key for the service account in Cloud Console and use **Import key file (JSON)**."
+          },
+          {
+            "table": [
+              [
+                "Content",
+                "Microsoft → Google",
+                "Google → Microsoft"
+              ],
+              [
+                "Mail",
+                "Each folder becomes a label; read state and flags kept",
+                "Each message goes to one folder (its first label, or Inbox/Sent/Archive); other labels become categories"
+              ],
+              [
+                "Contacts",
+                "Contact folders become contact groups",
+                "Contact groups become contact folders"
+              ],
+              [
+                "Calendar",
+                "Events imported with attendees, no invitation sent",
+                "Events created **without attendees** (Microsoft would send invitations); the attendee list is kept in the event body"
+              ],
+              [
+                "Drive",
+                "OneDrive files to My Drive as they are",
+                "Docs, Sheets, Slides exported to Word, Excel, PowerPoint; Forms and Sites skipped"
+              ],
+              [
+                "Shared drives",
+                "SharePoint/Teams libraries → shared drives with members",
+                "Shared drives → private Microsoft 365 groups (team sites) with members"
+              ],
+              [
+                "Groups",
+                "Microsoft 365 groups and lists → Google Groups with matching settings",
+                "Google Groups → Microsoft 365 groups"
+              ]
+            ]
+          },
+          {
+            "note": "Google has no license per user to choose: licenses follow the organizational unit, so the wizard hides license controls when the target is Google. Users created in Google must change their password at first sign-in."
+          },
+          {
+            "p": "**Shared drives:** tick **Shared drives / SharePoint libraries** in the campaign options, then in the campaign's **Shared drives** tab pick the source drives and click **Create in target**: 365MG creates the target shared drive or Microsoft 365 group and adds the members it can match."
+          }
+        ]
+      },
+      {
         "id": "campaign",
-        "title": "4. Create a campaign",
+        "title": "5. Create a campaign",
         "blocks": [
           {
             "p": "A campaign moves a set of users from one source tenant to one target tenant. The wizard has six steps; its title, steps and filters stay in view, and Back / Next / Save campaign stay at the bottom."
           },
           {
             "steps": [
-              "**Source tenant** and **Target tenant**: one step each.",
+              "**Source cloud** and **Target cloud**: one step each.",
               "**Choose source users**: filter by license, domain or state, tick users on the list and add them to the selection.",
               "**Match target users**: 365MG suggests a target user by address, alias or display name. Tick rows, then use **Set target domain…**, **Create if missing in target** or **Assign license…** in bulk; the checkbox above the list (**N matching users**) ticks every row the filter shows.",
               "**Content & schedule**: mail, OneDrive, contacts, calendar; skip Junk Email; run once or every N hours; thread counts.",
@@ -328,7 +393,7 @@
       },
       {
         "id": "provision",
-        "title": "5. Prepare the target users",
+        "title": "6. Prepare the target users",
         "blocks": [
           {
             "p": "On the campaign page, **Create users & assign licenses** creates the target users marked \"Create\" and gives every user the chosen license. Rows that fail show why; fix it and run it again."
@@ -340,7 +405,7 @@
       },
       {
         "id": "waves",
-        "title": "6. Waves and dry runs",
+        "title": "7. Waves and dry runs",
         "blocks": [
           {
             "p": "In the **Users** tab, tick users and use **Move to wave** to split a large migration. The run bar can then start one wave at a time; scheduled runs keep syncing every wave already opened."
@@ -352,7 +417,7 @@
       },
       {
         "id": "run",
-        "title": "7. Run, pause, resume",
+        "title": "8. Run, pause, resume",
         "blocks": [
           {
             "p": "The run bar at the top of every campaign tab shows what the campaign is doing and what comes next."
@@ -396,7 +461,7 @@
       },
       {
         "id": "decisions",
-        "title": "8. Needs your decision",
+        "title": "9. Needs your decision",
         "blocks": [
           {
             "p": "When a run meets something it should not settle alone, the campaign shows a **Needs your decision** panel grouped by kind, with an explanation and the actions for each user."
@@ -443,7 +508,7 @@
       },
       {
         "id": "groups",
-        "title": "9. Mail groups",
+        "title": "10. Mail groups",
         "blocks": [
           {
             "p": "In the **Mail groups** tab, pick source groups and click **Create groups & add members**. Graph can only create Microsoft 365 groups, so distribution lists and mail-enabled security groups become Microsoft 365 groups with the same alias, delivering to members' inboxes and accepting outside senders. Members without a target user are listed per group."
@@ -452,7 +517,7 @@
       },
       {
         "id": "reports",
-        "title": "10. Reports",
+        "title": "11. Reports",
         "blocks": [
           {
             "p": "**Reports** shows, per campaign, source and copied counts per user and in total, users that need a look, groups and notes. **Export HTML** writes a single page (light and dark, search and filter) and opens it; CSV exports list users or groups."
@@ -464,7 +529,7 @@
       },
       {
         "id": "settings",
-        "title": "11. Settings and languages",
+        "title": "12. Settings and languages",
         "blocks": [
           {
             "list": [
@@ -480,7 +545,7 @@
       },
       {
         "id": "updates",
-        "title": "12. Updates",
+        "title": "13. Updates",
         "blocks": [
           {
             "p": "**What's new** lists the changes of every version. When a newer version is published the sidebar shows it; **Update to x.y.z** downloads it, checks the author's signature, closes the app, installs and reopens it. Pause running campaigns first; resume them afterwards."
@@ -489,7 +554,7 @@
       },
       {
         "id": "faq",
-        "title": "13. Troubleshooting",
+        "title": "14. Troubleshooting",
         "blocks": [
           {
             "table": [
@@ -532,12 +597,12 @@
     },
     "items": {
       "addTenant": {
-        "title": "Add a tenant",
-        "desc": "Sign in once as global admin",
+        "title": "Add a cloud",
+        "desc": "Sign in once as global admin or super admin",
         "steps": [
-          "Open Tenants in the sidebar.",
-          "Click Add tenant: a browser window opens for the global admin sign-in.",
-          "Back in 365MG, the tenant shows its permission checks and licenses."
+          "Open Cloud management in the sidebar.",
+          "Click Add cloud → Microsoft 365: a browser window opens for the global admin sign-in.",
+          "Back in 365MG, the cloud appears as a card; click it for its checks and licenses."
         ]
       },
       "createCampaign": {
@@ -545,7 +610,7 @@
         "desc": "From choosing users to saving",
         "steps": [
           "Open Campaigns and click New campaign.",
-          "Choose the source and the target tenant.",
+          "Choose the source and the target cloud.",
           "Filter and tick the source users to move, then click Next.",
           "Tick the box above the list to pick every row the filter shows.",
           "Assign a target domain to all ticked rows at once.",
@@ -595,7 +660,7 @@
     }
   },
   "footer": {
-    "tagline": "Microsoft 365 tenant-to-tenant migration by tuanhd",
+    "tagline": "Microsoft 365 and Google Workspace migration by tuanhd",
     "contact": "Installer, demo or help",
     "trademark": "Microsoft 365, Exchange Online, OneDrive and Microsoft Graph are trademarks of Microsoft Corporation. 365MG is independent software, not affiliated with Microsoft."
   }

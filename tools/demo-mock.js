@@ -13,7 +13,7 @@
   ]
   var tenants = [
     {
-      id: 'src', display_name: 'Contoso Ltd', default_domain: 'contoso.com', domains: ['contoso.com', 'contoso.onmicrosoft.com'],
+      id: 'src', provider: 'microsoft', display_name: 'Contoso Ltd', default_domain: 'contoso.com', domains: ['contoso.com', 'contoso.onmicrosoft.com'],
       admin_upn: 'admin@contoso.onmicrosoft.com', added_at: iso(60 * 24 * 3),
       check: { checked_at: iso(30), user_count: 214, skus: [{ sku_id: SKU_BASIC, part_number: 'O365_BUSINESS_ESSENTIALS', enabled: 220, consumed: 214 }],
         items: [
@@ -23,7 +23,7 @@
         ] },
     },
     {
-      id: 'tgt', display_name: 'Fabrikam Inc', default_domain: 'fabrikam.com', domains: ['fabrikam.com', 'contoso.com', 'fabrikam.onmicrosoft.com'],
+      id: 'tgt', provider: 'microsoft', display_name: 'Fabrikam Inc', default_domain: 'fabrikam.com', domains: ['fabrikam.com', 'contoso.com', 'fabrikam.onmicrosoft.com'],
       admin_upn: 'admin@fabrikam.onmicrosoft.com', added_at: iso(60 * 24 * 3),
       check: { checked_at: iso(25), user_count: 120, skus: [
         { sku_id: SKU_BASIC, part_number: 'O365_BUSINESS_ESSENTIALS', enabled: 250, consumed: 118 },
@@ -32,6 +32,17 @@
           { key: 'admin', label: 'Global administrator', ok: true, detail: 'admin@fabrikam.onmicrosoft.com' },
           { key: 'graph', label: 'Microsoft Graph', ok: true, detail: 'User.ReadWrite.All, Directory' },
           { key: 'exchange', label: 'Exchange Online', ok: true, detail: '120 mailboxes' },
+        ] },
+    },
+    {
+      id: 'google:C03xk9', provider: 'google', display_name: 'Northwind Traders', default_domain: 'northwind.com',
+      domains: ['northwind.com', 'northwind.vn'], admin_upn: 'admin@northwind.com', added_at: iso(60 * 24),
+      check: { checked_at: iso(15), user_count: 86, skus: [],
+        items: [
+          { key: 'super_admin', label: 'Super admin', ok: true, detail: 'admin@northwind.com' },
+          { key: 'users', label: 'Users', ok: true, detail: '86 users' },
+          { key: 'mover', label: 'Data mover (service account)', ok: true, detail: 'mg365-mover@mg365-q7k2pd.iam.gserviceaccount.com' },
+          { key: 'delegation', label: 'Domain-wide delegation', ok: true, detail: 'Allowed for every scope' },
         ] },
     },
   ]
@@ -47,9 +58,10 @@
   var tgtUsers = dir('tgt', 'fabrikam.com').slice(0, 10)
 
   var options = { mail: true, onedrive: true, contacts: true, calendar: true, schedule: 'interval', interval_hours: 6,
-    mail_threads: 12, drive_threads: 10, allow_nonempty_target: false, skip_junk: true }
+    mail_threads: 12, drive_threads: 10, allow_nonempty_target: false, skip_junk: true, shared_drives: true }
   var campaign = { id: 7, name: 'Contoso → Fabrikam', source_tenant: 'src', target_tenant: 'tgt', created_at: iso(60 * 26),
-    status: 'synced', options: options, user_count: 16, last_run_at: iso(95), active_wave: 1, waves: [1, 2], paused: false }
+    status: 'synced', options: options, user_count: 16, last_run_at: iso(95), active_wave: 1, waves: [1, 2], paused: false,
+    source_provider: 'microsoft', target_provider: 'microsoft' }
   var cusers = people.slice(0, 16).map(function (p, i) {
     return { source_id: 'src-' + i, source_upn: p[1] + '@contoso.com', source_name: p[0], action: i < 10 ? 'map' : 'create',
       target_id: 'tgt-' + i, target_upn: p[1] + '@fabrikam.com', license_sku: SKU_BASIC, state: 'ready', error: '',
@@ -131,7 +143,7 @@
     tenant_check: function (a) { return tenants.find(function (t) { return t.id === a.id }) },
     tenant_users: function (a) { return a.id === 'src' ? srcUsers : tgtUsers },
     match_users: function (a) { return matchRows(a.sourceIds) },
-    campaign_list: function () { return [campaign, Object.assign({}, campaign, { id: 6, name: 'Pilot: IT team', status: 'synced', user_count: 4, waves: [1] })] },
+    campaign_list: function () { return [campaign, Object.assign({}, campaign, { id: 6, name: 'Northwind → Fabrikam', source_tenant: 'google:C03xk9', source_provider: 'google', status: 'synced', user_count: 42, waves: [1] })] },
     campaign_get: function () { return { campaign: campaign, users: cusers } },
     campaign_create: function () { return 7 },
     run_view: function () { return running ? runView() : null },
@@ -143,6 +155,11 @@
     issues_drive_script: function () { return 'Connect-SPOService -Url https://fabrikam-admin.sharepoint.com\nRequest-SPOPersonalSite -UserEmails dana.pham@fabrikam.com,noel.truong@fabrikam.com' },
     campaign_groups: function () { return report().groups },
     tenant_groups: function () { return [] },
+    tenant_shared_drives: function () { return [] },
+    campaign_shared_drives: function () { return [
+      { source_id: 'd1', source_name: 'Sales / Documents', source_site: 'g1', target_id: 't1', target_name: 'Sales', target_site: 'tg1', state: 'ready', copy_state: 'done', error: '', files: 1840, bytes: 7.6e9, source_bytes: 7.6e9 },
+      { source_id: 'd2', source_name: 'Projects / Documents', source_site: 'g2', target_id: null, target_name: '', target_site: '', state: 'pending', copy_state: '', error: '', files: 0, bytes: 0, source_bytes: null },
+    ] },
     report_get: function () { return report() },
     report_export: function () { return null },
     settings_get: function () { return { spool_dir: 'D:\\365mg-spool', stuck_minutes: 30 } },

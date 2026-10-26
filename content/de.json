@@ -3,8 +3,8 @@
   "name": "Deutsch",
   "dir": "ltr",
   "meta": {
-    "title": "365MG · Microsoft 365 sicher zwischen Mandanten verschieben",
-    "description": "365MG ist eine Desktop-App, die E-Mails, Kontakte, Kalender, OneDrive und E-Mail-Gruppen von einem Microsoft 365-Mandanten in einen anderen verschiebt – mit Journalen, die nie doppelt kopieren, und klaren Entscheidungen dort, wo Daten verloren gehen könnten."
+    "title": "365MG · Microsoft 365 und Google Workspace sicher verschieben",
+    "description": "365MG ist eine Desktop-App, die E-Mails, Kontakte, Kalender, Ablagen, geteilte Ablagen und Gruppen zwischen Microsoft 365-Mandanten und Google Workspace verschiebt – in beliebiger Richtung, mit Journalen, die nie doppelt kopieren, und klaren Entscheidungen dort, wo Daten verloren gehen könnten."
   },
   "nav": {
     "home": "Übersicht",
@@ -15,9 +15,9 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Microsoft 365-Migration von Mandant zu Mandant",
+      "eyebrow": "Migration Microsoft 365 ↔ Google Workspace",
       "title": "Das gesamte Microsoft 365 eines Unternehmens verschieben, **ohne eine einzige Nachricht zu verlieren**",
-      "subtitle": "365MG kopiert E-Mails, Kontakte, Kalender, OneDrive und E-Mail-Gruppen zwischen Mandanten von Ihrem eigenen Windows-PC aus. Es führt ein Journal über jedes Element, läuft ohne Duplikate erneut und hält an, um Sie zu fragen, sobald eine Entscheidung Daten verlieren oder verdoppeln könnte.",
+      "subtitle": "365MG kopiert E-Mails, Kontakte, Kalender, OneDrive und Google Drive, geteilte Ablagen und Gruppen zwischen Microsoft 365 und Google Workspace, in beliebiger Richtung, von Ihrem eigenen Windows-PC aus. Es führt ein Journal über jedes Element, läuft ohne Duplikate erneut und hält an, um Sie zu fragen, sobald eine Entscheidung Daten verlieren oder verdoppeln könnte.",
       "cta": "Handbuch lesen",
       "ctaTours": "Touren ansehen",
       "shotAlt": "Eine Kampagne in 365MG mit ihren Ausführungssteuerelementen und den erforderlichen Entscheidungen"
@@ -27,8 +27,8 @@
       "items": [
         {
           "icon": "🏢",
-          "title": "Viele Mandanten, viele Kampagnen",
-          "text": "Melden Sie sich pro Mandant einmal als globaler Administrator an. 365MG prüft Berechtigungen und Lizenzen und führt dann beliebig viele Kampagnen zwischen ihnen aus."
+          "title": "Microsoft 365 und Google Workspace",
+          "text": "Verbinden Sie beliebig viele Microsoft 365-Mandanten und Google Workspace-Konten und kopieren Sie dann in jede Richtung: Microsoft ↔ Google, Microsoft → Microsoft, Google → Google."
         },
         {
           "icon": "🧭",
@@ -76,8 +76,8 @@
       "title": "So läuft eine Migration ab",
       "steps": [
         {
-          "title": "Beide Mandanten hinzufügen",
-          "text": "Als globaler Administrator anmelden; 365MG prüft Berechtigungen und listet Lizenzen auf."
+          "title": "Beide Clouds verbinden",
+          "text": "Als globaler Microsoft-Administrator oder Google Super Admin anmelden; 365MG prüft Berechtigungen und richtet seine Datenübertragung ein."
         },
         {
           "title": "Kampagne planen",
@@ -110,7 +110,7 @@
       "shotAlt": "Der Bereich „Ihre Entscheidung erforderlich“"
     },
     "cta": {
-      "title": "Planen Sie einen Umzug von Mandant zu Mandant?",
+      "title": "Planen Sie einen Umzug zwischen Clouds?",
       "text": "365MG wird vom Autor vertrieben. Schreiben Sie für ein Installationsprogramm, eine Demo oder Hilfe bei einer Migration.",
       "button": "Autor kontaktieren",
       "caseStudy": "Fallstudie lesen"
@@ -283,18 +283,18 @@
       },
       {
         "id": "tenants",
-        "title": "3. Mandanten hinzufügen",
+        "title": "3. Clouds hinzufügen",
         "blocks": [
           {
             "steps": [
-              "Öffnen Sie **Mandanten** und klicken Sie auf **Mandant hinzufügen**.",
+              "Öffnen Sie **Cloud-Verwaltung**, klicken Sie auf **Cloud hinzufügen** und wählen Sie **Microsoft 365**.",
               "Melden Sie sich im sich öffnenden Browserfenster als globaler Administrator an und akzeptieren Sie die Berechtigungen.",
-              "Zurück in 365MG zeigt der Mandant seine Domänen, die Berechtigungsprüfungen und seine Lizenzen. Verwenden Sie **Berechtigungen prüfen**, nachdem Sie etwas im Admin Center geändert haben."
+              "Zurück in 365MG erscheint die Cloud als Karte mit dem Tag **Microsoft 365** und einem Statusabzeichen. Klicken Sie darauf, um ihre Domains, Berechtigungsprüfungen und Lizenzen zu sehen; verwenden Sie **Berechtigungen prüfen**, nachdem Sie etwas im Admin Center geändert haben."
             ]
           },
           {
             "shot": "tenants",
-            "caption": "Mandanten mit ihren Berechtigungsprüfungen und Lizenzen"
+            "caption": "Verbundene Clouds; klicken Sie auf eine Karte für die Details"
           },
           {
             "tour": "addTenant"
@@ -302,8 +302,73 @@
         ]
       },
       {
+        "id": "google",
+        "title": "4. Google Workspace",
+        "blocks": [
+          {
+            "p": "Google Workspace funktioniert als Quelle und als Ziel, für E-Mails, Kontakte, Kalender, Google Drive, geteilte Ablagen und Gruppen. Die Verbindung erfolgt in drei Schritten, einmal pro Workspace."
+          },
+          {
+            "steps": [
+              "**OAuth-Client (einmal für die App):** Erstellen Sie in der Google Cloud Console → APIs und Dienste → Anmeldedaten eine OAuth-Client-ID vom Typ **Desktop-App** und tragen Sie deren Client-ID und Clientschlüssel in 365MG unter **Einstellungen → Google Workspace-OAuth-Client** ein. Die Einstellungen enthalten die Schritte und eine Schaltfläche zur richtigen Seite.",
+              "**Anmelden:** Klicken Sie in der **Cloud-Verwaltung** auf **Cloud hinzufügen → Google Workspace** und melden Sie sich als **Super Admin** an.",
+              "**Datenübertragung:** Öffnen Sie die neue Karte und klicken Sie auf **Datenübertragung einrichten**. 365MG erstellt ein Google Cloud-Projekt, aktiviert die benötigten APIs und erstellt ein Dienstkonto mit einem Schlüssel, der verschlüsselt auf diesem PC gespeichert wird.",
+              "**Domainweite Delegierung:** Kopieren Sie die angezeigte Client-ID und die Liste der Bereiche, öffnen Sie Admin-Konsole → Sicherheit → Zugriffs- und Datenkontrolle → API-Steuerung → **Domainweite Delegierung**, klicken Sie auf **Neu hinzufügen**, fügen Sie beides ein und autorisieren Sie. Klicken Sie zurück in 365MG auf **Hinzugefügt – prüfen**."
+            ]
+          },
+          {
+            "warn": "Neue Google Cloud-Organisationen können Dienstkontoschlüssel per Richtlinie sperren. 365MG weist dann darauf hin: Erlauben Sie Schlüssel für das Projekt in den Organisationsrichtlinien, oder erstellen Sie in der Cloud Console einen Schlüssel für das Dienstkonto und verwenden Sie **Schlüsseldatei importieren (JSON)**."
+          },
+          {
+            "table": [
+              [
+                "Inhalt",
+                "Microsoft → Google",
+                "Google → Microsoft"
+              ],
+              [
+                "E-Mail",
+                "Jeder Ordner wird zu einem Label; Lesestatus und Markierungen bleiben erhalten",
+                "Jede Nachricht kommt in einen Ordner (ihr erstes Label oder Posteingang/Gesendet/Archiv); weitere Labels werden zu Kategorien"
+              ],
+              [
+                "Kontakte",
+                "Kontaktordner werden zu Kontaktgruppen",
+                "Kontaktgruppen werden zu Kontaktordnern"
+              ],
+              [
+                "Kalender",
+                "Termine werden mit Teilnehmern importiert, ohne Einladungen zu senden",
+                "Termine werden **ohne Teilnehmer** erstellt (Microsoft würde Einladungen senden); die Teilnehmerliste bleibt im Termintext erhalten"
+              ],
+              [
+                "Drive",
+                "OneDrive-Dateien unverändert nach „Meine Ablage“",
+                "Docs, Sheets, Slides werden nach Word, Excel, PowerPoint exportiert; Forms und Sites werden übersprungen"
+              ],
+              [
+                "Geteilte Ablagen",
+                "SharePoint-/Teams-Bibliotheken → geteilte Ablagen mit Mitgliedern",
+                "Geteilte Ablagen → private Microsoft 365-Gruppen (Teamwebsites) mit Mitgliedern"
+              ],
+              [
+                "Gruppen",
+                "Microsoft 365-Gruppen und Verteilerlisten → Google Groups mit entsprechenden Einstellungen",
+                "Google Groups → Microsoft 365-Gruppen"
+              ]
+            ]
+          },
+          {
+            "note": "Google hat keine Lizenz pro Benutzer zur Auswahl: Lizenzen richten sich nach der Organisationseinheit, daher blendet der Assistent die Lizenzeinstellungen aus, wenn das Ziel Google ist. In Google erstellte Benutzer müssen ihr Passwort bei der ersten Anmeldung ändern."
+          },
+          {
+            "p": "**Geteilte Ablagen:** Aktivieren Sie **Geteilte Ablagen / SharePoint-Bibliotheken** in den Kampagnenoptionen, wählen Sie dann im Tab **Geteilte Ablagen** der Kampagne die Quellablagen aus und klicken Sie auf **Im Ziel erstellen**: 365MG erstellt die geteilte Zielablage bzw. die Microsoft 365-Gruppe und fügt die Mitglieder hinzu, die es zuordnen kann."
+          }
+        ]
+      },
+      {
         "id": "campaign",
-        "title": "4. Kampagne erstellen",
+        "title": "5. Kampagne erstellen",
         "blocks": [
           {
             "p": "Eine Kampagne verschiebt eine Gruppe von Benutzern von einem Quellmandanten in einen Zielmandanten. Der Assistent hat sechs Schritte; Titel, Schritte und Filter bleiben oben sichtbar, Zurück / Weiter / Kampagne speichern bleiben unten."
@@ -328,7 +393,7 @@
       },
       {
         "id": "provision",
-        "title": "5. Zielbenutzer vorbereiten",
+        "title": "6. Zielbenutzer vorbereiten",
         "blocks": [
           {
             "p": "Auf der Kampagnenseite erstellt **Benutzer erstellen & Lizenzen zuweisen** die mit „Erstellen“ markierten Zielbenutzer und weist jedem Benutzer die gewählte Lizenz zu. Fehlgeschlagene Zeilen zeigen den Grund; beheben Sie ihn und führen Sie den Vorgang erneut aus."
@@ -340,7 +405,7 @@
       },
       {
         "id": "waves",
-        "title": "6. Wellen und Testläufe",
+        "title": "7. Wellen und Testläufe",
         "blocks": [
           {
             "p": "Markieren Sie auf der Registerkarte **Benutzer** Benutzer und verwenden Sie **In Welle verschieben**, um eine große Migration aufzuteilen. Die Ausführungsleiste kann dann jeweils eine Welle starten; geplante Ausführungen synchronisieren jede bereits geöffnete Welle weiter."
@@ -352,7 +417,7 @@
       },
       {
         "id": "run",
-        "title": "7. Ausführen, anhalten, fortsetzen",
+        "title": "8. Ausführen, anhalten, fortsetzen",
         "blocks": [
           {
             "p": "Die Ausführungsleiste oben auf jeder Registerkarte der Kampagne zeigt, was die Kampagne gerade tut und was als Nächstes folgt."
@@ -396,7 +461,7 @@
       },
       {
         "id": "decisions",
-        "title": "8. Ihre Entscheidung erforderlich",
+        "title": "9. Ihre Entscheidung erforderlich",
         "blocks": [
           {
             "p": "Trifft eine Ausführung auf etwas, das sie nicht allein klären sollte, zeigt die Kampagne einen Bereich **Ihre Entscheidung erforderlich**, nach Art gruppiert, mit einer Erklärung und den Aktionen für jeden Benutzer."
@@ -443,7 +508,7 @@
       },
       {
         "id": "groups",
-        "title": "9. E-Mail-Gruppen",
+        "title": "10. E-Mail-Gruppen",
         "blocks": [
           {
             "p": "Wählen Sie auf der Registerkarte **E-Mail-Gruppen** Quellgruppen aus und klicken Sie auf **Gruppen erstellen & Mitglieder hinzufügen**. Graph kann nur Microsoft 365-Gruppen erstellen, daher werden Verteilerlisten und E-Mail-aktivierte Sicherheitsgruppen zu Microsoft 365-Gruppen mit demselben Alias, die an die Posteingänge der Mitglieder zustellen und externe Absender akzeptieren. Mitglieder ohne Zielbenutzer werden pro Gruppe aufgeführt."
@@ -452,7 +517,7 @@
       },
       {
         "id": "reports",
-        "title": "10. Berichte",
+        "title": "11. Berichte",
         "blocks": [
           {
             "p": "**Berichte** zeigt pro Kampagne die Quell- und Kopierzahlen pro Benutzer und insgesamt, zu prüfende Benutzer, Gruppen und Hinweise. **HTML exportieren** schreibt eine einzelne Seite (hell und dunkel, mit Suche und Filter) und öffnet sie; CSV-Exporte listen Benutzer oder Gruppen auf."
@@ -464,7 +529,7 @@
       },
       {
         "id": "settings",
-        "title": "11. Einstellungen und Sprachen",
+        "title": "12. Einstellungen und Sprachen",
         "blocks": [
           {
             "list": [
@@ -480,7 +545,7 @@
       },
       {
         "id": "updates",
-        "title": "12. Updates",
+        "title": "13. Updates",
         "blocks": [
           {
             "p": "**Neuigkeiten** listet die Änderungen jeder Version auf. Wenn eine neuere Version veröffentlicht ist, zeigt die Seitenleiste sie an; **Auf x.y.z aktualisieren** lädt sie herunter, prüft die Signatur des Autors, schließt die App, installiert und öffnet sie wieder. Halten Sie laufende Kampagnen zuvor an und setzen Sie sie danach fort."
@@ -489,7 +554,7 @@
       },
       {
         "id": "faq",
-        "title": "13. Problembehandlung",
+        "title": "14. Problembehandlung",
         "blocks": [
           {
             "table": [
@@ -532,12 +597,12 @@
     },
     "items": {
       "addTenant": {
-        "title": "Mandant hinzufügen",
+        "title": "Cloud hinzufügen",
         "desc": "Einmal als globaler Administrator anmelden",
         "steps": [
-          "Öffnen Sie „Mandanten“ in der Seitenleiste.",
-          "Klicken Sie auf „Mandant hinzufügen“: Ein Browserfenster für die Anmeldung als globaler Administrator öffnet sich.",
-          "Zurück in 365MG zeigt der Mandant seine Berechtigungsprüfungen und Lizenzen."
+          "Öffnen Sie „Cloud-Verwaltung“ in der Seitenleiste.",
+          "Klicken Sie auf „Cloud hinzufügen“ → „Microsoft 365“: Ein Browserfenster für die Anmeldung als globaler Administrator öffnet sich.",
+          "Zurück in 365MG erscheint die Cloud als Karte; klicken Sie darauf, um ihre Prüfungen und Lizenzen zu sehen."
         ]
       },
       "createCampaign": {
@@ -595,7 +660,7 @@
     }
   },
   "footer": {
-    "tagline": "Microsoft 365-Migration von Mandant zu Mandant von tuanhd",
+    "tagline": "Migration von Microsoft 365 und Google Workspace von tuanhd",
     "contact": "Installationsprogramm, Demo oder Hilfe",
     "trademark": "Microsoft 365, Exchange Online, OneDrive und Microsoft Graph sind Marken der Microsoft Corporation. 365MG ist unabhängige Software und steht in keiner Verbindung zu Microsoft."
   }

@@ -3,8 +3,8 @@
   "name": "Tiếng Việt",
   "dir": "ltr",
   "meta": {
-    "title": "365MG · Chuyển Microsoft 365 giữa các tenant, an toàn",
-    "description": "365MG là ứng dụng desktop chuyển mail, danh bạ, lịch, OneDrive và nhóm mail từ tenant Microsoft 365 này sang tenant khác, có nhật ký từng mục để không bao giờ chép trùng và hỏi bạn khi có nguy cơ mất dữ liệu."
+    "title": "365MG · Chuyển Microsoft 365 và Google Workspace, an toàn",
+    "description": "365MG là ứng dụng desktop chuyển mail, danh bạ, lịch, drive, shared drive và nhóm giữa Microsoft 365 và Google Workspace theo mọi chiều, có nhật ký từng mục để không bao giờ chép trùng và hỏi bạn khi có nguy cơ mất dữ liệu."
   },
   "nav": {
     "home": "Tổng quan",
@@ -15,9 +15,9 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Di chuyển Microsoft 365 giữa các tenant",
+      "eyebrow": "Di chuyển Microsoft 365 ↔ Google Workspace",
       "title": "Chuyển cả công ty sang Microsoft 365 mới, **không sót một lá thư**",
-      "subtitle": "365MG chép mail, danh bạ, lịch, OneDrive và nhóm mail giữa hai tenant ngay trên máy Windows của bạn. Mỗi mục đều được ghi nhật ký nên chạy lại không bao giờ trùng, và app dừng lại hỏi bạn mỗi khi một lựa chọn có thể làm mất hoặc trùng dữ liệu.",
+      "subtitle": "365MG chép mail, danh bạ, lịch, OneDrive và Google Drive, shared drive và nhóm giữa Microsoft 365 và Google Workspace theo mọi chiều, ngay trên máy Windows của bạn. Mỗi mục đều được ghi nhật ký nên chạy lại không bao giờ trùng, và app dừng lại hỏi bạn mỗi khi một lựa chọn có thể làm mất hoặc trùng dữ liệu.",
       "cta": "Đọc hướng dẫn",
       "ctaTours": "Xem minh hoạ",
       "shotAlt": "Một chiến dịch trong 365MG với thanh điều khiển chạy và các việc cần quyết định"
@@ -27,8 +27,8 @@
       "items": [
         {
           "icon": "🏢",
-          "title": "Nhiều tenant, nhiều chiến dịch",
-          "text": "Đăng nhập global admin một lần cho mỗi tenant. 365MG kiểm tra quyền và license, rồi chạy bao nhiêu chiến dịch giữa các tenant cũng được."
+          "title": "Microsoft 365 và Google Workspace",
+          "text": "Kết nối bao nhiêu tenant Microsoft 365 và Google Workspace cũng được, rồi chép theo mọi chiều: Microsoft ↔ Google, Microsoft → Microsoft, Google → Google."
         },
         {
           "icon": "🧭",
@@ -76,8 +76,8 @@
       "title": "Một lần chuyển diễn ra thế nào",
       "steps": [
         {
-          "title": "Thêm hai tenant",
-          "text": "Đăng nhập global admin; 365MG kiểm tra quyền và liệt kê license."
+          "title": "Kết nối hai cloud",
+          "text": "Đăng nhập global admin Microsoft hoặc super admin Google; 365MG kiểm tra quyền và thiết lập app chép dữ liệu."
         },
         {
           "title": "Lập chiến dịch",
@@ -110,7 +110,7 @@
       "shotAlt": "Mục Cần bạn quyết định"
     },
     "cta": {
-      "title": "Sắp chuyển tenant?",
+      "title": "Sắp chuyển giữa các cloud?",
       "text": "365MG do tác giả trực tiếp phân phối. Hãy liên hệ để nhận bộ cài, xem demo hoặc được hỗ trợ khi chuyển.",
       "button": "Liên hệ tác giả",
       "caseStudy": "Đọc câu chuyện thực tế"
@@ -283,18 +283,18 @@
       },
       {
         "id": "tenants",
-        "title": "3. Thêm tenant",
+        "title": "3. Thêm cloud",
         "blocks": [
           {
             "steps": [
-              "Mở **Tenant** và bấm **Thêm tenant**.",
+              "Mở **Quản lý Cloud**, bấm **Thêm cloud** rồi chọn **Microsoft 365**.",
               "Đăng nhập global admin trong cửa sổ trình duyệt vừa mở và đồng ý cấp quyền.",
-              "Quay lại 365MG, tenant hiện domain, kết quả kiểm tra quyền và license. Bấm **Kiểm tra quyền** sau khi thay đổi gì trong admin center."
+              "Quay lại 365MG, cloud hiện thành một thẻ có tag **Microsoft 365** và huy hiệu tình trạng. Bấm vào thẻ để xem domain, kết quả kiểm tra quyền và license; bấm **Kiểm tra quyền** sau khi thay đổi gì trong admin center."
             ]
           },
           {
             "shot": "tenants",
-            "caption": "Tenant kèm kết quả kiểm tra quyền và license"
+            "caption": "Các cloud đã kết nối; bấm vào thẻ để xem chi tiết"
           },
           {
             "tour": "addTenant"
@@ -302,15 +302,80 @@
         ]
       },
       {
+        "id": "google",
+        "title": "4. Google Workspace",
+        "blocks": [
+          {
+            "p": "Google Workspace dùng được làm nguồn lẫn đích, cho mail, danh bạ, lịch, Google Drive, shared drive và nhóm. Kết nối gồm ba bước, làm một lần cho mỗi Workspace."
+          },
+          {
+            "steps": [
+              "**OAuth client (một lần cho app):** trong Google Cloud Console → APIs & Services → Credentials, tạo OAuth client ID loại **Desktop app**, rồi nhập Client ID và secret vào **Cài đặt → OAuth client của Google Workspace** trong 365MG. Trang Cài đặt có sẵn các bước và nút mở đúng trang.",
+              "**Đăng nhập:** ở **Quản lý Cloud**, bấm **Thêm cloud → Google Workspace** và đăng nhập bằng **super admin**.",
+              "**App chép dữ liệu:** mở thẻ vừa thêm và bấm **Thiết lập app chép dữ liệu**. 365MG tạo một project trên Google Cloud, bật các API cần dùng và tạo service account với khoá được mã hoá lưu trên máy này.",
+              "**Ủy quyền toàn miền:** chép Client ID và danh sách scope app hiện ra, mở Admin console → Bảo mật → Truy cập và kiểm soát dữ liệu → Kiểm soát API → **Ủy quyền trên toàn miền**, bấm **Thêm mới**, dán cả hai rồi cho phép. Quay lại 365MG, bấm **Đã thêm — kiểm tra**."
+            ]
+          },
+          {
+            "warn": "Tổ chức Google Cloud mới có thể chặn khoá service account bằng chính sách. Khi đó 365MG báo rõ: cho phép tạo khoá cho project trong Organization policies, hoặc tự tạo khoá cho service account trong Cloud Console rồi dùng **Nhập file khoá (JSON)**."
+          },
+          {
+            "table": [
+              [
+                "Nội dung",
+                "Microsoft → Google",
+                "Google → Microsoft"
+              ],
+              [
+                "Mail",
+                "Mỗi thư mục thành một nhãn; giữ trạng thái đã đọc và gắn cờ",
+                "Mỗi thư vào một thư mục (nhãn đầu tiên, hoặc Inbox/Sent/Archive); các nhãn khác thành category"
+              ],
+              [
+                "Danh bạ",
+                "Thư mục danh bạ thành nhóm liên hệ",
+                "Nhóm liên hệ thành thư mục danh bạ"
+              ],
+              [
+                "Lịch",
+                "Sự kiện được nhập kèm người tham dự, không gửi lời mời",
+                "Sự kiện được tạo **không kèm người tham dự** (Microsoft sẽ gửi lời mời); danh sách người tham dự được ghi trong nội dung sự kiện"
+              ],
+              [
+                "Drive",
+                "File OneDrive vào My Drive nguyên dạng",
+                "Docs, Sheets, Slides được xuất sang Word, Excel, PowerPoint; Forms và Sites bị bỏ qua"
+              ],
+              [
+                "Shared drive",
+                "Thư viện SharePoint/Teams → shared drive kèm thành viên",
+                "Shared drive → nhóm Microsoft 365 riêng tư (team site) kèm thành viên"
+              ],
+              [
+                "Nhóm",
+                "Nhóm Microsoft 365 và danh sách → Google Groups với cài đặt tương ứng",
+                "Google Groups → nhóm Microsoft 365"
+              ]
+            ]
+          },
+          {
+            "note": "Google không gán license cho từng user mà theo đơn vị tổ chức (OU), nên wizard ẩn phần license khi đích là Google. User tạo mới bên Google phải đổi mật khẩu ở lần đăng nhập đầu."
+          },
+          {
+            "p": "**Shared drive:** tích **Shared drive / thư viện SharePoint** trong tuỳ chọn chiến dịch, rồi ở tab **Shared drive** của chiến dịch chọn các drive nguồn và bấm **Tạo ở đích**: 365MG tạo shared drive hoặc nhóm Microsoft 365 ở đích và thêm các thành viên khớp được."
+          }
+        ]
+      },
+      {
         "id": "campaign",
-        "title": "4. Tạo chiến dịch",
+        "title": "5. Tạo chiến dịch",
         "blocks": [
           {
             "p": "Một chiến dịch chuyển một nhóm user từ một tenant nguồn sang một tenant đích. Wizard có sáu bước; tiêu đề, các bước và bộ lọc luôn hiện ở trên, các nút Quay lại / Tiếp / Lưu chiến dịch luôn ở dưới."
           },
           {
             "steps": [
-              "**Tenant nguồn** và **Tenant đích**: mỗi bước chọn một tenant.",
+              "**Cloud nguồn** và **Cloud đích**: mỗi bước chọn một cloud.",
               "**Chọn user nguồn**: lọc theo license, domain hoặc trạng thái, tích user trong danh sách rồi thêm vào phần đã chọn.",
               "**Khớp user đích**: 365MG gợi ý user đích theo địa chỉ, alias hoặc tên hiển thị. Tích các dòng rồi dùng **Gán domain đích…**, **Tạo mới nếu chưa có ở đích** hoặc **Gán license…** hàng loạt; ô tích phía trên danh sách (**N user phù hợp**) chọn mọi dòng bộ lọc đang hiện.",
               "**Nội dung & lịch chạy**: mail, OneDrive, danh bạ, lịch; bỏ qua Junk Email; chạy một lần hoặc mỗi N giờ; số luồng.",
@@ -328,7 +393,7 @@
       },
       {
         "id": "provision",
-        "title": "5. Chuẩn bị user đích",
+        "title": "6. Chuẩn bị user đích",
         "blocks": [
           {
             "p": "Trong trang chiến dịch, **Tạo user & gán license** tạo các user đích đánh dấu \"Tạo mới\" và gán license đã chọn cho mọi user. Dòng nào lỗi sẽ ghi lý do; sửa xong thì bấm lại."
@@ -340,7 +405,7 @@
       },
       {
         "id": "waves",
-        "title": "6. Chia đợt và chạy thử",
+        "title": "7. Chia đợt và chạy thử",
         "blocks": [
           {
             "p": "Ở tab **User**, tích chọn user và bấm **Xếp vào đợt** để chia nhỏ một lần chuyển lớn. Thanh điều khiển chạy khi đó cho chép từng đợt; lịch định kỳ tiếp tục đồng bộ mọi đợt đã mở."
@@ -352,7 +417,7 @@
       },
       {
         "id": "run",
-        "title": "7. Chạy, tạm dừng, chạy tiếp",
+        "title": "8. Chạy, tạm dừng, chạy tiếp",
         "blocks": [
           {
             "p": "Thanh điều khiển ở đầu mọi tab của chiến dịch cho biết chiến dịch đang làm gì và sắp làm gì."
@@ -396,7 +461,7 @@
       },
       {
         "id": "decisions",
-        "title": "8. Cần bạn quyết định",
+        "title": "9. Cần bạn quyết định",
         "blocks": [
           {
             "p": "Khi gặp việc không nên tự xử lý, chiến dịch hiện mục **Cần bạn quyết định**, nhóm theo loại, kèm giải thích và nút xử lý cho từng user."
@@ -443,7 +508,7 @@
       },
       {
         "id": "groups",
-        "title": "9. Nhóm mail",
+        "title": "10. Nhóm mail",
         "blocks": [
           {
             "p": "Ở tab **Nhóm mail**, chọn nhóm nguồn rồi bấm **Tạo nhóm & thêm thành viên**. Graph chỉ tạo được nhóm Microsoft 365, nên danh sách phân phối và nhóm bảo mật có mail được tạo thành nhóm Microsoft 365 cùng alias, gửi thư vào hộp thư thành viên và nhận thư từ bên ngoài. Thành viên chưa có user ở đích được liệt kê theo từng nhóm."
@@ -452,7 +517,7 @@
       },
       {
         "id": "reports",
-        "title": "10. Báo cáo",
+        "title": "11. Báo cáo",
         "blocks": [
           {
             "p": "**Báo cáo** hiện, theo từng chiến dịch, số liệu nguồn và đã chép theo user và tổng, user cần chú ý, nhóm và ghi chú. **Xuất HTML** tạo một trang duy nhất (sáng và tối, tìm và lọc) rồi mở ra; xuất CSV cho danh sách user hoặc nhóm."
@@ -464,7 +529,7 @@
       },
       {
         "id": "settings",
-        "title": "11. Cài đặt và ngôn ngữ",
+        "title": "12. Cài đặt và ngôn ngữ",
         "blocks": [
           {
             "list": [
@@ -480,7 +545,7 @@
       },
       {
         "id": "updates",
-        "title": "12. Cập nhật",
+        "title": "13. Cập nhật",
         "blocks": [
           {
             "p": "**Có gì mới** liệt kê thay đổi của mọi phiên bản. Khi có bản mới, sidebar báo ngay; **Cập nhật lên x.y.z** tải bản mới, kiểm tra chữ ký của tác giả, đóng app, cài và mở lại. Hãy tạm dừng các chiến dịch đang chạy trước, cập nhật xong thì chạy tiếp."
@@ -489,7 +554,7 @@
       },
       {
         "id": "faq",
-        "title": "13. Xử lý sự cố",
+        "title": "14. Xử lý sự cố",
         "blocks": [
           {
             "table": [
@@ -532,12 +597,12 @@
     },
     "items": {
       "addTenant": {
-        "title": "Thêm tenant",
-        "desc": "Đăng nhập global admin một lần",
+        "title": "Thêm cloud",
+        "desc": "Đăng nhập global admin hoặc super admin một lần",
         "steps": [
-          "Mở Tenant ở sidebar.",
-          "Bấm Thêm tenant: trình duyệt mở ra để đăng nhập global admin.",
-          "Quay lại 365MG, tenant hiện kết quả kiểm tra quyền và license."
+          "Mở Quản lý Cloud ở sidebar.",
+          "Bấm Thêm cloud → Microsoft 365: trình duyệt mở ra để đăng nhập global admin.",
+          "Quay lại 365MG, cloud hiện thành một thẻ; bấm vào để xem kết quả kiểm tra và license."
         ]
       },
       "createCampaign": {
@@ -545,7 +610,7 @@
         "desc": "Từ chọn user đến lưu",
         "steps": [
           "Mở Chiến dịch và bấm Chiến dịch mới.",
-          "Chọn tenant nguồn và tenant đích.",
+          "Chọn cloud nguồn và cloud đích.",
           "Lọc và tích chọn user nguồn cần chuyển, rồi bấm Tiếp.",
           "Tích ô phía trên danh sách để chọn mọi dòng bộ lọc đang hiện.",
           "Gán domain đích cho tất cả dòng đã chọn một lần.",
@@ -595,7 +660,7 @@
     }
   },
   "footer": {
-    "tagline": "Di chuyển Microsoft 365 giữa các tenant, do tuanhd phát triển",
+    "tagline": "Di chuyển Microsoft 365 và Google Workspace, do tuanhd phát triển",
     "contact": "Bộ cài, demo hoặc hỗ trợ",
     "trademark": "Microsoft 365, Exchange Online, OneDrive và Microsoft Graph là thương hiệu của Microsoft Corporation. 365MG là phần mềm độc lập, không liên kết với Microsoft."
   }

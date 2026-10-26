@@ -107,7 +107,7 @@ async function captureLang(browser, lang) {
 
   // Static screenshots for the landing page and the guide.
   await go(page, '/dashboard'); await shot(page, lang, 'dashboard')
-  await go(page, '/tenants'); await shot(page, lang, 'tenants')
+  await go(page, '/clouds'); await shot(page, lang, 'tenants')
   await go(page, '/campaigns/7'); await shot(page, lang, 'campaign')
   await click(page, sel('issue-group-target_no_drive'))
   await page.$eval(sel('issues'), (el) => el.scrollIntoView({ block: 'start' }))
@@ -117,7 +117,7 @@ async function captureLang(browser, lang) {
 
   tours.addTenant = await tour(page, lang, 'addTenant', [
     { before: (p) => go(p, '/dashboard'), target: sel('nav-tenants'), action: 'click' },
-    { before: (p) => go(p, '/tenants'), target: sel('tenant-add'), action: 'click', noClick: true },
+    { before: (p) => go(p, '/clouds'), target: sel('tenant-add'), action: 'click', noClick: true },
     { target: sel('tenant-card'), action: 'look' },
   ])
 

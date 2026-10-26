@@ -17,7 +17,7 @@
    "box": [
     0.025,
     0.0861,
-    0.0944,
+    0.1077,
     0.035
    ],
    "action": "click",
@@ -27,10 +27,10 @@
   {
    "shot": "assets/shots/ar/tour-addTenant-3.webp",
    "box": [
-    0.4125,
+    0.5417,
     0.1472,
-    0.375,
-    0.3737
+    0.2458,
+    0.22
    ],
    "action": "look",
    "w": 1280,
@@ -54,7 +54,7 @@
    "shot": "assets/shots/ar/tour-createCampaign-2.webp",
    "box": [
     0.3375,
-    0.3066,
+    0.2597,
     0.45,
     0.0869
    ],
@@ -66,7 +66,7 @@
    "shot": "assets/shots/ar/tour-createCampaign-3.webp",
    "box": [
     0.7664,
-    0.4041,
+    0.3572,
     0.0109,
     0.0175
    ],
@@ -78,7 +78,7 @@
    "shot": "assets/shots/ar/tour-createCampaign-4.webp",
    "box": [
     0.7664,
-    0.4422,
+    0.3953,
     0.0109,
     0.0175
    ],
@@ -90,7 +90,7 @@
    "shot": "assets/shots/ar/tour-createCampaign-5.webp",
    "box": [
     0.4001,
-    0.4725,
+    0.4256,
     0.1625,
     0.035
    ],
@@ -102,9 +102,9 @@
    "shot": "assets/shots/ar/tour-createCampaign-6.webp",
    "box": [
     0.2625,
-    0.1222,
+    0.0604,
     0.525,
-    0.8062
+    0.9281
    ],
    "action": "look",
    "w": 1280,
