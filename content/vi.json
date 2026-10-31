@@ -516,11 +516,36 @@
         ]
       },
       {
+        "id": "pipeline",
+        "title": "11. Tiếp quản pipeline PowerShell",
+        "blocks": [
+          {
+            "p": "Nếu bạn đã bắt đầu chép bằng script PowerShell, 365MG tiếp quản được mà không chép lại. Ở trang **Chiến dịch**, thẻ **Pipeline PowerShell** có nút **Nhập vào 365MG**: chọn thư mục kết quả của pipeline, user, journal mail (item đã nhập, đã xác minh, bị từ chối) và journal OneDrive (thư mục, file kèm cTag) sẽ thành một chiến dịch bình thường."
+          },
+          {
+            "steps": [
+              "Dừng các job PowerShell (tác vụ đồng bộ mail hằng giờ và các tiến trình OneDrive) để không còn dòng mới được ghi.",
+              "Bấm **Nhập vào 365MG** và chọn thư mục pipeline. Hai tenant phải đã được kết nối ở **Quản lý Cloud**.",
+              "Mở chiến dịch mới, bấm **Nhập lại** để lấy phần pipeline ghi thêm, rồi bấm **Bắt đầu**."
+            ]
+          },
+          {
+            "note": "Chiến dịch được tạo ở trạng thái tạm dừng. Lần chạy sau chỉ chép phần phát sinh vì kết quả của pipeline đã nằm trong journal của app. **Nhập lại** dùng được cho đến khi 365MG tự chạy chiến dịch; sau đó journal của app mới hơn nên nút bị từ chối. Một thư mục pipeline chỉ nhập vào một chiến dịch; nhập lần nữa sẽ báo chiến dịch đã có thay vì tạo bản sao."
+          },
+          {
+            "p": "Thư viện SharePoint chỉ được nhập số liệu (số file và dung lượng từng thư viện), nên hiện trong báo cáo nhưng 365MG không chép tiếp."
+          }
+        ]
+      },
+      {
         "id": "reports",
-        "title": "11. Báo cáo",
+        "title": "12. Báo cáo",
         "blocks": [
           {
             "p": "**Báo cáo** hiện, theo từng chiến dịch, số liệu nguồn và đã chép theo user và tổng, user cần chú ý, nhóm và ghi chú. **Xuất HTML** tạo một trang duy nhất (sáng và tối, tìm và lọc) rồi mở ra; xuất CSV cho danh sách user hoặc nhóm."
+          },
+          {
+            "p": "**Đo nguồn và đích** (trang chiến dịch và Báo cáo) đọc số thư, dung lượng mail, số file và dung lượng drive ở cả hai phía, hiện dưới email nguồn và email đích của từng user; **Đo nhanh** bỏ qua bước đếm file. Menu **⋯** cuối dòng user mở các kiểm tra tài khoản nguồn hoặc đích, copy tên và email, và mở user đó trong Báo cáo. Có thể chọn **Pipeline PowerShell** làm nguồn của báo cáo."
           },
           {
             "tour": "report"
@@ -528,8 +553,26 @@
         ]
       },
       {
+        "id": "monitor",
+        "title": "13. Giám sát",
+        "blocks": [
+          {
+            "p": "**Giám sát** (menu trái) là màn hình trực tiếp, cập nhật mỗi giây: mức tải của máy này (CPU, RAM, ổ đĩa, mạng, nhiệt độ nếu đọc được), biểu đồ số luồng và tốc độ (MB/s, file/s), nhật ký truyền tải, tiến độ và thời gian còn lại (ETA) của từng job. Tab thứ hai, **Cấu hình**, gồm kết nối cloud, pool truyền tải và chạy chiến dịch."
+          },
+          {
+            "list": [
+              "**Pool truyền tải**: các file trong một job OneDrive, Google Drive hoặc shared drive được chép song song. Số luồng là tổng của cả app và chỉnh được khi đang chạy.",
+              "**Giới hạn tài nguyên**: chọn số lõi CPU và độ ưu tiên (bình thường, dưới bình thường, thấp nhất) để việc chép không làm máy bị lag.",
+              "**Nhiều app mover**: mỗi tenant đích dùng được tối đa bốn app \"365MG Data Mover\", các job được chia đều giữa chúng vì SharePoint giới hạn tốc độ theo từng app. App mới dùng được sau khoảng 10 phút, khi quyền đã có hiệu lực.",
+              "**Thứ tự và chạy lại**: job lớn nhất chạy trước; khi các job khác xong, job có lỗi được chạy lại một lần.",
+              "**Pipeline PowerShell**: chọn thư mục của pipeline đang chép, Giám sát đọc file state và log để hiện tiến độ tổng."
+            ]
+          }
+        ]
+      },
+      {
         "id": "utilities",
-        "title": "12. Tiện ích: kiểm tra theo email",
+        "title": "14. Tiện ích: kiểm tra theo email",
         "blocks": [
           {
             "p": "**Tiện ích → Kiểm tra theo email** trả lời cho một địa chỉ: \"mailbox này nằm ở đâu, lớn bao nhiêu, và đã được chuyển đủ chưa?\"."
@@ -547,15 +590,39 @@
         ]
       },
       {
+        "id": "data",
+        "title": "15. Vùng dữ liệu và sao lưu",
+        "blocks": [
+          {
+            "p": "365MG giữ cơ sở dữ liệu và các bản sao lưu trong một thư mục dữ liệu, mặc định `D:\\365MG` (thư mục `db` và `backups`), không nằm ở ổ C. **Cài đặt → Dữ liệu & sao lưu** cho biết thư mục đang dùng và cho chuyển sang nơi khác; nếu thư mục đích đã có dữ liệu 365MG thì app dùng luôn."
+          },
+          {
+            "p": "**Sao lưu mã hóa** chuyển toàn bộ sang máy khác mà không phải đăng nhập lại tenant. Tệp `.365mgbak` gồm thông tin đăng nhập cloud, chứng chỉ app chép dữ liệu, client secret Google và mật khẩu user đã tạo. Các bí mật được gỡ khỏi lớp bảo vệ gắn với máy này và cả tệp được mã hóa bằng mật khẩu sao lưu từ 8 ký tự trở lên (Argon2id và XChaCha20-Poly1305)."
+          },
+          {
+            "steps": [
+              "Chọn **Toàn bộ** (kèm chiến dịch và journal) hoặc **Chỉ cấu hình và thông tin đăng nhập**, nhập mật khẩu hai lần rồi bấm **Xuất sao lưu**.",
+              "Trên máy kia mở **Cài đặt → Dữ liệu & sao lưu**, chọn tệp, nhập mật khẩu và bấm **Khôi phục**.",
+              "App khởi động lại, các tenant đã kết nối sẵn. Dữ liệu cũ được giữ lại dưới tên `365mg.before-restore-….db`."
+            ]
+          },
+          {
+            "warn": "Mật khẩu sao lưu không thể lấy lại: mất nó thì không mở được tệp. Không khôi phục được khi có chiến dịch đang chạy."
+          }
+        ]
+      },
+      {
         "id": "settings",
-        "title": "13. Cài đặt và ngôn ngữ",
+        "title": "16. Cài đặt và ngôn ngữ",
         "blocks": [
           {
             "list": [
               "**Ngôn ngữ**: chín ngôn ngữ, đổi là có tác dụng ngay; tiếng Ả Rập chuyển bố cục sang phải-sang-trái.",
               "**Giao diện**: sáng, tối hoặc theo Windows; nút mặt trời/mặt trăng trên thanh tiêu đề cũng đổi được.",
               "**Thư mục tạm**: không đặt trên ổ C.",
-              "**Coi luồng là kẹt sau**: số phút không có tiến triển trước khi luồng được khởi động lại (tối đa 2 lần)."
+              "**Coi luồng là kẹt sau**: số phút không có tiến triển trước khi luồng được khởi động lại (tối đa 2 lần).",
+              "**Dữ liệu & sao lưu**: nơi lưu dữ liệu, chuyển thư mục, sao lưu và khôi phục có mã hóa (xem mục ở trên).",
+              "**Google OAuth**: thêm, sửa, xóa nhiều OAuth client, mỗi client một tên riêng; khi kết nối Google Workspace mà có nhiều client, app hỏi dùng client nào."
             ]
           },
           {
@@ -565,7 +632,7 @@
       },
       {
         "id": "updates",
-        "title": "14. Cập nhật",
+        "title": "17. Cập nhật",
         "blocks": [
           {
             "p": "**Có gì mới** liệt kê thay đổi của mọi phiên bản. Khi có bản mới, sidebar báo ngay; **Cập nhật lên x.y.z** tải bản mới, kiểm tra chữ ký của tác giả, đóng app, cài và mở lại. Hãy tạm dừng các chiến dịch đang chạy trước, cập nhật xong thì chạy tiếp."
@@ -574,7 +641,7 @@
       },
       {
         "id": "faq",
-        "title": "15. Xử lý sự cố",
+        "title": "18. Xử lý sự cố",
         "blocks": [
           {
             "table": [

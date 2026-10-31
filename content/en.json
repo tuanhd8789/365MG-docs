@@ -516,11 +516,36 @@
         ]
       },
       {
+        "id": "pipeline",
+        "title": "11. Take over a PowerShell pipeline",
+        "blocks": [
+          {
+            "p": "If you started a copy with PowerShell scripts, 365MG can take it over without copying again. On **Campaigns**, the **PowerShell pipeline** card has **Import into 365MG**: pick the pipeline's output folder and the users, the mail journals (imported, verified, rejected items) and the OneDrive journals (folders, files with their cTag) become a normal campaign."
+          },
+          {
+            "steps": [
+              "Stop the PowerShell jobs (the hourly mail sync and the OneDrive runners) so no new lines are written.",
+              "Click **Import into 365MG** and choose the pipeline folder. Both tenants must already be connected under **Clouds**.",
+              "Open the new campaign and click **Import again** to pick up whatever the pipeline wrote since, then click **Start**."
+            ]
+          },
+          {
+            "note": "The campaign starts paused. The next run copies only what is new, because the pipeline's results are already in the app's journals. **Import again** is available until 365MG runs the campaign itself; after that the app's own journals are newer and the button is refused. A pipeline folder goes into one campaign only; a second import reports that campaign instead of creating a copy."
+          },
+          {
+            "p": "SharePoint libraries are imported as figures only (files and size per library), so they show up in the report but are not copied further by 365MG."
+          }
+        ]
+      },
+      {
         "id": "reports",
-        "title": "11. Reports",
+        "title": "12. Reports",
         "blocks": [
           {
             "p": "**Reports** shows, per campaign, source and copied counts per user and in total, users that need a look, groups and notes. **Export HTML** writes a single page (light and dark, search and filter) and opens it; CSV exports list users or groups."
+          },
+          {
+            "p": "**Measure source and target** (campaign page and Reports) reads mail count and size, file count and drive size on both sides and shows them under each user's source and target address; **Quick measure** skips the file count. The **⋯** menu at the end of a user row opens the checks for the source or target account, copies names and addresses, and opens that user in Reports. A **PowerShell pipeline** can also be chosen as the source of a report."
           },
           {
             "tour": "report"
@@ -528,8 +553,26 @@
         ]
       },
       {
+        "id": "monitor",
+        "title": "13. Monitor",
+        "blocks": [
+          {
+            "p": "**Monitor** (left menu) is the live view, refreshed every second: load of this computer (CPU, RAM, disk, network, temperature where readable), a chart of threads and speed (MB/s, files/s), the transfer log and progress with an ETA for every job. A second tab, **Configuration**, holds the cloud connections, the transfer pool and starting campaigns."
+          },
+          {
+            "list": [
+              "**Transfer pool**: the files of a OneDrive, Google Drive or shared drive job are copied in parallel. The number of threads is shared by the whole app and can be changed while running.",
+              "**Resource limits**: choose how many CPU cores to use and the priority (normal, below normal, lowest) so copying does not make the computer lag.",
+              "**Several mover apps**: each target tenant can use up to four \"365MG Data Mover\" apps and jobs are spread between them, because SharePoint limits speed per app. A new app is used after about 10 minutes, once its permissions have taken effect.",
+              "**Order and retry**: the largest job runs first; after the others finish, a job with errors is retried once.",
+              "**PowerShell pipeline**: choose the folder of a pipeline copy and Monitor reads its state and logs to show overall progress."
+            ]
+          }
+        ]
+      },
+      {
         "id": "utilities",
-        "title": "12. Utilities: check by email",
+        "title": "14. Utilities: check by email",
         "blocks": [
           {
             "p": "**Utilities → Check by email** answers \"where is this mailbox, how big is it, and did the migration get all of it?\" for one address."
@@ -547,15 +590,39 @@
         ]
       },
       {
+        "id": "data",
+        "title": "15. Data folder and backup",
+        "blocks": [
+          {
+            "p": "365MG keeps its database and backups in one data folder, by default `D:\\365MG` (folders `db` and `backups`), not on drive C. **Settings → Data & backup** shows where it is and can move it; if the target folder already holds 365MG data, the app uses that."
+          },
+          {
+            "p": "**Encrypted backup** moves everything to another computer without signing in to the tenants again. The `.365mgbak` file holds the cloud sign-ins, the data mover certificates, Google client secrets and created users' passwords. Secrets are taken out of the protection tied to this computer and the whole file is encrypted with a passphrase of at least 8 characters (Argon2id and XChaCha20-Poly1305)."
+          },
+          {
+            "steps": [
+              "Choose **Full** (with campaigns and journals) or **Configuration and credentials only**, type the passphrase twice and click **Export backup**.",
+              "On the other computer open **Settings → Data & backup**, pick the file, type the passphrase and click **Restore**.",
+              "The app restarts; the tenants are connected already. The previous data is kept as `365mg.before-restore-….db`."
+            ]
+          },
+          {
+            "warn": "The passphrase cannot be recovered: without it the file cannot be opened. Restore is refused while a campaign is running."
+          }
+        ]
+      },
+      {
         "id": "settings",
-        "title": "13. Settings and languages",
+        "title": "16. Settings and languages",
         "blocks": [
           {
             "list": [
               "**Language**: nine languages, applied at once; Arabic switches the layout to right to left.",
               "**Appearance**: light, dark or matching Windows; the sun/moon button in the title bar switches too.",
               "**Temporary folder**: keep it off drive C.",
-              "**Treat a thread as stuck after**: minutes without progress before a thread is restarted (at most twice)."
+              "**Treat a thread as stuck after**: minutes without progress before a thread is restarted (at most twice).",
+              "**Data & backup**: where the data lives, moving it, and encrypted backup and restore (see the section above).",
+              "**Google OAuth**: add, edit and delete several OAuth clients, each with its own name; when you connect a Google Workspace with more than one client the app asks which to use."
             ]
           },
           {
@@ -565,7 +632,7 @@
       },
       {
         "id": "updates",
-        "title": "14. Updates",
+        "title": "17. Updates",
         "blocks": [
           {
             "p": "**What's new** lists the changes of every version. When a newer version is published the sidebar shows it; **Update to x.y.z** downloads it, checks the author's signature, closes the app, installs and reopens it. Pause running campaigns first; resume them afterwards."
@@ -574,7 +641,7 @@
       },
       {
         "id": "faq",
-        "title": "15. Troubleshooting",
+        "title": "18. Troubleshooting",
         "blocks": [
           {
             "table": [

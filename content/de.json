@@ -516,11 +516,36 @@
         ]
       },
       {
+        "id": "pipeline",
+        "title": "11. Eine PowerShell-Pipeline übernehmen",
+        "blocks": [
+          {
+            "p": "Wenn Sie ein Kopieren mit PowerShell-Skripten gestartet haben, kann 365MG es übernehmen, ohne erneut zu kopieren. Auf **Kampagnen** hat die Karte **PowerShell-Pipeline** die Schaltfläche **In 365MG importieren**: Wählen Sie den Ausgabeordner der Pipeline und die Benutzer, dann werden die Mail-Protokolle (importierte, geprüfte und abgelehnte Elemente) und die OneDrive-Protokolle (Ordner, Dateien mit ihrem cTag) zu einer normalen Kampagne."
+          },
+          {
+            "steps": [
+              "Beenden Sie die PowerShell-Aufträge (die stündliche Mail-Synchronisierung und die OneDrive-Runner), damit keine neuen Zeilen mehr geschrieben werden.",
+              "Klicken Sie auf **In 365MG importieren** und wählen Sie den Pipeline-Ordner. Beide Mandanten müssen unter **Cloud-Verwaltung** bereits verbunden sein.",
+              "Öffnen Sie die neue Kampagne und klicken Sie auf **Erneut importieren**, um zu übernehmen, was die Pipeline seitdem geschrieben hat, und dann auf **Jetzt starten**."
+            ]
+          },
+          {
+            "note": "Die Kampagne startet angehalten. Der nächste Lauf kopiert nur Neues, weil die Ergebnisse der Pipeline bereits in den Protokollen der App stehen. **Erneut importieren** ist verfügbar, bis 365MG die Kampagne selbst ausführt; danach sind die eigenen Protokolle der App neuer und die Schaltfläche wird abgelehnt. Ein Pipeline-Ordner geht nur in eine Kampagne; ein zweiter Import meldet diese Kampagne, statt eine Kopie zu erstellen."
+          },
+          {
+            "p": "SharePoint-Bibliotheken werden nur als Zahlen importiert (Dateien und Größe je Bibliothek), sie erscheinen daher im Bericht, werden von 365MG aber nicht weiter kopiert."
+          }
+        ]
+      },
+      {
         "id": "reports",
-        "title": "11. Berichte",
+        "title": "12. Berichte",
         "blocks": [
           {
             "p": "**Berichte** zeigt pro Kampagne die Quell- und Kopierzahlen pro Benutzer und insgesamt, zu prüfende Benutzer, Gruppen und Hinweise. **HTML exportieren** schreibt eine einzelne Seite (hell und dunkel, mit Suche und Filter) und öffnet sie; CSV-Exporte listen Benutzer oder Gruppen auf."
+          },
+          {
+            "p": "**Quelle und Ziel messen** (Kampagnenseite und Berichte) liest Anzahl und Größe der Mails, Anzahl der Dateien und Größe des Laufwerks auf beiden Seiten und zeigt sie unter der Quell- und Zieladresse jedes Benutzers an; **Schnell** überspringt das Zählen der Dateien. Das Menü **⋯** am Ende einer Benutzerzeile öffnet die Prüfungen für das Quell- oder Zielkonto, kopiert Namen und Adressen und öffnet diesen Benutzer in den Berichten. Eine **PowerShell-Pipeline** kann ebenfalls als Quelle eines Berichts gewählt werden."
           },
           {
             "tour": "report"
@@ -528,8 +553,26 @@
         ]
       },
       {
+        "id": "monitor",
+        "title": "13. Monitor",
+        "blocks": [
+          {
+            "p": "**Monitor** (linkes Menü) ist die Live-Ansicht, die jede Sekunde aktualisiert wird: Auslastung dieses Computers (CPU, RAM, Datenträger, Netzwerk, Temperatur, wo lesbar), ein Diagramm zu Threads und Geschwindigkeit (MB/s, Dateien/s), das Übertragungsprotokoll und der Fortschritt mit geschätzter Restzeit für jeden Auftrag. Eine zweite Registerkarte, **Konfiguration**, enthält die Cloud-Verbindungen, den Übertragungspool und das Starten von Kampagnen."
+          },
+          {
+            "list": [
+              "**Übertragungspool**: Die Dateien eines OneDrive-, Google-Drive- oder Shared-Drive-Auftrags werden parallel kopiert. Die Anzahl der Threads gilt für die ganze App und kann während des Laufs geändert werden.",
+              "**Ressourcenlimits**: Wählen Sie, wie viele CPU-Kerne genutzt werden und die Priorität (normal, niedriger als normal, niedrigste), damit das Kopieren den Computer nicht ausbremst.",
+              "**Mehrere Mover-Apps**: Jeder Zielmandant kann bis zu vier „365MG Data Mover“-Apps nutzen, und die Aufträge werden auf sie verteilt, weil SharePoint die Geschwindigkeit pro App begrenzt. Eine neue App wird nach etwa 10 Minuten verwendet, sobald ihre Berechtigungen wirksam sind.",
+              "**Reihenfolge und Wiederholung**: Der größte Auftrag läuft zuerst; nachdem die anderen fertig sind, wird ein Auftrag mit Fehlern einmal wiederholt.",
+              "**PowerShell-Pipeline**: Wählen Sie den Ordner einer Pipeline-Kopie, dann liest Monitor deren Status und Protokolle, um den Gesamtfortschritt anzuzeigen."
+            ]
+          }
+        ]
+      },
+      {
         "id": "utilities",
-        "title": "12. Werkzeuge: nach E-Mail prüfen",
+        "title": "14. Werkzeuge: nach E-Mail prüfen",
         "blocks": [
           {
             "p": "**Werkzeuge → Nach E-Mail prüfen** beantwortet für eine Adresse die Frage „Wo liegt dieses Postfach, wie groß ist es, und hat die Migration alles übernommen?“"
@@ -547,15 +590,39 @@
         ]
       },
       {
+        "id": "data",
+        "title": "15. Datenordner und Sicherung",
+        "blocks": [
+          {
+            "p": "365MG speichert seine Datenbank und die Sicherungen in einem Datenordner, standardmäßig `D:\\365MG` (Ordner `db` und `backups`), nicht auf Laufwerk C. **Einstellungen → Daten & Sicherung** zeigt, wo er liegt, und kann ihn verschieben; enthält der Zielordner bereits 365MG-Daten, verwendet die App diese."
+          },
+          {
+            "p": "Die **verschlüsselte Sicherung** überträgt alles auf einen anderen Computer, ohne sich erneut bei den Mandanten anzumelden. Die Datei `.365mgbak` enthält die Cloud-Anmeldungen, die Data-Mover-Zertifikate, Google-Clientgeheimnisse und die Kennwörter erstellter Benutzer. Die Geheimnisse werden aus dem an diesen Computer gebundenen Schutz herausgelöst, und die gesamte Datei wird mit einer Passphrase von mindestens 8 Zeichen verschlüsselt (Argon2id und XChaCha20-Poly1305)."
+          },
+          {
+            "steps": [
+              "Wählen Sie **Alles** (mit Kampagnen und Protokollen) oder **Nur Konfiguration & Anmeldungen**, geben Sie die Passphrase zweimal ein und klicken Sie auf **Sicherung erstellen**.",
+              "Öffnen Sie auf dem anderen Computer **Einstellungen → Daten & Sicherung**, wählen Sie die Datei, geben Sie die Passphrase ein und klicken Sie auf **Wiederherstellen und neu starten**.",
+              "Die App startet neu; die Mandanten sind bereits verbunden. Die bisherigen Daten bleiben als `365mg.before-restore-….db` erhalten."
+            ]
+          },
+          {
+            "warn": "Die Passphrase kann nicht wiederhergestellt werden: Ohne sie lässt sich die Datei nicht öffnen. Die Wiederherstellung wird abgelehnt, solange eine Kampagne läuft."
+          }
+        ]
+      },
+      {
         "id": "settings",
-        "title": "13. Einstellungen und Sprachen",
+        "title": "16. Einstellungen und Sprachen",
         "blocks": [
           {
             "list": [
               "**Sprache**: neun Sprachen, sofort übernommen; Arabisch stellt das Layout auf rechts nach links um.",
               "**Darstellung**: hell, dunkel oder wie Windows; auch über die Sonne/Mond-Schaltfläche in der Titelleiste umschaltbar.",
               "**Temporärer Ordner**: nicht auf Laufwerk C.",
-              "**Thread als hängend behandeln nach**: Minuten ohne Fortschritt, bevor ein Thread neu gestartet wird (höchstens zweimal)."
+              "**Thread als hängend behandeln nach**: Minuten ohne Fortschritt, bevor ein Thread neu gestartet wird (höchstens zweimal).",
+              "**Daten & Sicherung**: wo die Daten liegen, Verschieben sowie verschlüsselte Sicherung und Wiederherstellung (siehe Abschnitt oben).",
+              "**Google OAuth**: mehrere OAuth-Clients mit jeweils eigenem Namen hinzufügen, bearbeiten und löschen; wenn Sie ein Google Workspace mit mehr als einem Client verbinden, fragt die App, welcher verwendet werden soll."
             ]
           },
           {
@@ -565,7 +632,7 @@
       },
       {
         "id": "updates",
-        "title": "14. Updates",
+        "title": "17. Updates",
         "blocks": [
           {
             "p": "**Neuigkeiten** listet die Änderungen jeder Version auf. Wenn eine neuere Version veröffentlicht ist, zeigt die Seitenleiste sie an; **Auf x.y.z aktualisieren** lädt sie herunter, prüft die Signatur des Autors, schließt die App, installiert und öffnet sie wieder. Halten Sie laufende Kampagnen zuvor an und setzen Sie sie danach fort."
@@ -574,7 +641,7 @@
       },
       {
         "id": "faq",
-        "title": "15. Problembehandlung",
+        "title": "18. Problembehandlung",
         "blocks": [
           {
             "table": [
