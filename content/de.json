@@ -317,6 +317,32 @@
             ]
           },
           {
+            "p": "**Enable every API in one go (right after creating the OAuth client):** the project that holds the OAuth client needs all 9 APIs below. If one is missing, the app reports a 403 like “API has not been used in project … or it is disabled”."
+          },
+          {
+            "steps": [
+              "Open Google Cloud Console and, in the project picker at the top, select the **project that holds the OAuth client**.",
+              "Open each link below in turn. Each opens that API's page: check the project name at the top, then click the blue **Enable** button. If the button says **Manage**, the API is already on; move to the next link.",
+              "When all 9 are on, wait 2–5 minutes, then retry the action in 365MG."
+            ]
+          },
+          {
+            "list": [
+              "[Cloud Resource Manager API](https://console.cloud.google.com/apis/library/cloudresourcemanager.googleapis.com)",
+              "[Service Usage API](https://console.cloud.google.com/apis/library/serviceusage.googleapis.com)",
+              "[Identity and Access Management (IAM) API](https://console.cloud.google.com/apis/library/iam.googleapis.com)",
+              "[Admin SDK API](https://console.cloud.google.com/apis/library/admin.googleapis.com)",
+              "[Gmail API](https://console.cloud.google.com/apis/library/gmail.googleapis.com)",
+              "[Google Drive API](https://console.cloud.google.com/apis/library/drive.googleapis.com)",
+              "[Google Calendar API](https://console.cloud.google.com/apis/library/calendar-json.googleapis.com)",
+              "[People API](https://console.cloud.google.com/apis/library/people.googleapis.com)",
+              "[Groups Settings API](https://console.cloud.google.com/apis/library/groupssettings.googleapis.com)"
+            ]
+          },
+          {
+            "warn": "The error “Cloud Resource Manager project creation is disabled” is not about APIs: in Admin console → Apps → Additional Google services → **Google Cloud Platform**, allow project creation. Or use the OAuth client's own project with the APIs above enabled."
+          },
+          {
             "warn": "Neue Google Cloud-Organisationen können Dienstkontoschlüssel per Richtlinie sperren. 365MG weist dann darauf hin: Erlauben Sie Schlüssel für das Projekt in den Organisationsrichtlinien, oder erstellen Sie in der Cloud Console einen Schlüssel für das Dienstkonto und verwenden Sie **Schlüsseldatei importieren (JSON)**."
           },
           {

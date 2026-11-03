@@ -317,7 +317,33 @@
             ]
           },
           {
-            "warn": "New Google Cloud organizations may block service account keys by policy. 365MG then says so: allow keys for the project in Organization policies, or create a key for the service account in Cloud Console and use **Import key file (JSON)**."
+            "p": "**Enable every API in one go (right after creating the OAuth client):** the project that holds the OAuth client needs all 9 APIs below. If one is missing, the app reports a 403 like “API has not been used in project … or it is disabled”."
+          },
+          {
+            "steps": [
+              "Open Google Cloud Console and, in the project picker at the top, select the **project that holds the OAuth client**.",
+              "Open each link below in turn. Each opens that API's page: check the project name at the top, then click the blue **Enable** button. If the button says **Manage**, the API is already on; move to the next link.",
+              "When all 9 are on, wait 2–5 minutes, then retry the action in 365MG."
+            ]
+          },
+          {
+            "list": [
+              "[Cloud Resource Manager API](https://console.cloud.google.com/apis/library/cloudresourcemanager.googleapis.com)",
+              "[Service Usage API](https://console.cloud.google.com/apis/library/serviceusage.googleapis.com)",
+              "[Identity and Access Management (IAM) API](https://console.cloud.google.com/apis/library/iam.googleapis.com)",
+              "[Admin SDK API](https://console.cloud.google.com/apis/library/admin.googleapis.com)",
+              "[Gmail API](https://console.cloud.google.com/apis/library/gmail.googleapis.com)",
+              "[Google Drive API](https://console.cloud.google.com/apis/library/drive.googleapis.com)",
+              "[Google Calendar API](https://console.cloud.google.com/apis/library/calendar-json.googleapis.com)",
+              "[People API](https://console.cloud.google.com/apis/library/people.googleapis.com)",
+              "[Groups Settings API](https://console.cloud.google.com/apis/library/groupssettings.googleapis.com)"
+            ]
+          },
+          {
+            "warn": "The error “Cloud Resource Manager project creation is disabled” is not about APIs: in Admin console → Apps → Additional Google services → **Google Cloud Platform**, allow project creation. Or use the OAuth client's own project with the APIs above enabled."
+          },
+          {
+            "warn": "**“An organization policy blocks service account keys”:** (1) In Cloud Console, pick the **organization** in the project picker at the top, go to **IAM & Admin → IAM → Grant access** and give your own super admin email the **Organization Policy Administrator** role. (2) Select the project the app created (its name starts with `mg365-`), go to **IAM & Admin → Organization policies**, find **Disable service account key creation** (and the Managed one if listed) → **Manage policy** → **Override parent's policy** → **Enforcement: Off** → **Set policy**. (3) Wait 2–5 minutes, then click **Set up the data mover** again."
           },
           {
             "table": [

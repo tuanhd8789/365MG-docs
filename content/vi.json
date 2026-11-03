@@ -317,7 +317,33 @@
             ]
           },
           {
-            "warn": "Tổ chức Google Cloud mới có thể chặn khoá service account bằng chính sách. Khi đó 365MG báo rõ: cho phép tạo khoá cho project trong Organization policies, hoặc tự tạo khoá cho service account trong Cloud Console rồi dùng **Nhập file khoá (JSON)**."
+            "p": "**Bật đủ API một lần (làm ngay sau khi tạo OAuth client):** project chứa OAuth client phải bật đủ 9 API dưới đây. Thiếu một cái, app báo lỗi 403 kiểu “API has not been used in project … or it is disabled”."
+          },
+          {
+            "steps": [
+              "Mở Google Cloud Console, ở ô chọn project trên cùng chọn đúng **project chứa OAuth client**.",
+              "Bấm lần lượt từng link bên dưới. Mỗi link mở trang của API đó: kiểm tra tên project ở trên cùng vẫn đúng, rồi bấm nút xanh **Enable** (Bật). Nếu nút ghi **Manage** (Quản lý) thì API đã bật, chuyển sang link tiếp theo.",
+              "Bật xong cả 9 cái, chờ 2–5 phút rồi quay lại 365MG bấm lại thao tác."
+            ]
+          },
+          {
+            "list": [
+              "[Cloud Resource Manager API](https://console.cloud.google.com/apis/library/cloudresourcemanager.googleapis.com)",
+              "[Service Usage API](https://console.cloud.google.com/apis/library/serviceusage.googleapis.com)",
+              "[Identity and Access Management (IAM) API](https://console.cloud.google.com/apis/library/iam.googleapis.com)",
+              "[Admin SDK API](https://console.cloud.google.com/apis/library/admin.googleapis.com)",
+              "[Gmail API](https://console.cloud.google.com/apis/library/gmail.googleapis.com)",
+              "[Google Drive API](https://console.cloud.google.com/apis/library/drive.googleapis.com)",
+              "[Google Calendar API](https://console.cloud.google.com/apis/library/calendar-json.googleapis.com)",
+              "[People API](https://console.cloud.google.com/apis/library/people.googleapis.com)",
+              "[Groups Settings API](https://console.cloud.google.com/apis/library/groupssettings.googleapis.com)"
+            ]
+          },
+          {
+            "warn": "Lỗi “Cloud Resource Manager project creation is disabled” không phải do API: vào Admin console → Ứng dụng → Ứng dụng khác của Google → **Google Cloud Platform** → bật quyền tạo project. Hoặc dùng luôn project chứa OAuth client đã bật đủ API ở trên."
+          },
+          {
+            "warn": "**Báo “Chính sách của tổ chức đang chặn khoá service account”:** (1) Trong Cloud Console, ở ô chọn project trên cùng chọn **tổ chức**, vào **IAM & Admin → IAM → Grant access**, thêm chính email super admin với vai trò **Organization Policy Administrator**. (2) Chọn project app vừa tạo (tên bắt đầu bằng `mg365-`), vào **IAM & Admin → Organization policies**, tìm **Disable service account key creation** (cả bản Managed nếu có) → **Manage policy** → **Override parent's policy** → **Enforcement: Off** → **Set policy**. (3) Chờ 2–5 phút rồi bấm lại **Thiết lập app chép dữ liệu**."
           },
           {
             "table": [
