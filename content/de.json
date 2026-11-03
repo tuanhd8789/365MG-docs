@@ -312,18 +312,18 @@
             "steps": [
               "**OAuth-Client (einmal für die App):** Erstellen Sie in der Google Cloud Console → APIs und Dienste → Anmeldedaten eine OAuth-Client-ID vom Typ **Desktop-App** und tragen Sie deren Client-ID und Clientschlüssel in 365MG unter **Einstellungen → Google Workspace-OAuth-Client** ein. Die Einstellungen enthalten die Schritte und eine Schaltfläche zur richtigen Seite.",
               "**Anmelden:** Klicken Sie in der **Cloud-Verwaltung** auf **Cloud hinzufügen → Google Workspace** und melden Sie sich als **Super Admin** an.",
-              "**Datenübertragung:** Öffnen Sie die neue Karte und klicken Sie auf **Datenübertragung einrichten**. 365MG erstellt ein Google Cloud-Projekt, aktiviert die benötigten APIs und erstellt ein Dienstkonto mit einem Schlüssel, der verschlüsselt auf diesem PC gespeichert wird.",
+              "**Data mover:** open the new card and click **Set up the data mover**. 365MG creates a Google Cloud project, turns on the APIs it needs and creates a service account **with no key**: Google signs for the super admin, so no key sits on this machine and the organization's key policy can stay on.",
               "**Domainweite Delegierung:** Kopieren Sie die angezeigte Client-ID und die Liste der Bereiche, öffnen Sie Admin-Konsole → Sicherheit → Zugriffs- und Datenkontrolle → API-Steuerung → **Domainweite Delegierung**, klicken Sie auf **Neu hinzufügen**, fügen Sie beides ein und autorisieren Sie. Klicken Sie zurück in 365MG auf **Hinzugefügt – prüfen**."
             ]
           },
           {
-            "p": "**Enable every API in one go (right after creating the OAuth client):** the project that holds the OAuth client needs all 9 APIs below. If one is missing, the app reports a 403 like “API has not been used in project … or it is disabled”."
+            "p": "**Enable every API in one go (right after creating the OAuth client):** the project that holds the OAuth client needs all 10 APIs below. If one is missing, the app reports a 403 like “API has not been used in project … or it is disabled”."
           },
           {
             "steps": [
               "Open Google Cloud Console and, in the project picker at the top, select the **project that holds the OAuth client**.",
               "Open each link below in turn. Each opens that API's page: check the project name at the top, then click the blue **Enable** button. If the button says **Manage**, the API is already on; move to the next link.",
-              "When all 9 are on, wait 2–5 minutes, then retry the action in 365MG."
+              "When all 10 are on, wait 2–5 minutes, then retry the action in 365MG."
             ]
           },
           {
@@ -331,6 +331,7 @@
               "[Cloud Resource Manager API](https://console.cloud.google.com/apis/library/cloudresourcemanager.googleapis.com)",
               "[Service Usage API](https://console.cloud.google.com/apis/library/serviceusage.googleapis.com)",
               "[Identity and Access Management (IAM) API](https://console.cloud.google.com/apis/library/iam.googleapis.com)",
+              "[IAM Service Account Credentials API](https://console.cloud.google.com/apis/library/iamcredentials.googleapis.com)",
               "[Admin SDK API](https://console.cloud.google.com/apis/library/admin.googleapis.com)",
               "[Gmail API](https://console.cloud.google.com/apis/library/gmail.googleapis.com)",
               "[Google Drive API](https://console.cloud.google.com/apis/library/drive.googleapis.com)",
@@ -343,7 +344,7 @@
             "warn": "The error “Cloud Resource Manager project creation is disabled” is not about APIs: in Admin console → Apps → Additional Google services → **Google Cloud Platform**, allow project creation. Or use the OAuth client's own project with the APIs above enabled."
           },
           {
-            "warn": "Neue Google Cloud-Organisationen können Dienstkontoschlüssel per Richtlinie sperren. 365MG weist dann darauf hin: Erlauben Sie Schlüssel für das Projekt in den Organisationsrichtlinien, oder erstellen Sie in der Cloud Console einen Schlüssel für das Dienstkonto und verwenden Sie **Schlüsseldatei importieren (JSON)**."
+            "warn": "**Long campaigns:** if your organization uses **Google Cloud session control** to require signing in again periodically, the app pauses and asks you to sign in to the Google connection again (the journal is kept, nothing is copied twice). To avoid it: admin.google.com → **Security → Access and data control → Google Cloud session control** → **Never require reauthentication**."
           },
           {
             "table": [
